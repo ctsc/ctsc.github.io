@@ -10,9 +10,9 @@ Live at: **[ctsc.github.io](https://ctsc.github.io)**
 
 Clean, professional portfolio site built for recruiters and hiring managers. No fluff—just my projects, skills, and contact info.
 
-Currently seeking **full-time roles in Data Engineering** (graduating December 2025).
 
-## Projects Featured
+
+## Current Projects Featured
 
 **Automated Data Pipeline**  
 Production ETL pipeline processing 50K+ records/second with intelligent incremental loading. Achieved 90% reduction in processing time and 99.9% reliability across 10M+ records.
@@ -38,29 +38,6 @@ Python security tool using AST parsing. Detects SQL injections, insecure API key
 **Frameworks:** React, Node.js, Django, Flask  
 **Data Science:** Pandas, NumPy, Scikit-learn, XGBoost
 
-## Running Locally
-
-```bash
-# Clone the repo
-git clone https://github.com/ctsc/ctsc.github.io.git
-
-# Open in browser
-open index.html
-```
-
-That's it. No build process, no dependencies.
-
-## Structure
-
-```
-personalweb/
-├── index.html       # Main page
-├── styles.css       # Styling
-├── script.js        # Smooth scrolling
-└── README.md        # You're here
-```
-
-Simple single-page site. Responsive design works on mobile and desktop.
 
 ## Contact
 
@@ -71,4 +48,4 @@ Simple single-page site. Responsive design works on mobile and desktop.
 
 ---
 
-Built by Carter Tierney | Georgia State University CS Student
+Built by Carter Tierney 
