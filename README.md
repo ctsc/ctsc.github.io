@@ -1,151 +1,195 @@
-# Personal Portfolio Website
+# Carter Tierney | Data Engineer Portfolio
 
-A modern, dark-themed single-page portfolio website showcasing your projects with a bold aesthetic inspired by powerlifting, gaming, and anime culture.
+A clean, minimal, single-page portfolio showcasing data engineering projects and expertise. Professional blue theme with smooth animations.
 
-## Features
+## 🎯 Concept
 
-- **Dark Theme**: Black background with neon/electric accent colors (green, pink, blue, purple)
-- **Responsive Design**: Mobile-first approach that looks great on all devices
-- **Smooth Animations**: Anime-inspired transitions and effects including glitch effects
-- **Interactive Elements**: Hover effects, smooth scrolling, mobile menu
-- **Project Showcase**: Display your GitHub projects with links and technology tags
-- **Personal Touch**: Reflects your personality as a powerlifter, gamer, and anime enthusiast
+A professional, minimal portfolio with a light blue theme. Clean layout inspired by modern developer portfolios - focused on showcasing data engineering expertise with clear project descriptions and real production metrics.
 
-## Tech Stack
+## ✨ Features
 
-- HTML5
-- CSS3 (with modern features like Grid, Flexbox, CSS Variables)
-- Vanilla JavaScript (no frameworks needed!)
+### Design Philosophy
+- **Zero Scrolling**: Everything fits on one screen (desktop)
+- **Dashboard Layout**: 4x3 grid system with modular cards
+- **Minimal Aesthetic**: Terminal-inspired, monospace font, green accent
+- **Professional**: Matches resume tone - clear, concise, consistent
 
-## Local Development
+### Interactive Elements
+- **Live System Time**: Updates every second in header
+- **Hover Effects**: Subtle glow on cards
+- **Keyboard Shortcuts**:
+  - `G` → Open GitHub
+  - `L` → Open LinkedIn  
+  - `Ctrl/Cmd + K` → Contact
 
-1. Clone this repository or download the files
-2. Open `index.html` in your browser
-3. That's it! No build process needed.
+### Content Cards
+1. **Profile** - Name, role, bio, links
+2. **Metrics** - Key stats (12.5K tx/min, 99.7% uptime, etc.)
+3. **Tech Stack** - 8 core technologies
+4. **Education** - M.S. & B.S. + Achievement
+5. **3 Projects** - Top data engineering work
+6. **Experience** - 2 recent positions
+7. **Status** - Availability & interests
 
-## Customization
+## 📐 Layout
 
-### Update Your Information
+```
+┌─────────────────────────────────────────────────┐
+│ HEADER: Status | Title | Time | Contact         │
+├─────────┬─────────┬─────────┬─────────┐
+│ Profile │ Metrics │  Tech   │   Edu   │
+├─────────┼─────────┼─────────┼─────────┤
+│Project 1│Project 2│Project 3│ Work    │
+├─────────┴─────────┴─────────┴─────────┤
+│          Status & Availability         │
+├─────────────────────────────────────────┤
+│ FOOTER: Copyright | Title | Tagline    │
+└─────────────────────────────────────────┘
+```
 
-Edit `index.html` to add your personal information:
+## 🎨 Design Specs
 
-1. **Navigation & Contact**:
-   - Replace `your.email@example.com` with your email (line 187)
-   - Update social media links (lines 197-206)
+### Colors
+- **Background**: #0a0e1a (dark blue-black)
+- **Cards**: #151922 (slightly lighter)
+- **Accent**: #00ff88 (terminal green)
+- **Text**: #e4e6eb (light gray)
 
-2. **Hero Section**:
-   - Customize the hero description if needed (lines 28-31)
+### Typography
+- **Font**: JetBrains Mono (monospace)
+- **Size**: 14px base (responsive down to 10px mobile)
 
-3. **About Section**:
-   - Edit the about text to tell your story (lines 50-60)
+### Grid
+- **Desktop**: 4 columns × 3 rows
+- **Tablet**: 2 columns × 5 rows
+- **Mobile**: 1 column (scrollable)
 
-4. **Projects**:
-   - Replace the placeholder project cards with your actual projects
-   - Update GitHub links (search for `yourusername` in the file)
-   - Modify project titles, descriptions, and tech tags
-   - Add more project cards by copying the `.project-card` structure
+## 🚀 Quick Start
 
-### Styling Customization
+1. Open `index.html` in a browser
+2. That's it! No build process needed.
 
-Edit `styles.css` to customize colors and appearance:
+## 🔧 Customization
 
-- **Colors**: Modify CSS variables at the top of the file (lines 11-17)
-  ```css
-  --accent-primary: #00ff88;  /* Main accent color */
-  --accent-secondary: #ff006e; /* Secondary accent */
-  --accent-blue: #00d9ff;      /* Blue accent */
-  --accent-purple: #9d4edd;    /* Purple accent */
-  ```
+### Update Your Info
 
-- **Fonts**: Change the Google Fonts import in `index.html` if desired
+**Lines to change in `index.html`:**
+- Line 24: Your name in title
+- Line 29: Email address
+- Line 40: Name
+- Line 41: Role
+- Line 42: Bio
+- Lines 44-46: GitHub, LinkedIn, Phone links
+- Lines 82-88: Education details
+- Lines 89: Achievement
+- Lines 95-166: Projects (3 total)
+- Lines 175-186: Work experience (2 entries)
+- Lines 194-202: Status/availability
 
-### JavaScript Features
+### Change Colors
 
-The `script.js` file includes:
-- Mobile menu toggle
-- Smooth scrolling
-- Scroll animations
-- 3D tilt effect on project cards
-- Easter egg (try the Konami code: ↑↑↓↓←→←→BA)
+**In `styles.css` (lines 9-15):**
+```css
+--accent: #00ff88;        /* Main green accent */
+--bg-primary: #0a0e1a;    /* Dark background */
+--bg-card: #151922;       /* Card background */
+```
 
-Optional features are commented out and can be enabled:
-- Cursor trail effect
-- Typing animation for subtitle
+## 📱 Responsive
 
-## Deployment to GitHub Pages
+- **Desktop (1200px+)**: Full 4×3 grid, no scroll
+- **Laptop (1024-1199px)**: Scaled down, still no scroll
+- **Tablet (768-1023px)**: 2×5 grid, some scroll
+- **Mobile (<768px)**: 1 column, vertical scroll
 
-### Option 1: Quick Deploy from GitHub Web
-
-1. Create a new repository on GitHub (can be named anything, e.g., `personalweb`)
-2. Upload all files (`index.html`, `styles.css`, `script.js`, `README.md`) to the repository
-3. Go to repository **Settings** → **Pages**
-4. Under "Source", select **main** branch and **/ (root)** folder
-5. Click **Save**
-6. Your site will be live at `https://yourusername.github.io/personalweb/`
-
-
-
-Then follow steps 3-6 from Option 1.
-
-### Option 3: Deploy to username.github.io (Personal Site)
-
-For your main GitHub Pages site:
-
-1. Create a repository named **exactly** `yourusername.github.io` (replace with your actual GitHub username)
-2. Push your files to this repository
-3. GitHub Pages will automatically be enabled
-4. Your site will be live at `https://yourusername.github.io/`
-
-## File Structure
+## 🎯 File Structure
 
 ```
 personalweb/
-│
-├── index.html          # Main HTML file
-├── styles.css          # All styles and animations
-├── script.js           # Interactive functionality
-└── README.md           # This file (documentation)
+├── index.html    (9 cards layout)
+├── styles.css    (minimal dashboard styling)
+├── script.js     (time update, shortcuts)
+└── README.md     (this file)
 ```
 
-## Browser Support
+**Total Size**: ~12KB (all files combined)
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+## 📊 Metrics Displayed
 
-## Performance Tips
+From your actual resume:
+- ✅ 12.5K transactions/minute
+- ✅ 99.7% system uptime
+- ✅ 18x database optimization
+- ✅ 95.3% ML accuracy
 
-- All assets are optimized and minimal
-- No external dependencies except Google Fonts
-- Pure CSS animations for better performance
-- Lazy loading with Intersection Observer
+## 🔑 Keyboard Shortcuts
 
-## Future Enhancements
+- `G` - Open GitHub profile
+- `L` - Open LinkedIn profile
+- `Ctrl/Cmd + K` - Open email contact
 
-Consider adding:
-- Dark/light mode toggle
-- Blog section
-- More projects as you build them
-- Contact form integration
-- Analytics (Google Analytics or similar)
-- SEO meta tags and Open Graph tags
-- Favicon
+## 🌐 Deploy
 
-## License
+### GitHub Pages
+```bash
+git init
+git add .
+git commit -m "Data engineer dashboard"
+git remote add origin https://github.com/ctsc/portfolio
+git push -u origin main
+```
+Enable Pages in repo settings.
 
-Feel free to use this template for your own portfolio! No attribution required, but always appreciated.
+### Netlify
+Drag and drop the folder to netlify.com
 
-## Need Help?
+### Vercel  
+Import from GitHub and deploy instantly.
 
-- [GitHub Pages Documentation](https://docs.github.com/en/pages)
-- [MDN Web Docs](https://developer.mozilla.org/)
-- [CSS Tricks](https://css-tricks.com/)
+## 💡 Design Choices
+
+**Why This Layout?**
+- Matches data engineering aesthetic (monitoring dashboards)
+- Clean and professional (not gamer-themed)
+- Information density without clutter
+- Respects recruiter's time (no scrolling needed)
+- Consistent with resume tone
+
+**Why Minimal?**
+- Focus on content, not design
+- Fast loading
+- Professional appearance
+- Easy to scan quickly
+
+**Why Dashboard Style?**
+- Reflects data engineering work (monitoring systems)
+- Unique but not gimmicky
+- Shows technical thinking
+- Industry-appropriate
+
+## ✅ Matches Resume
+
+This portfolio uses the same:
+- Projects (E-Commerce Analytics, Enterprise Platform, ML Sports, Housing)
+- Metrics (12.5K tx/min, 99.7% uptime, etc.)
+- Tech stack (Python, Kafka, Spark, PostgreSQL, AWS)
+- Tone (professional, metric-driven, clear)
+
+## 🎓 Perfect For
+
+- Amazon data engineer applications
+- Google/Meta/tech company portfolios
+- LinkedIn profile link
+- Resume supplement
+- Technical interviews
+
+## 📞 Contact
+
+- **Email**: cartertierney0@gmail.com
+- **LinkedIn**: [Carter Tierney](https://www.linkedin.com/in/carter-tierney-6b6001261/)
+- **GitHub**: [ctsc](https://github.com/ctsc)
+- **Phone**: (404) 807-0557
 
 ---
 
-**Built with ☕ and 💪**
-
-*Now go lift some weights, play some games, and watch some anime while your portfolio does the talking!* 🎮⚡
-
+**CARTER_TIERNEY.sys** | Data Engineer | © 2025
