@@ -83,25 +83,7 @@ Optional features are commented out and can be enabled:
 5. Click **Save**
 6. Your site will be live at `https://yourusername.github.io/personalweb/`
 
-### Option 2: Deploy from Command Line
 
-```bash
-# Initialize git repository (if not already done)
-git init
-
-# Add all files
-git add .
-
-# Commit your files
-git commit -m "Initial portfolio website"
-
-# Add your GitHub repository as remote
-git remote add origin https://github.com/yourusername/personalweb.git
-
-# Push to GitHub
-git branch -M main
-git push -u origin main
-```
 
 Then follow steps 3-6 from Option 1.
 
