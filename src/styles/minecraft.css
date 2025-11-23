@@ -1,0 +1,186 @@
+/* Minecraft UI Styles */
+
+:root {
+    --mc-btn-gray: #7d7d7d;
+    --mc-btn-shadow: #3a3a3a;
+    --mc-btn-highlight: #a8a8a8;
+    --mc-text-shadow: 2px 2px 0px #3f3f3f;
+    --mc-yellow: #ffff55;
+}
+
+.mc-bg {
+    background-color: #2e2e2e;
+    /* Fallback */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.minecraft.net/content/dam/games/minecraft/key-art/Games_Subnav_Minecraft-300x465.jpg');
+    /* Placeholder, will need a real panoramic image or dirt texture */
+    background-size: cover;
+    background-position: center;
+}
+
+.mc-button {
+    width: 400px;
+    height: 40px;
+    background-color: var(--mc-btn-gray);
+    border: 2px solid #000;
+    border-top-color: var(--mc-btn-highlight);
+    border-left-color: var(--mc-btn-highlight);
+    border-bottom-color: var(--mc-btn-shadow);
+    border-right-color: var(--mc-btn-shadow);
+    color: #ddd;
+    font-size: 20px;
+    text-shadow: 2px 2px 0px #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    position: relative;
+    transition: none;
+    /* Minecraft buttons snap */
+}
+
+.mc-button:hover {
+    background-color: #8f8f8f;
+    border-top-color: #c6c6c6;
+    border-left-color: #c6c6c6;
+    border-bottom-color: #515151;
+    border-right-color: #515151;
+    color: #ffffa0;
+    /* Yellow text on hover */
+}
+
+.mc-button:active {
+    border-top-color: var(--mc-btn-shadow);
+    border-left-color: var(--mc-btn-shadow);
+    border-bottom-color: var(--mc-btn-highlight);
+    border-right-color: var(--mc-btn-highlight);
+}
+
+.mc-logo {
+    font-size: 72px;
+    color: #b5b5b5;
+    text-shadow: 4px 4px 0px #3f3f3f;
+    margin-bottom: 20px;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+}
+
+.mc-splash {
+    position: absolute;
+    bottom: 0;
+    right: -50px;
+    font-size: 24px;
+    color: var(--mc-yellow);
+    text-shadow: 2px 2px 0px #3f3f3f;
+    transform: rotate(-20deg);
+    animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+        transform: rotate(-20deg) scale(1);
+    }
+
+    to {
+        transform: rotate(-20deg) scale(1.1);
+    }
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+.version-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+.copyright-text {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+/* World Select Styles */
+.world-list {
+    width: 100%;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #a0a0a0;
+    border-top-color: #505050;
+    border-left-color: #505050;
+    border-bottom-color: #fff;
+    border-right-color: #fff;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.world-item {
+    display: flex;
+    padding: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.world-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.world-item.selected {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #fff;
+}
+
+.world-icon {
+    width: 64px;
+    height: 64px;
+    margin-right: 10px;
+}
+
+.world-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.world-name {
+    font-size: 22px;
+    color: #fff;
+    text-shadow: 1px 1px 0 #3f3f3f;
+}
+
+.world-details {
+    font-size: 16px;
+    color: #888;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border: 1px solid #fff;
+}
