@@ -4,9 +4,10 @@ import MainMenu from './components/MainMenu';
 import WorldSelect from './components/WorldSelect';
 import Multiplayer from './components/Multiplayer';
 import Options from './components/Options';
+import Education from './components/Education';
 
 function App() {
-    const [screen, setScreen] = useState('menu'); // menu, projects, contact, options
+    const [screen, setScreen] = useState('menu'); // menu, projects, contact, options, education
 
     const handleNavigate = (newScreen) => {
         setScreen(newScreen);
@@ -18,6 +19,7 @@ function App() {
             {screen === 'projects' && <WorldSelect onBack={() => setScreen('menu')} />}
             {screen === 'contact' && <Multiplayer onBack={() => setScreen('menu')} />}
             {screen === 'options' && <Options onBack={() => setScreen('menu')} />}
+            {screen === 'education' && <Education onBack={() => setScreen('menu')} />}
         </>
     );
 }
