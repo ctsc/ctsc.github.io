@@ -3,6 +3,15 @@ import '../styles/minecraft.css';
 
 const FeedbackBook = ({ isOpen, onClose }) => {
     const [feedback, setFeedback] = useState('');
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 640);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     // Prevent body scroll when modal is open
     useEffect(() => {
@@ -39,21 +48,22 @@ const FeedbackBook = ({ isOpen, onClose }) => {
 
     return (
         <div className="mc-book-overlay" onClick={handleOverlayClick}>
-            <div className="mc-book-container" onClick={(e) => e.stopPropagation()}>
-                <button className="mc-book-close" onClick={onClose}>×</button>
+            <div className="mc-book-container" onClick={(e) => e.stopPropagation()} style={{ width: isMobile ? '95vw' : '700px', padding: isMobile ? '20px' : '40px 50px' }}>
+                <button className="mc-book-close" onClick={onClose} style={{ width: isMobile ? '44px' : '35px', height: isMobile ? '44px' : '35px', fontSize: isMobile ? '24px' : '28px' }}>×</button>
                 
-                <h2 className="mc-book-title">Let Me Know What You Think</h2>
+                <h2 className="mc-book-title" style={{ fontSize: isMobile ? '20px' : '32px', marginBottom: isMobile ? '15px' : '30px' }}>Let Me Know What You Think</h2>
                 
                 <textarea
                     className="mc-book-textarea"
                     value={feedback}
                     onChange={(e) => setFeedback(e.target.value)}
                     placeholder="Type your feedback here..."
-                    rows="12"
+                    rows={isMobile ? '8' : '12'}
+                    style={{ fontSize: isMobile ? '16px' : '20px', padding: isMobile ? '12px' : '20px', minHeight: isMobile ? '200px' : '300px' }}
                 />
                 
                 <div className="mc-book-actions">
-                    <button className="mc-book-submit" onClick={handleSubmit}>
+                    <button className="mc-book-submit" onClick={handleSubmit} style={{ width: isMobile ? '100%' : '200px', fontSize: isMobile ? '18px' : '22px' }}>
                         Send Feedback
                     </button>
                 </div>

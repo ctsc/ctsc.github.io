@@ -10,6 +10,11 @@ const Education = ({ onBack }) => {
     const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
     const [hoveredAchievement, setHoveredAchievement] = useState(null);
     const canvasRef = useRef(null);
+    
+    // Touch handling for mobile
+    const [touchStart, setTouchStart] = useState(null);
+    const [pinchStart, setPinchStart] = useState(null);
+    const [lastPinchDistance, setLastPinchDistance] = useState(null);
 
     // Get achievement by ID
     const getAchievement = (id) => achievements.find(a => a.id === id);
@@ -66,6 +71,64 @@ const Education = ({ onBack }) => {
         setIsDragging(false);
     };
 
+    // Touch handlers for mobile pan/zoom
+    const handleTouchStart = (e) => {
+        if (e.touches.length === 1) {
+            // Single touch - start pan
+            const touch = e.touches[0];
+            setTouchStart({
+                x: touch.clientX - pan.x,
+                y: touch.clientY - pan.y
+            });
+            setIsDragging(true);
+        } else if (e.touches.length === 2) {
+            // Two touches - start pinch zoom
+            const touch1 = e.touches[0];
+            const touch2 = e.touches[1];
+            const distance = Math.hypot(
+                touch2.clientX - touch1.clientX,
+                touch2.clientY - touch1.clientY
+            );
+            setPinchStart({ distance, zoom });
+            setLastPinchDistance(distance);
+            setIsDragging(false);
+        }
+    };
+
+    const handleTouchMove = (e) => {
+        e.preventDefault();
+        if (e.touches.length === 1 && touchStart) {
+            // Single touch - pan
+            const touch = e.touches[0];
+            setPan({
+                x: touch.clientX - touchStart.x,
+                y: touch.clientY - touchStart.y
+            });
+        } else if (e.touches.length === 2 && pinchStart) {
+            // Two touches - pinch zoom
+            const touch1 = e.touches[0];
+            const touch2 = e.touches[1];
+            const distance = Math.hypot(
+                touch2.clientX - touch1.clientX,
+                touch2.clientY - touch1.clientY
+            );
+            
+            if (lastPinchDistance) {
+                const scale = distance / lastPinchDistance;
+                const newZoom = Math.max(0.5, Math.min(2, pinchStart.zoom * scale));
+                setZoom(newZoom);
+            }
+            setLastPinchDistance(distance);
+        }
+    };
+
+    const handleTouchEnd = () => {
+        setIsDragging(false);
+        setTouchStart(null);
+        setPinchStart(null);
+        setLastPinchDistance(null);
+    };
+
     // Zoom handler
     const handleWheel = (e) => {
         e.preventDefault();
@@ -108,10 +171,24 @@ const Education = ({ onBack }) => {
     const canvasWidth = maxX - minX;
     const canvasHeight = maxY - minY;
 
+    // Check if mobile device
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
+    const iconSize = isMobile ? 48 : 64;
+    const nodeSize = isMobile ? 48 : 64;
+
+    // Update mobile state on resize
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 640);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <div className="app-container mc-bg">
-            <div className="menu-container" style={{ width: '1200px', height: '87vh' }}>
-                <h1 style={{ color: 'white', marginBottom: '15px', textShadow: '2px 2px 0 #3f3f3f', fontSize: '40px' }}>
+            <div className="menu-container achievement-container" style={{ width: isMobile ? '100%' : '1200px', maxWidth: '95vw', height: isMobile ? 'auto' : '87vh', minHeight: isMobile ? '100vh' : 'auto', padding: isMobile ? '10px' : '0' }}>
+                <h1 style={{ color: 'white', marginBottom: '15px', textShadow: '2px 2px 0 #3f3f3f', fontSize: isMobile ? '28px' : '40px' }}>
                     Achievements
                 </h1>
 
@@ -139,6 +216,10 @@ const Education = ({ onBack }) => {
                     onMouseMove={handleMouseMove}
                     onMouseUp={handleMouseUp}
                     onMouseLeave={handleMouseUp}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                    touch-action="none"
                 >
                     {/* Shared Container for Lines and Nodes */}
                     <div
@@ -176,7 +257,7 @@ const Education = ({ onBack }) => {
                                             <path
                                                 d={path}
                                                 stroke="#000000"
-                                                strokeWidth="6"
+                                                strokeWidth="8"
                                                 fill="none"
                                                 strokeLinecap="round"
                                                 strokeLinejoin="round"
@@ -185,13 +266,14 @@ const Education = ({ onBack }) => {
                                         {/* Main line */}
                                         <path
                                             d={path}
-                                            stroke={isUnlocked ? '#FFFF00' : '#9A9A00'} // Bright neon yellow or dark yellow
-                                            strokeWidth={isUnlocked ? '4' : '3'}
+                                            stroke={isUnlocked ? '#FFD700' : '#9A9A00'} // Golden yellow or dark yellow
+                                            strokeWidth={isUnlocked ? '7' : '4'}
                                             fill="none"
                                             strokeLinecap="round"
                                             strokeLinejoin="round"
                                             strokeDasharray={isUnlocked ? '0' : '8,4'}
                                             opacity={isUnlocked ? 1 : 0.6}
+                                            filter={isUnlocked ? 'drop-shadow(0 0 2px #FFD700)' : 'none'}
                                         />
                                     </g>
                                 );
@@ -232,12 +314,12 @@ const Education = ({ onBack }) => {
                                     {/* Achievement Icon */}
                                     <div
                                         style={{
-                                            width: '48px',
-                                            height: '48px',
+                                            width: `${nodeSize}px`,
+                                            height: `${nodeSize}px`,
                                             background: isUnlocked
                                                 ? '#B0B0B0' // Bright grey block
                                                 : '#555555',
-                                            border: '3px solid',
+                                            border: '4px solid',
                                             borderTopColor: isUnlocked ? '#D0D0D0' : '#666',
                                             borderLeftColor: isUnlocked ? '#D0D0D0' : '#666',
                                             borderBottomColor: isUnlocked ? '#808080' : '#222',
@@ -246,8 +328,8 @@ const Education = ({ onBack }) => {
                                             alignItems: 'center',
                                             justifyContent: 'center',
                                             boxShadow: isUnlocked
-                                                ? '0 0 0 2px #000, inset 0 0 8px rgba(0,0,0,0.2)'
-                                                : '0 0 0 2px #000, inset 0 0 10px rgba(0,0,0,0.5)',
+                                                ? '0 0 0 3px #000, inset 0 0 8px rgba(0,0,0,0.2)'
+                                                : '0 0 0 3px #000, inset 0 0 10px rgba(0,0,0,0.5)',
                                             imageRendering: 'pixelated',
                                             opacity: isUnlocked ? 1 : 0.5,
                                             transform: isHovered ? 'scale(1.2)' : 'scale(1)',
@@ -257,16 +339,15 @@ const Education = ({ onBack }) => {
                                     >
                                         <MinecraftItemIcon 
                                             itemType={achievement.itemType || 'sword'} 
-                                            size={32}
+                                            size={iconSize}
                                         />
                                     </div>
 
-                                    {/* Achievement Tooltip */}
-                                    {(isHovered || isUnlocked) && (
-                                        <div
+                                    {/* Achievement Tooltip - Always visible */}
+                                    <div
                                             style={{
                                                 position: 'absolute',
-                                                top: '40px',
+                                                top: isMobile ? '40px' : '50px',
                                                 left: '50%',
                                                 transform: 'translateX(-50%)',
                                                 whiteSpace: 'nowrap',
@@ -276,25 +357,27 @@ const Education = ({ onBack }) => {
                                                 borderLeftColor: '#505050',
                                                 borderBottomColor: '#fff',
                                                 borderRightColor: '#fff',
-                                                padding: '8px 12px',
-                                                fontSize: '14px',
-                                                color: isUnlocked ? '#ffff55' : '#888888',
-                                                textShadow: '2px 2px 0 #3f3f3f',
+                                                padding: isMobile ? '8px 12px' : '10px 16px',
+                                                fontSize: isMobile ? '14px' : '16px',
                                                 fontFamily: 'var(--font-mojangles), monospace',
                                                 pointerEvents: 'none',
                                                 zIndex: 20,
-                                                minWidth: '150px',
-                                                textAlign: 'center'
+                                                minWidth: isMobile ? '150px' : '200px',
+                                                maxWidth: isMobile ? '200px' : 'none',
+                                                textAlign: 'center',
+                                                wordWrap: 'break-word',
+                                                whiteSpace: isMobile ? 'normal' : 'nowrap'
                                             }}
                                         >
-                                            <div style={{ fontWeight: 'bold', marginBottom: '4px' }}>
+                                            <div style={{ 
+                                                fontWeight: 'bold', 
+                                                color: isUnlocked ? '#FFD700' : '#888888',
+                                                fontSize: isMobile ? '16px' : '18px',
+                                                textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 4px #000'
+                                            }}>
                                                 {achievement.title}
                                             </div>
-                                            <div style={{ fontSize: '11px', color: '#aaa', lineHeight: '1.3' }}>
-                                                {achievement.description}
-                                            </div>
                                         </div>
-                                    )}
                                 </div>
                             );
                         })}
@@ -304,23 +387,35 @@ const Education = ({ onBack }) => {
                     {/* Zoom Controls */}
                     <div style={{
                         position: 'absolute',
-                        bottom: '20px',
-                        right: '20px',
+                        bottom: isMobile ? '10px' : '20px',
+                        right: isMobile ? '10px' : '20px',
                         display: 'flex',
                         flexDirection: 'column',
                         gap: '5px',
                         zIndex: 100
                     }}>
                         <button
-                            className="mc-button"
-                            style={{ width: '40px', height: '30px', fontSize: '18px' }}
+                            className="mc-button zoom-btn"
+                            style={{ 
+                                width: isMobile ? '44px' : '40px', 
+                                height: isMobile ? '44px' : '30px', 
+                                fontSize: isMobile ? '20px' : '18px',
+                                minWidth: '44px',
+                                minHeight: '44px'
+                            }}
                             onClick={() => setZoom(Math.min(2, zoom + 0.1))}
                         >
                             +
                         </button>
                         <button
-                            className="mc-button"
-                            style={{ width: '40px', height: '30px', fontSize: '18px' }}
+                            className="mc-button zoom-btn"
+                            style={{ 
+                                width: isMobile ? '44px' : '40px', 
+                                height: isMobile ? '44px' : '30px', 
+                                fontSize: isMobile ? '20px' : '18px',
+                                minWidth: '44px',
+                                minHeight: '44px'
+                            }}
                             onClick={() => setZoom(Math.max(0.5, zoom - 0.1))}
                         >
                             −
@@ -333,17 +428,31 @@ const Education = ({ onBack }) => {
                         top: '10px',
                         left: '10px',
                         color: '#aaa',
-                        fontSize: '12px',
+                        fontSize: isMobile ? '10px' : '12px',
                         fontFamily: 'var(--font-mojangles), monospace',
-                        zIndex: 100
+                        zIndex: 100,
+                        display: isMobile ? 'none' : 'block'
                     }}>
                         Drag to pan • Scroll to zoom • Hover for details
                     </div>
+                    {isMobile && (
+                        <div style={{
+                            position: 'absolute',
+                            top: '10px',
+                            left: '10px',
+                            color: '#aaa',
+                            fontSize: '10px',
+                            fontFamily: 'var(--font-mojangles), monospace',
+                            zIndex: 100
+                        }}>
+                            Drag to pan • Pinch to zoom
+                        </div>
+                    )}
                 </div>
 
                 {/* Done Button */}
-                <div className="button-row">
-                    <button className="mc-button" style={{ width: '260px' }} onClick={onBack}>
+                <div className="button-row" style={{ marginTop: isMobile ? '10px' : '0' }}>
+                    <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={onBack}>
                         Done
                     </button>
                 </div>

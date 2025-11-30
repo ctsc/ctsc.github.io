@@ -5,7 +5,9 @@ import BlockParticles from './BlockParticles';
 
 const MainMenu = ({ onNavigate }) => {
     const [particlesEnabled, setParticlesEnabled] = useState(true);
-    const [particleCount, setParticleCount] = useState(25);
+    // Reduce particle count on mobile for better performance
+    const isMobile = window.innerWidth <= 640;
+    const [particleCount, setParticleCount] = useState(isMobile ? 10 : 25);
 
     // Load particles preference from localStorage
     useEffect(() => {
@@ -15,7 +17,10 @@ const MainMenu = ({ onNavigate }) => {
             setParticlesEnabled(saved === 'true');
         }
         if (savedCount !== null) {
-            setParticleCount(parseInt(savedCount, 10));
+            const savedCountNum = parseInt(savedCount, 10);
+            // Ensure mobile doesn't exceed recommended count
+            const maxCount = window.innerWidth <= 640 ? 10 : 25;
+            setParticleCount(Math.min(savedCountNum, maxCount));
         }
 
         // Listen for changes from Options menu
@@ -52,17 +57,17 @@ const MainMenu = ({ onNavigate }) => {
                 </div>
 
                 <button className="mc-button" onClick={() => onNavigate('projects')}>
-                    Singleplayer
+                    Projects
                 </button>
                 <button className="mc-button" onClick={() => onNavigate('contact')}>
-                    Multiplayer
+                    Social Links
                 </button>
-                <button className="mc-button" onClick={() => onNavigate('education')}>
-                    Achievements
+                <button className="mc-button" onClick={() => onNavigate('options')}>
+                    Experience
                 </button>
-                <div style={{ display: 'flex', gap: '10px', width: '550px' }}>
-                    <button className="mc-button" style={{ flex: 1 }} onClick={() => onNavigate('options')}>
-                        Options...
+                <div className="button-row" style={{ maxWidth: '550px', width: '100%' }}>
+                    <button className="mc-button" style={{ flex: 1 }} onClick={() => onNavigate('education')}>
+                        Achievements
                     </button>
                     <button className="mc-button" style={{ flex: 1 }} onClick={() => alert("You can't quit! I need a job!")}>
                         Quit Game
@@ -75,7 +80,7 @@ const MainMenu = ({ onNavigate }) => {
             
             {/* Floating Blocks Toggle Button */}
             <button
-                className="mc-button"
+                className="mc-button particles-toggle-btn"
                 onClick={toggleParticles}
                 style={{
                     position: 'absolute',

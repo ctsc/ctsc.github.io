@@ -10,9 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "framer-motion": "^10.16.4",
+    "minecraft-items-react": "^0.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "framer-motion": "^10.16.4",
     "react-icons": "^4.11.0",
     "three": "^0.160.0"
   },

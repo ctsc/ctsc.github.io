@@ -29,6 +29,14 @@ html {
   position: fixed;
   top: 0;
   left: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 640px) {
+  html {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 }
 
 body {
@@ -43,6 +51,18 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y pinch-zoom;
+}
+
+@media (max-width: 640px) {
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+  }
 }
 
 #root {

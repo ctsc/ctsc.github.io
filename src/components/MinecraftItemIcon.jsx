@@ -1,227 +1,97 @@
 import React from 'react';
+import {
+    // Clubs/Fun Path
+    MinecraftPaper,
+    MinecraftMinecart,
+    MinecraftBook,
+    MinecraftIronIngot,
+    MinecraftGoldenApple,
+    MinecraftNetherStar,
+    MinecraftRedstone,
+    MinecraftBundle,
+    // School/Projects Path
+    MinecraftEnchantedBook,
+    MinecraftIronPickaxe,
+    MinecraftDiamond,
+    MinecraftDiamondSword,
+    MinecraftBrewingStand,
+    MinecraftGlowstoneDust,
+    MinecraftBlazePowder,
+    MinecraftBlazeRod,
+    MinecraftEndCrystal,
+    MinecraftShulkerShell,
+    MinecraftCommandBlockMinecart,
+    MinecraftFilledMap,
+    MinecraftEnderEye,
+    MinecraftHopper,
+    MinecraftRepeater,
+    MinecraftComparator,
+    MinecraftFlowerBannerPattern,
+    // Internships/Experience Path
+    MinecraftLeather,
+    MinecraftEnderPearl,
+    MinecraftEmerald,
+    MinecraftExperienceBottle,
+} from 'minecraft-items-react';
 
 /**
- * Minecraft-style pixel art item icons for achievements
+ * Minecraft-style item icons for achievements using minecraft-items-react package
  */
 const MinecraftItemIcon = ({ itemType, size = 32 }) => {
-    const pixelSize = size / 16; // 16x16 grid for pixel art
-    
-    // Pixel patterns for different Minecraft items (16x16 grid)
-    const items = {
-        sword: [
-            // Row 0-3: Handle
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-            // Row 4-7: Crossguard
-            [0,0,0,0,1,1,1,0,0,1,1,1,0,0,0,0],
-            [0,0,0,0,1,2,1,0,0,1,2,1,0,0,0,0],
-            [0,0,0,0,1,1,1,0,0,1,1,1,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-            // Row 8-15: Blade
-            [0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0],
-            [0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,0],
-            [0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0],
-            [0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0],
-            [0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0],
-            [0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0],
-            [0,0,0,0,0,1,0,1,1,0,1,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-        ],
-        book: [
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0],
-            [0,0,0,0,1,3,3,3,3,3,2,1,0,0,0,0],
-            [0,0,0,1,3,3,3,3,3,3,3,2,1,0,0,0],
-            [0,0,1,3,3,3,3,3,3,3,3,3,2,1,0,0],
-            [0,1,3,3,3,3,3,3,3,3,3,3,3,2,1,0],
-            [1,3,3,3,3,3,3,3,3,3,3,3,3,3,2,1],
-            [1,3,3,3,3,3,3,3,3,3,3,3,3,3,2,1],
-            [1,3,3,3,3,3,3,3,3,3,3,3,3,3,2,1],
-            [1,3,3,3,3,3,3,3,3,3,3,3,3,3,2,1],
-            [1,3,3,3,3,3,3,3,3,3,3,3,3,3,2,1],
-            [0,1,3,3,3,3,3,3,3,3,3,3,3,2,1,0],
-            [0,0,1,3,3,3,3,3,3,3,3,3,2,1,0,0],
-            [0,0,0,1,3,3,3,3,3,3,3,2,1,0,0,0],
-            [0,0,0,0,1,2,2,2,2,2,2,1,0,0,0,0],
-            [0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0],
-        ],
-        diploma: [
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-            [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
-            [0,1,3,3,3,3,3,3,3,3,3,3,3,3,1,0],
-            [0,1,3,2,2,2,2,2,2,2,2,2,2,3,1,0],
-            [0,1,3,2,3,3,3,3,3,3,3,3,2,3,1,0],
-            [0,1,3,2,3,2,2,2,2,2,2,3,2,3,1,0],
-            [0,1,3,2,3,2,3,3,3,3,2,3,2,3,1,0],
-            [0,1,3,2,3,2,3,2,2,3,2,3,2,3,1,0],
-            [0,1,3,2,3,2,3,2,2,3,2,3,2,3,1,0],
-            [0,1,3,2,3,2,3,3,3,3,2,3,2,3,1,0],
-            [0,1,3,2,3,2,2,2,2,2,2,3,2,3,1,0],
-            [0,1,3,2,3,3,3,3,3,3,3,3,2,3,1,0],
-            [0,1,3,2,2,2,2,2,2,2,2,2,2,3,1,0],
-            [0,1,3,3,3,3,3,3,3,3,3,3,3,3,1,0],
-            [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-        ],
-        trophy: [
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0],
-            [0,0,0,1,1,3,3,3,3,3,3,1,1,0,0,0],
-            [0,0,1,3,3,3,2,2,2,2,3,3,3,1,0,0],
-            [0,0,1,3,3,2,2,2,2,2,2,3,3,1,0,0],
-            [0,1,3,3,2,2,2,2,2,2,2,2,3,3,1,0],
-            [0,1,3,3,2,2,2,2,2,2,2,2,3,3,1,0],
-            [0,1,3,3,2,2,2,2,2,2,2,2,3,3,1,0],
-            [0,1,3,3,3,2,2,2,2,2,2,3,3,3,1,0],
-            [0,0,1,3,3,3,2,2,2,2,3,3,3,1,0,0],
-            [0,0,0,1,3,3,3,3,3,3,3,3,1,0,0,0],
-            [0,0,0,0,1,3,3,3,3,3,3,1,0,0,0,0],
-            [0,0,0,0,1,3,3,3,3,3,3,1,0,0,0,0],
-            [0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0],
-            [0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-        ],
-        briefcase: [
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-            [0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0],
-            [0,0,1,2,2,2,2,2,2,2,2,2,2,1,0,0],
-            [0,1,1,2,2,2,2,2,2,2,2,2,2,1,1,0],
-            [0,1,3,2,2,2,2,2,2,2,2,2,2,3,1,0],
-            [1,1,3,2,2,2,2,2,2,2,2,2,2,3,1,1],
-            [1,3,3,2,2,2,2,2,2,2,2,2,2,3,3,1],
-            [1,3,3,2,2,2,2,2,2,2,2,2,2,3,3,1],
-            [1,3,3,2,2,2,2,2,2,2,2,2,2,3,3,1],
-            [1,3,3,2,2,2,2,2,2,2,2,2,2,3,3,1],
-            [1,1,3,2,2,2,2,2,2,2,2,2,2,3,1,1],
-            [0,1,3,3,3,3,3,3,3,3,3,3,3,3,1,0],
-            [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-        ],
-        weight: [
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0],
-            [0,0,0,1,1,2,2,2,2,2,2,1,1,0,0,0],
-            [0,0,1,2,2,2,2,2,2,2,2,2,2,1,0,0],
-            [0,1,2,2,2,2,2,2,2,2,2,2,2,2,1,0],
-            [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
-            [1,2,2,2,2,1,1,1,1,1,1,2,2,2,2,1],
-            [1,2,2,2,2,1,1,1,1,1,1,2,2,2,2,1],
-            [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
-            [0,1,2,2,2,2,2,2,2,2,2,2,2,2,1,0],
-            [0,0,1,2,2,2,2,2,2,2,2,2,2,1,0,0],
-            [0,0,0,1,1,2,2,2,2,2,2,1,1,0,0,0],
-            [0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-        ],
-        rocket: [
-            [0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0],
-            [0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0],
-            [0,0,0,0,0,1,2,2,2,2,1,0,0,0,0,0],
-            [0,0,0,0,1,2,2,3,3,2,2,1,0,0,0,0],
-            [0,0,0,1,2,2,3,3,3,3,2,2,1,0,0,0],
-            [0,0,1,2,2,3,3,3,3,3,3,2,2,1,0,0],
-            [0,1,2,2,3,3,3,2,2,3,3,3,2,2,1,0],
-            [1,2,2,3,3,3,2,1,1,2,3,3,3,2,2,1],
-            [1,2,2,3,3,3,2,1,1,2,3,3,3,2,2,1],
-            [0,1,2,2,3,3,3,2,2,3,3,3,2,2,1,0],
-            [0,0,1,2,2,3,3,3,3,3,3,2,2,1,0,0],
-            [0,0,0,1,2,2,3,3,3,3,2,2,1,0,0,0],
-            [0,0,0,0,1,2,2,3,3,2,2,1,0,0,0,0],
-            [0,0,0,0,0,1,2,2,2,2,1,0,0,0,0,0],
-            [0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0],
-        ],
-        lightbulb: [
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0],
-            [0,0,0,1,1,3,3,3,3,3,3,1,1,0,0,0],
-            [0,0,1,3,3,3,3,3,3,3,3,3,3,1,0,0],
-            [0,1,3,3,3,3,2,2,2,2,3,3,3,3,1,0],
-            [0,1,3,3,3,2,2,2,2,2,2,3,3,3,1,0],
-            [1,3,3,3,2,2,3,3,3,3,2,2,3,3,3,1],
-            [1,3,3,3,2,2,3,3,3,3,2,2,3,3,3,1],
-            [1,3,3,3,2,2,2,2,2,2,2,2,3,3,3,1],
-            [0,1,3,3,3,2,2,2,2,2,2,3,3,3,1,0],
-            [0,1,3,3,3,3,2,2,2,2,3,3,3,3,1,0],
-            [0,0,1,3,3,3,3,3,3,3,3,3,3,1,0,0],
-            [0,0,0,1,3,3,3,3,3,3,3,3,1,0,0,0],
-            [0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0],
-            [0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-        ],
-        star: [
-            [0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0],
-            [0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0],
-            [0,0,0,0,1,1,1,3,3,1,1,1,0,0,0,0],
-            [0,0,0,1,3,3,3,3,3,3,3,3,1,0,0,0],
-            [0,0,1,3,3,3,3,3,3,3,3,3,3,1,0,0],
-            [0,1,3,3,3,2,2,3,3,2,2,3,3,3,1,0],
-            [1,3,3,3,2,2,2,2,2,2,2,2,3,3,3,1],
-            [0,1,3,3,3,2,2,2,2,2,2,3,3,3,1,0],
-            [0,0,1,3,3,3,2,2,2,2,3,3,3,1,0,0],
-            [0,1,3,3,3,3,3,2,2,3,3,3,3,3,1,0],
-            [1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,1],
-            [0,1,1,1,1,3,3,3,3,3,3,1,1,1,1,0],
-            [0,0,0,0,1,1,1,3,3,1,1,1,0,0,0,0],
-            [0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0],
-            [0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-        ],
+    // Map achievement itemType to actual Minecraft item components
+    const itemComponents = {
+        // Clubs/Fun Path
+        'diploma': MinecraftPaper,
+        'rocket': MinecraftMinecart,
+        'star': MinecraftBook,
+        'weight': MinecraftIronIngot,
+        'trophy': MinecraftGoldenApple,
+        'lightbulb': MinecraftRedstone,
+        'briefcase': MinecraftBundle,
+        
+        // School/Projects Path
+        'book': MinecraftBook,
+        'sword': MinecraftIronPickaxe,
+        'enchanted_book': MinecraftEnchantedBook,
+        'diamond': MinecraftDiamond,
+        'diamond_sword': MinecraftDiamondSword,
+        'brewing_stand': MinecraftBrewingStand,
+        'redstone_lamp': MinecraftGlowstoneDust,
+        'blaze_powder': MinecraftBlazePowder,
+        'blaze_rod': MinecraftBlazeRod,
+        'end_crystal': MinecraftEndCrystal,
+        'shulker_box': MinecraftShulkerShell,
+        'command_block': MinecraftCommandBlockMinecart,
+        'filled_map': MinecraftFilledMap,
+        'ender_chest': MinecraftEnderEye,
+        'hopper': MinecraftHopper,
+        'repeater': MinecraftRepeater,
+        'comparator': MinecraftComparator,
+        'poppy': MinecraftFlowerBannerPattern,
+        'nether_star': MinecraftNetherStar,
+        
+        // Internships/Experience Path
+        'leather': MinecraftLeather,
+        'ender_pearl': MinecraftEnderPearl,
+        'emerald_block': MinecraftEmerald,
+        'experience_bottle': MinecraftExperienceBottle,
+        'beacon': MinecraftNetherStar,
+        'chest': MinecraftBundle,
+        'ender_eye': MinecraftEnderEye,
     };
     
-    const pattern = items[itemType] || items.sword;
-    
-    // Color palette
-    const colors = {
-        0: 'transparent',
-        1: '#000000', // Black outline
-        2: '#8B7355', // Brown/wood
-        3: '#FFD700', // Gold
-    };
-    
-    // Item-specific colors
-    const itemColors = {
-        sword: { 2: '#C0C0C0', 3: '#808080' }, // Silver blade
-        book: { 2: '#8B4513', 3: '#D2691E' }, // Brown book
-        diploma: { 2: '#FFFFFF', 3: '#FFD700' }, // White paper, gold seal
-        trophy: { 2: '#FFD700', 3: '#FFA500' }, // Gold trophy
-        briefcase: { 2: '#654321', 3: '#8B4513' }, // Brown briefcase
-        weight: { 2: '#808080', 3: '#606060' }, // Grey weights
-        rocket: { 2: '#FF6347', 3: '#FF0000' }, // Red rocket
-        lightbulb: { 2: '#FFD700', 3: '#FFFF00' }, // Yellow bulb
-        star: { 2: '#FFD700', 3: '#FFFF00' }, // Gold star
-    };
-    
-    const customColors = itemColors[itemType] || {};
-    const finalColors = { ...colors, ...customColors };
+    // Get the component for this itemType, fallback to Book if not found
+    const ItemComponent = itemComponents[itemType] || MinecraftBook;
     
     return (
         <div style={{
             width: size,
             height: size,
-            display: 'grid',
-            gridTemplateColumns: `repeat(16, ${pixelSize}px)`,
-            gridTemplateRows: `repeat(16, ${pixelSize}px)`,
-            imageRendering: 'pixelated',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
         }}>
-            {pattern.map((row, y) =>
-                row.map((pixel, x) => (
-                    <div
-                        key={`${x}-${y}`}
-                        style={{
-                            width: pixelSize,
-                            height: pixelSize,
-                            backgroundColor: finalColors[pixel] || 'transparent',
-                        }}
-                    />
-                ))
-            )}
+            <ItemComponent size={size} />
         </div>
     );
 };

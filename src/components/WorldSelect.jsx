@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { projects } from '../data/projects';
 import FeedbackBook from './FeedbackBook';
 import WorldBlockIcon from './WorldBlockIcon';
@@ -7,6 +7,15 @@ import '../styles/minecraft.css';
 const WorldSelect = ({ onBack }) => {
     const [selectedId, setSelectedId] = useState(null);
     const [isBookOpen, setIsBookOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 640);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const handlePlay = () => {
         if (selectedId) {
@@ -17,8 +26,8 @@ const WorldSelect = ({ onBack }) => {
 
     return (
         <div className="app-container mc-bg">
-            <div className="menu-container" style={{ width: '1100px' }}>
-                <h1 style={{ color: 'white', marginBottom: '25px', textShadow: '2px 2px 0 #3f3f3f', fontSize: '40px' }}>Select World</h1>
+            <div className="menu-container world-select-container" style={{ width: isMobile ? '100%' : '1100px', maxWidth: '95vw', padding: isMobile ? '10px' : '0' }}>
+                <h1 style={{ color: 'white', marginBottom: '25px', textShadow: '2px 2px 0 #3f3f3f', fontSize: isMobile ? '28px' : '40px' }}>Select World</h1>
 
                 <div className="world-list">
                     {projects.map((project) => (
@@ -31,7 +40,7 @@ const WorldSelect = ({ onBack }) => {
                                 <WorldBlockIcon 
                                     isSelected={selectedId === project.id}
                                     blockType={project.blockType || 'grass'}
-                                    size={64}
+                                    size={isMobile ? 48 : 64}
                                 />
                             </div>
                             <div className="world-info">
@@ -54,17 +63,17 @@ const WorldSelect = ({ onBack }) => {
                         className="mc-button"
                         disabled={!selectedId}
                         onClick={handlePlay}
-                        style={{ width: '260px', opacity: selectedId ? 1 : 0.5 }}
+                        style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px', opacity: selectedId ? 1 : 0.5 }}
                     >
                         Play Selected World
                     </button>
-                    <button className="mc-button" style={{ width: '260px' }} onClick={() => setIsBookOpen(true)}>Edit</button>
-                    <button className="mc-button" style={{ width: '260px' }} onClick={() => alert('Cannot delete portfolio projects!')}>Delete</button>
+                    <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={() => setIsBookOpen(true)}>Edit</button>
+                    <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={() => alert('Cannot delete portfolio projects!')}>Delete</button>
                 </div>
 
                 <div className="button-row" style={{ marginTop: '10px' }}>
-                    <button className="mc-button" style={{ width: '260px' }} onClick={() => alert('Re-creating world...')}>Re-Create</button>
-                    <button className="mc-button" style={{ width: '260px' }} onClick={onBack}>Cancel</button>
+                    <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={() => alert('Re-creating world...')}>Re-Create</button>
+                    <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={onBack}>Cancel</button>
                 </div>
             </div>
             
