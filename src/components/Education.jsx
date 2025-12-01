@@ -5,7 +5,8 @@ import '../styles/minecraft.css';
 
 const Education = ({ onBack }) => {
     const [pan, setPan] = useState({ x: 0, y: 0 });
-    const [zoom, setZoom] = useState(1);
+    // Start more zoomed out so more of the achievement tree is visible by default
+    const [zoom, setZoom] = useState(0.6);
     const [isDragging, setIsDragging] = useState(false);
     const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
     const [hoveredAchievement, setHoveredAchievement] = useState(null);
@@ -115,7 +116,7 @@ const Education = ({ onBack }) => {
             
             if (lastPinchDistance) {
                 const scale = distance / lastPinchDistance;
-                const newZoom = Math.max(0.5, Math.min(2, pinchStart.zoom * scale));
+                const newZoom = Math.max(0.4, Math.min(2, pinchStart.zoom * scale));
                 setZoom(newZoom);
             }
             setLastPinchDistance(distance);
@@ -134,7 +135,7 @@ const Education = ({ onBack }) => {
         e.preventDefault();
         e.stopPropagation();
         const delta = e.deltaY > 0 ? 0.9 : 1.1;
-        const newZoom = Math.max(0.5, Math.min(2, zoom * delta));
+        const newZoom = Math.max(0.4, Math.min(2, zoom * delta));
         setZoom(newZoom);
         return false;
     };
@@ -149,7 +150,7 @@ const Education = ({ onBack }) => {
             e.stopPropagation();
             const delta = e.deltaY > 0 ? 0.9 : 1.1;
             setZoom(prevZoom => {
-                const newZoom = Math.max(0.5, Math.min(2, prevZoom * delta));
+                const newZoom = Math.max(0.4, Math.min(2, prevZoom * delta));
                 return newZoom;
             });
         };
@@ -187,7 +188,15 @@ const Education = ({ onBack }) => {
 
     return (
         <div className="app-container mc-bg">
-            <div className="menu-container achievement-container" style={{ width: isMobile ? '100%' : '1200px', maxWidth: '95vw', height: isMobile ? 'auto' : '87vh', minHeight: isMobile ? '100vh' : 'auto', padding: isMobile ? '10px' : '0' }}>
+            <div
+                className="menu-container achievement-container"
+                style={{
+                    width: isMobile ? '100%' : '1600px',
+                    maxWidth: '99vw',
+                    height: isMobile ? 'auto' : '87vh',
+                    padding: isMobile ? '10px' : '0'
+                }}
+            >
                 <h1 style={{ color: 'white', marginBottom: '15px', textShadow: '2px 2px 0 #3f3f3f', fontSize: isMobile ? '28px' : '40px' }}>
                     Achievements
                 </h1>

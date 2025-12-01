@@ -212,23 +212,13 @@ export const achievements = [
     },
     {
         id: 'flask_fastapi_mastery',
-        title: 'Flask/FastAPI Mastery',
-        description: 'Mastered Flask and FastAPI frameworks',
+        title: 'Machine Learning Mastery',
+        description: 'Mastered core machine learning concepts and frameworks',
         itemType: 'brewing_stand',
         x: 2500,
         y: 850,
         unlocked: true,
         dependencies: ['django_quizlet_app']
-    },
-    {
-        id: 'ml_dl_master',
-        title: 'Machine/Deep Learning Master',
-        description: 'Mastered machine learning with TensorFlow, PyTorch, and scikit-learn',
-        itemType: 'redstone_lamp',
-        x: 2500,
-        y: 1050,
-        unlocked: true,
-        dependencies: ['flask_fastapi_mastery']
     },
     {
         id: 'python_mastery',
@@ -238,7 +228,17 @@ export const achievements = [
         x: 2500,
         y: 1250,
         unlocked: true,
-        dependencies: ['ml_dl_master']
+        dependencies: ['flask_fastapi_mastery']
+    },
+    {
+        id: 'publish_ml_research_paper',
+        title: 'Publish a ML Research Paper',
+        description: 'Published a machine learning research paper',
+        itemType: 'nether_star',
+        x: 2500,
+        y: 1450,
+        unlocked: false,
+        dependencies: ['python_mastery']
     },
     
     // Below Java Foundation (going down)
@@ -274,23 +274,13 @@ export const achievements = [
     },
     {
         id: 'restful_api',
-        title: 'RestfulAPI',
-        description: 'Mastered RESTful API design and development',
+        title: 'API Mastery',
+        description: 'Mastered RESTful API and backend service design',
         itemType: 'comparator',
         x: 3000,
         y: 1050,
         unlocked: true,
         dependencies: ['react_express']
-    },
-    {
-        id: 'spring_framework',
-        title: 'Spring Framework',
-        description: 'Mastered Spring Framework',
-        itemType: 'poppy',
-        x: 3000,
-        y: 1250,
-        unlocked: true,
-        dependencies: ['restful_api']
     },
     {
         id: 'java_javascript_master',
@@ -300,7 +290,7 @@ export const achievements = [
         x: 3000,
         y: 1450,
         unlocked: true,
-        dependencies: ['spring_framework']
+        dependencies: ['restful_api']
     },
     
     // Below C/C++ (going down)
@@ -337,26 +327,6 @@ export const achievements = [
     
     // Below Cloud/Deployment Foundations (going down)
     {
-        id: 'dart_flutter_firebase',
-        title: 'Dart/Flutter Firebase Fundamentals',
-        description: 'Mastered Dart, Flutter, and Firebase fundamentals',
-        itemType: 'blaze_powder',
-        x: 4500,
-        y: 650,
-        unlocked: true,
-        dependencies: ['cloud_deployment_foundations']
-    },
-    {
-        id: 'firebase',
-        title: 'Firebase',
-        description: 'Mastered Firebase platform',
-        itemType: 'blaze_rod',
-        x: 4500,
-        y: 850,
-        unlocked: true,
-        dependencies: ['dart_flutter_firebase']
-    },
-    {
         id: 'gcs_google_deployment',
         title: 'GCS/Google Deployment',
         description: 'Mastered Google Cloud Storage and deployment',
@@ -364,7 +334,7 @@ export const achievements = [
         x: 4500,
         y: 1050,
         unlocked: true,
-        dependencies: ['firebase']
+        dependencies: ['cloud_deployment_foundations']
     },
     {
         id: 'aws_mastery',
@@ -450,26 +420,6 @@ export const achievements = [
         unlocked: true,
         dependencies: ['etl_pipelines']
     },
-    {
-        id: 'apache_spark_kafka',
-        title: 'Apache Spark/Kafka',
-        description: 'Mastered Apache Spark and Kafka',
-        itemType: 'repeater',
-        x: 3500,
-        y: 1450,
-        unlocked: true,
-        dependencies: ['big_data_warehousing']
-    },
-    {
-        id: 'ml_researcher',
-        title: 'Machine Learning Researcher',
-        description: 'Became a machine learning researcher',
-        itemType: 'nether_star',
-        x: 3500,
-        y: 1650,
-        unlocked: true,
-        dependencies: ['apache_spark_kafka']
-    },
     
     // ========== INTERNSHIPS/EXPERIENCE PATH (CENTER/DOWN) ==========
     {
@@ -481,6 +431,16 @@ export const achievements = [
         y: 500,
         unlocked: true,
         dependencies: ['start']
+    },
+    {
+        id: 'modernized_homeowner_systems',
+        title: 'Modernized Homeowner Systems',
+        description: 'Modernized homeowner systems',
+        itemType: 'ender_chest',
+        x: 1200,
+        y: 500,
+        unlocked: true,
+        dependencies: ['first_internship']
     },
     {
         id: 'clinic_website',
@@ -501,6 +461,16 @@ export const achievements = [
         y: 700,
         unlocked: true,
         dependencies: ['clinic_website']
+    },
+    {
+        id: 'set_up_1000_appointments',
+        title: 'Set Up 1000 Appointments Online',
+        description: 'Enabled 1000+ online appointments through the modernized site',
+        itemType: 'emerald_block',
+        x: 1500,
+        y: 900,
+        unlocked: false,
+        dependencies: ['modernized_website_analytics']
     },
     {
         id: 'ursim_cofounder',
