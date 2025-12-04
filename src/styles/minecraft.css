@@ -1049,6 +1049,13 @@ html {
     width: 200px;
 }
 
+/* On mobile, hide bottom meta elements (version text, copyright, toggle button) */
+@media (max-width: 640px) {
+    .bottom-mobile-container {
+        display: none !important;
+    }
+}
+
 /* Mobile-specific container adjustments */
 @media (max-width: 640px) {
 
