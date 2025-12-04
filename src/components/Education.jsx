@@ -118,6 +118,11 @@ const Education = ({ onBack }) => {
 
     // Touch handlers for mobile pan/zoom
     const handleTouchStart = (e) => {
+        // Prevent page scroll when touching canvas
+        if (canvasRef.current && canvasRef.current.contains(e.target)) {
+            e.stopPropagation();
+        }
+        
         if (e.touches.length === 1) {
             // Single touch - start pan
             const touch = e.touches[0];
@@ -141,7 +146,12 @@ const Education = ({ onBack }) => {
     };
 
     const handleTouchMove = (e) => {
-        e.preventDefault();
+        // Always prevent default on canvas to stop Safari pull-to-refresh
+        if (canvasRef.current && canvasRef.current.contains(e.target)) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
         if (e.touches.length === 1 && touchStart) {
             // Single touch - pan
             const touch = e.touches[0];
@@ -258,15 +268,40 @@ const Education = ({ onBack }) => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    // Prevent Safari pull-to-refresh on mobile when touching canvas
+    useEffect(() => {
+        if (isMobile && canvasRef.current) {
+            const canvas = canvasRef.current;
+            
+            // Prevent pull-to-refresh when touching the canvas
+            const preventPullToRefresh = (e) => {
+                if (canvas.contains(e.target)) {
+                    e.preventDefault();
+                }
+            };
+            
+            // Use capture phase to catch events early
+            canvas.addEventListener('touchmove', preventPullToRefresh, { passive: false, capture: true });
+            canvas.addEventListener('touchstart', preventPullToRefresh, { passive: false, capture: true });
+            
+            return () => {
+                canvas.removeEventListener('touchmove', preventPullToRefresh, { capture: true });
+                canvas.removeEventListener('touchstart', preventPullToRefresh, { capture: true });
+            };
+        }
+    }, [isMobile]);
+
     return (
-        <div className="app-container mc-bg">
+        <div className="app-container mc-bg achievement-page-container">
             <div
                 className="menu-container achievement-container"
                 style={{
                     width: isMobile ? '100%' : '1600px',
                     maxWidth: '99vw',
                     height: isMobile ? 'auto' : '87vh',
-                    padding: isMobile ? '10px' : '0'
+                    padding: isMobile ? '10px' : '0',
+                    touchAction: isMobile ? 'none' : 'auto',
+                    overscrollBehavior: isMobile ? 'none' : 'auto'
                 }}
             >
                 <h1 style={{ color: 'white', marginBottom: '15px', textShadow: '2px 2px 0 #3f3f3f', fontSize: isMobile ? '28px' : '40px' }}>
@@ -291,7 +326,11 @@ const Education = ({ onBack }) => {
                         borderLeftColor: '#505050',
                         borderBottomColor: '#fff',
                         borderRightColor: '#fff',
-                        marginBottom: '10px'
+                        marginBottom: '10px',
+                        touchAction: 'none',
+                        WebkitTouchCallout: 'none',
+                        WebkitUserSelect: 'none',
+                        userSelect: 'none'
                     }}
                     onMouseDown={handleMouseDown}
                     onMouseMove={handleMouseMove}
@@ -300,7 +339,6 @@ const Education = ({ onBack }) => {
                     onTouchStart={handleTouchStart}
                     onTouchMove={handleTouchMove}
                     onTouchEnd={handleTouchEnd}
-                    touch-action="none"
                 >
                     {/* Shared Container for Lines and Nodes */}
                     <div

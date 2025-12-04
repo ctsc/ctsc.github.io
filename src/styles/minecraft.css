@@ -852,16 +852,42 @@
         margin-right: auto;
     }
 
+    .bottom-mobile-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 10px;
+        z-index: 10;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
+    }
+
     .version-text,
     .copyright-text {
         font-size: 10px;
         position: relative;
         display: block;
         text-align: center;
-        margin-top: 5px;
+        margin: 2px 0;
         bottom: auto;
         left: auto;
         right: auto;
+        color: white;
+    }
+
+    .particles-toggle-btn {
+        position: relative !important;
+        bottom: auto !important;
+        right: auto !important;
+        width: calc(100% - 20px) !important;
+        max-width: 250px !important;
+        margin-top: 10px;
+        margin-bottom: 5px;
     }
 
     .world-list {
@@ -962,22 +988,69 @@ html {
     -webkit-overflow-scrolling: touch;
 }
 
+/* Prevent Safari pull-to-refresh on achievements page (mobile only) */
+@media (max-width: 640px) {
+    .achievement-page-container {
+        overscroll-behavior: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    .achievement-page-container .achievement-container {
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-y: contain;
+    }
+    
+    .achievement-page-container .achievement-container::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 /* Particles toggle button mobile styling */
 .particles-toggle-btn {
     min-width: 150px;
 }
 
+/* Desktop: bottom-mobile-container should not interfere */
+.bottom-mobile-container {
+    position: static;
+    display: contents;
+}
+
+/* Desktop: keep original absolute positioning for version and copyright text */
+.bottom-mobile-container .version-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: auto;
+    font-size: 20px;
+}
+
+.bottom-mobile-container .copyright-text {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    left: auto;
+    font-size: 20px;
+}
+
+/* Desktop: particles toggle button stays in original position */
+.bottom-mobile-container .particles-toggle-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 200px;
+}
+
 /* Mobile-specific container adjustments */
 @media (max-width: 640px) {
-    .particles-toggle-btn {
-        position: relative !important;
-        bottom: auto !important;
-        right: auto !important;
-        width: calc(100% - 20px) !important;
-        max-width: 250px !important;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
 
     .achievement-container,
     .options-container,

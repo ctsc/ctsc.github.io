@@ -75,25 +75,27 @@ const MainMenu = ({ onNavigate }) => {
                 </div>
             </div>
 
-            <div className="version-text">cartercraft 1.7.10 (Personal Website)</div>
-            <div className="copyright-text">Copyright Mojang AB. Do not distribute!</div>
-            
-            {/* Floating Blocks Toggle Button */}
-            <button
-                className="mc-button particles-toggle-btn"
-                onClick={toggleParticles}
-                style={{
-                    position: 'absolute',
-                    bottom: '20px',
-                    right: '20px',
-                    width: '200px',
-                    height: '45px',
-                    fontSize: '20px',
-                    zIndex: 100
-                }}
-            >
-                {particlesEnabled ? 'Disable Blocks' : 'Enable Blocks'}
-            </button>
+            <div className="bottom-mobile-container">
+                <div className="version-text">cartercraft 1.7.10 (Personal Website)</div>
+                <div className="copyright-text">Copyright Mojang AB. Do not distribute!</div>
+                
+                {/* Floating Blocks Toggle Button */}
+                <button
+                    className="mc-button particles-toggle-btn"
+                    onClick={toggleParticles}
+                    style={{
+                        position: 'absolute',
+                        bottom: '20px',
+                        right: '20px',
+                        width: '200px',
+                        height: '45px',
+                        fontSize: '20px',
+                        zIndex: 100
+                    }}
+                >
+                    {particlesEnabled ? 'Disable Blocks' : 'Enable Blocks'}
+                </button>
+            </div>
         </div>
     );
 };
