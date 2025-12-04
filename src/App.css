@@ -19,7 +19,8 @@
     .app-container {
         overflow-y: auto;
         overflow-x: hidden;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: flex-start;
         padding-top: 20px;
     }
 }
