@@ -61,31 +61,149 @@ const BlockParticles = ({ enabled = true, count = 25 }) => {
         // Create block geometry (reuse for all blocks)
         const geometry = new THREE.BoxGeometry(0.3, 0.3, 0.3);
 
+        // Grass/stone/crafting theme block textures
+        const blockTextures = [
+            'grass_block',
+            'coal_ore',
+            'stone',
+            'cobblestone',
+            'crafting_table_top'
+        ];
+
+        // Create texture loader
+        const loader = new THREE.TextureLoader();
+        const textureBaseUrl = 'https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.20.1/assets/minecraft/textures/block/';
+
         // Create blocks with random positions and velocities
         const blocks = [];
+        
         for (let i = 0; i < count; i++) {
-            // Random material colors (Minecraft-like)
-            const colors = [
-                0x7cb342, // Green (grass)
-                0x8d6e63, // Brown (dirt)
-                0x9e9e9e, // Gray (stone)
-                0x5d4037, // Dark brown (wood)
-                0x4caf50, // Bright green
-                0x795548, // Brown
-            ];
-            const color = colors[Math.floor(Math.random() * colors.length)];
-            const material = new THREE.MeshStandardMaterial({ 
-                color: color,
+            // Select a random texture from the theme
+            const textureName = blockTextures[Math.floor(Math.random() * blockTextures.length)];
+            const textureUrl = `${textureBaseUrl}${textureName}.png`;
+            
+            // Create initial material (will be updated when texture loads)
+            const initialMaterial = new THREE.MeshStandardMaterial({ 
+                color: 0xd4c4a8, // Light beige fallback color
                 roughness: 0.8,
                 metalness: 0.2
             });
 
-            const block = new THREE.Mesh(geometry, material);
+            const block = new THREE.Mesh(geometry, initialMaterial);
             
-            // Random starting position
-            block.position.x = (Math.random() - 0.5) * 10;
-            block.position.y = (Math.random() - 0.5) * 10;
-            block.position.z = (Math.random() - 0.5) * 10;
+            // Special handling for grass blocks - need top and side textures
+            if (textureName === 'grass_block') {
+                // Load grass block with grass on top
+                const sideTextureUrl = `${textureBaseUrl}grass_block_side.png`;
+                const topTextureUrl = `${textureBaseUrl}grass_block_top.png`;
+                const bottomTextureUrl = `${textureBaseUrl}dirt.png`;
+                
+                let texturesLoaded = 0;
+                let loadedSideTexture = null;
+                let loadedTopTexture = null;
+                let loadedBottomTexture = null;
+                
+                const createGrassMaterials = () => {
+                    if (!loadedSideTexture || !loadedTopTexture || !loadedBottomTexture) return;
+                    
+                    // Create materials for each face
+                    const materials = [
+                        new THREE.MeshStandardMaterial({ map: loadedSideTexture }), // right
+                        new THREE.MeshStandardMaterial({ map: loadedSideTexture }), // left
+                        new THREE.MeshStandardMaterial({ map: loadedTopTexture }), // top
+                        new THREE.MeshStandardMaterial({ map: loadedBottomTexture }), // bottom
+                        new THREE.MeshStandardMaterial({ map: loadedSideTexture }), // front
+                        new THREE.MeshStandardMaterial({ map: loadedSideTexture })  // back
+                    ];
+                    
+                    // Update block with multi-material
+                    if (block.material) {
+                        if (Array.isArray(block.material)) {
+                            block.material.forEach(mat => mat.dispose());
+                        } else {
+                            block.material.dispose();
+                        }
+                    }
+                    block.material = materials;
+                };
+                
+                loader.load(
+                    sideTextureUrl,
+                    (tex) => {
+                        tex.magFilter = THREE.NearestFilter;
+                        tex.minFilter = THREE.NearestFilter;
+                        tex.wrapS = THREE.RepeatWrapping;
+                        tex.wrapT = THREE.RepeatWrapping;
+                        loadedSideTexture = tex;
+                        texturesLoaded++;
+                        if (texturesLoaded === 3) createGrassMaterials();
+                    }
+                );
+                loader.load(
+                    topTextureUrl,
+                    (tex) => {
+                        tex.magFilter = THREE.NearestFilter;
+                        tex.minFilter = THREE.NearestFilter;
+                        tex.wrapS = THREE.RepeatWrapping;
+                        tex.wrapT = THREE.RepeatWrapping;
+                        loadedTopTexture = tex;
+                        texturesLoaded++;
+                        if (texturesLoaded === 3) createGrassMaterials();
+                    }
+                );
+                loader.load(
+                    bottomTextureUrl,
+                    (tex) => {
+                        tex.magFilter = THREE.NearestFilter;
+                        tex.minFilter = THREE.NearestFilter;
+                        tex.wrapS = THREE.RepeatWrapping;
+                        tex.wrapT = THREE.RepeatWrapping;
+                        loadedBottomTexture = tex;
+                        texturesLoaded++;
+                        if (texturesLoaded === 3) createGrassMaterials();
+                    }
+                );
+            } else {
+                // Load texture for other blocks
+                loader.load(
+                    textureUrl,
+                    (texture) => {
+                        // Configure texture for pixelated Minecraft look
+                        texture.magFilter = THREE.NearestFilter;
+                        texture.minFilter = THREE.NearestFilter;
+                        texture.wrapS = THREE.RepeatWrapping;
+                        texture.wrapT = THREE.RepeatWrapping;
+                        
+                        // Update block material with texture
+                        if (block.material) {
+                            block.material.map = texture;
+                            block.material.needsUpdate = true;
+                        }
+                    },
+                    undefined,
+                    (error) => {
+                        // Keep fallback color if texture fails to load
+                        console.warn(`Failed to load texture ${textureName} for floating block`);
+                    }
+                );
+            }
+            
+            // Helper function to bias random values towards edges (-1 or 1)
+            // This creates a U-shaped distribution favoring borders
+            const biasTowardsEdges = (random) => {
+                // Map [0,1] to [-1,1] with bias towards edges
+                // Use a power function to push values towards extremes
+                const sign = random < 0.5 ? -1 : 1;
+                const distance = random < 0.5 ? random * 2 : (random - 0.5) * 2;
+                // Square the distance to bias towards edges (0 or 1)
+                const biasedDistance = Math.pow(distance, 0.3); // Lower exponent = more bias to edges
+                return sign * biasedDistance;
+            };
+            
+            // Random starting position - biased towards borders
+            block.position.x = biasTowardsEdges(Math.random()) * 5;
+            block.position.y = biasTowardsEdges(Math.random()) * 5;
+            block.position.z = biasTowardsEdges(Math.random()) * 5;
 
             // Random rotation
             block.rotation.x = Math.random() * Math.PI;
@@ -143,13 +261,14 @@ const BlockParticles = ({ enabled = true, count = 25 }) => {
                 block.rotation.y += block.userData.velocity.rotationY;
                 block.rotation.z += block.userData.velocity.rotationZ;
 
-                // Wrap around screen edges
-                if (block.position.x > 6) block.position.x = -6;
-                if (block.position.x < -6) block.position.x = 6;
-                if (block.position.y > 6) block.position.y = -6;
-                if (block.position.y < -6) block.position.y = 6;
-                if (block.position.z > 6) block.position.z = -6;
-                if (block.position.z < -6) block.position.z = 6;
+                // Wrap around screen edges - maintain border density
+                const borderRange = 5;
+                if (block.position.x > borderRange) block.position.x = -borderRange;
+                if (block.position.x < -borderRange) block.position.x = borderRange;
+                if (block.position.y > borderRange) block.position.y = -borderRange;
+                if (block.position.y < -borderRange) block.position.y = borderRange;
+                if (block.position.z > borderRange) block.position.z = -borderRange;
+                if (block.position.z < -borderRange) block.position.z = borderRange;
             });
 
             renderer.render(scene, camera);
@@ -173,8 +292,12 @@ const BlockParticles = ({ enabled = true, count = 25 }) => {
                     if (object.geometry) object.geometry.dispose();
                     if (object.material) {
                         if (Array.isArray(object.material)) {
-                            object.material.forEach(material => material.dispose());
+                            object.material.forEach(material => {
+                                if (material.map) material.map.dispose();
+                                material.dispose();
+                            });
                         } else {
+                            if (object.material.map) object.material.map.dispose();
                             object.material.dispose();
                         }
                     }

@@ -32,9 +32,9 @@ export const resumeData = {
             company: "UrSim",
             date: "Oct 2025 - Present",
             points: [
-                "Engineered fantasy sports lineup generator with multi-variable optimization and real-time data APIs, delivering accurate DraftKings/FanDuel DFS lineups with quant optimization.",
-                "Collaborating with content creators and implementing marketing strategies to enhance user engagement growth.",
-                "Deploying B2B SaaS desktop/web applications with monthly subscription pricing model to drive recurring revenue."
+                "Designed frontend architecture for a scalable web-app with React/Typescript/AWS to deliver lineups to users.",
+                "Engineered an optimizer with quantitative finance techniques(Monte Carlo, GARCH) using Python to solve constrained problems, generating 20-100 optimal lineups with 89.6% efficiency.",
+                "Deploying SaaS desktop/web applications with monthly subscription pricing model to drive recurring revenue."
             ]
         },
         {
@@ -42,9 +42,10 @@ export const resumeData = {
             company: "Paulk Clinic",
             date: "Aug 2025 - Present",
             points: [
-                "Led healthcare website modernization using PHP/CSS, achieving 25% surge in patient engagement and 25% reduction in bounce rate.",
-                "Redesigned site infrastructure with optimized WordPress plugins, boosting performance by 60% and cutting page load time from 4.2s to 1.7s.",
-                "Implementing an ethically compliant GenAI chatbot using PHP/APIs to raise patient engagement/reduce bounce rate."
+                "Architected website frontend using PHP/CSS, achieving 25% surge in patient engagement//25% reduction in bounce rate.",
+                "Optimized website with WordPress plugins, boosting performance by 60% and cutting page load time from 4.2s to 1.7s.",
+                "Highlighting trends and patterns using Google Analytics to support decision-making.",
+                "Maintaining HIPAA compliance and clean code through SDLC practices in a heavily regulated industry."
             ]
         },
         {
@@ -52,9 +53,11 @@ export const resumeData = {
             company: "Alpha Web Advisors",
             date: "Oct 2024 - Aug 2025",
             points: [
-                "Migrated 500+ property listings (20K+ records) to PostgreSQL with a normalized schema/35+ validation rules, ensuring zero data loss.",
-                "Built AI automation tools with Python workflows, boosting data accuracy from 92% to 99.8% and cutting query time 18x (3.2s → 180ms), saving 15+ hours weekly on HOA reports.",
-                "Delivered Power BI dashboards in Agile sprints, replacing Excel workflows and improving client efficiency/satisfaction."
+                "Migrated 500+ properties (20K+ records) to PostgreSQL with 35+ validation rules, achieving zero data loss.",
+                "Optimized SQL queries, boosting data accuracy from 92% to 99.8% and cutting query time 18x (3.2s → 180ms)",
+                "Performed EDA on occupancy and pricing data to optimize lease fee adjustments, projecting a 3-5% rise in rental income.",
+                "Delivered Power BI data visualized insights within Agile sprints, replacing Excel workflows.",
+                "Deployed AWS Amplify//RDS deployment pipelines, increasing system uptime to 99.9% for 1300+ users."
             ]
         },
         {
@@ -71,11 +74,11 @@ export const resumeData = {
         }
     ],
     skills: {
-        languages: "Python, Java, C#/C++, JavaScript/TypeScript, SQL, PHP, HTML/CSS, Bash/Shell",
-        dataEngineering: "Apache Kafka, Apache Spark, Hadoop, ETL Pipelines, Big Data",
-        databases: "PostgreSQL, MySQL, MongoDB",
-        cloudContainerization: "AWS (S3, Redshift, Lambda, EMR, Glue), Docker, Kubernetes, Linux/Unix, GCS, Firebase",
-        frameworks: "React, Node.js, ExpressJS, VueJS, Flask, Spring Boot, FastAPI, Next.js, Tailwind CSS, Bootstrap, REST APIs",
-        dataScienceMachineLearning: "Pandas, NumPy, Scikit-learn, XGBoost, Power BI, PyTorch, Deep Learning, Neural Networks, LLMs, GenAI"
+        languages: "Python, Java, C#/C++, JavaScript/TypeScript, SQL, PHP, HTML/CSS, Dart",
+        dataEngineering: "Apache Kafka, Apache Spark, ETL/EDA Pipelines, Big Data",
+        databases: "PostgreSQL, MySQL, MongoDB, NoSQL",
+        cloudContainerization: "AWS (S3, Redshift, Lambda), Docker, Kubernetes, Linux/Unix, GCS, Firebase",
+        frameworks: "React, React Native, Node.js, ExpressJS, Spring Boot, FastAPI, Flutter, Tailwind CSS, Bootstrap, REST APIs",
+        dataScienceMachineLearning: "Pandas, NumPy, Scikit-learn, XGBoost, Power BI, PyTorch, MatPlotLib, Seaborn, Plotly, GenAI"
     }
 };

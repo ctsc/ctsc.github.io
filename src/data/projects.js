@@ -31,22 +31,12 @@ export const projects = [
     },
     {
         id: 4,
-        name: "Library DBMS",
-        date: "11/10/2025",
-        mode: "Adventure Mode",
-        tech: "Flask, PostgreSQL",
-        description: "Full-stack app with normalized schema and RESTful API.",
-        link: "https://github.com/ctsc/Library-Database-Management-System",
-        blockType: "bookshelf" // Bookshelf = library/books
-    },
-    {
-        id: 5,
         name: "Static Analysis Tool",
-        date: "11/01/2025",
+        date: "11/01/2024",
         mode: "Spectator Mode",
         tech: "Python, AST",
-        description: "Security tool detecting SQL injections and code quality issues.",
+        description: "Python-based static analysis tool using AST parsing to detect security vulnerabilities and code quality issues.",
         link: "https://github.com/ctsc/StaticAnalysisTool",
-        blockType: "obsidian" // Obsidian = security/strong
+        blockType: "bookshelf" // Bookshelf = library/analysis tool
     }
 ];

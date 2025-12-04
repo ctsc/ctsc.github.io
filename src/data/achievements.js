@@ -118,307 +118,13 @@ export const achievements = [
     // ========== SCHOOL WORK & PROJECTS PATH (RIGHT SIDE) ==========
     {
         id: 'data_structures_98',
-        title: '98 in Data Structures',
-        description: 'Achieved 98% grade in Data Structures/Algorithms',
+        title: '100 in Data Structures',
+        description: 'Achieved 100% grade in Data Structures/Algorithms',
         itemType: 'enchanted_book',
         x: 1500,
-        y: 450,
+        y: 200,
         unlocked: true,
         dependencies: ['start']
-    },
-    
-    // Horizontal branch from Data Structures (left to right)
-    {
-        id: 'git_master',
-        title: 'Git Master',
-        description: 'Mastered Git version control',
-        itemType: 'sword',
-        x: 2000,
-        y: 450,
-        unlocked: true,
-        dependencies: ['data_structures_98']
-    },
-    {
-        id: 'python_foundation',
-        title: 'Python Foundation',
-        description: 'Mastered foundations in Python',
-        itemType: 'book',
-        x: 2500,
-        y: 450,
-        unlocked: true,
-        dependencies: ['data_structures_98']
-    },
-    {
-        id: 'java_foundation',
-        title: 'Java Foundation',
-        description: 'Mastered foundations in Java',
-        itemType: 'book',
-        x: 3000,
-        y: 450,
-        unlocked: true,
-        dependencies: ['data_structures_98']
-    },
-    {
-        id: 'sql_database',
-        title: 'SQL/Database',
-        description: 'Mastered SQL and database fundamentals',
-        itemType: 'chest',
-        x: 3500,
-        y: 450,
-        unlocked: true,
-        dependencies: ['data_structures_98']
-    },
-    {
-        id: 'cpp_foundation',
-        title: 'C/C++ Foundation',
-        description: 'Mastered foundations in C/C++',
-        itemType: 'book',
-        x: 4000,
-        y: 450,
-        unlocked: true,
-        dependencies: ['data_structures_98']
-    },
-    {
-        id: 'cloud_deployment_foundations',
-        title: 'Cloud/Deployment Foundations',
-        description: 'Mastered cloud computing and deployment fundamentals',
-        itemType: 'beacon',
-        x: 4500,
-        y: 450,
-        unlocked: true,
-        dependencies: ['data_structures_98']
-    },
-    {
-        id: 'containerization',
-        title: 'Containerization',
-        description: 'Mastered containerization fundamentals',
-        itemType: 'shulker_box',
-        x: 5000,
-        y: 450,
-        unlocked: true,
-        dependencies: ['data_structures_98']
-    },
-    
-    // Below Python Foundation (going down)
-    {
-        id: 'django_quizlet_app',
-        title: 'Django GenAI Quizlet App',
-        description: 'Built Django Quizlet app with GenAI capabilities',
-        itemType: 'enchanted_book',
-        x: 2500,
-        y: 650,
-        unlocked: true,
-        dependencies: ['python_foundation']
-    },
-    {
-        id: 'flask_fastapi_mastery',
-        title: 'Machine Learning Mastery',
-        description: 'Mastered core machine learning concepts and frameworks',
-        itemType: 'brewing_stand',
-        x: 2500,
-        y: 850,
-        unlocked: true,
-        dependencies: ['django_quizlet_app']
-    },
-    {
-        id: 'python_mastery',
-        title: 'Python Mastery',
-        description: 'Achieved mastery in Python programming',
-        itemType: 'diamond',
-        x: 2500,
-        y: 1250,
-        unlocked: true,
-        dependencies: ['flask_fastapi_mastery']
-    },
-    {
-        id: 'publish_ml_research_paper',
-        title: 'Publish a ML Research Paper',
-        description: 'Published a machine learning research paper',
-        itemType: 'nether_star',
-        x: 2500,
-        y: 1450,
-        unlocked: false,
-        dependencies: ['python_mastery']
-    },
-    
-    // Below Java Foundation (going down)
-    {
-        id: 'html_css',
-        title: 'HTML/CSS',
-        description: 'Mastered HTML and CSS',
-        itemType: 'diploma',
-        x: 3000,
-        y: 650,
-        unlocked: true,
-        dependencies: ['java_foundation']
-    },
-    {
-        id: 'typescript_master',
-        title: 'TypeScript Master',
-        description: 'Mastered TypeScript programming language',
-        itemType: 'enchanted_book',
-        x: 3200,
-        y: 650,
-        unlocked: true,
-        dependencies: ['html_css']
-    },
-    {
-        id: 'react_express',
-        title: 'React.JS/Express.JS',
-        description: 'Mastered React.js and Express.js frameworks',
-        itemType: 'lightbulb',
-        x: 3000,
-        y: 850,
-        unlocked: true,
-        dependencies: ['html_css']
-    },
-    {
-        id: 'restful_api',
-        title: 'API Mastery',
-        description: 'Mastered RESTful API and backend service design',
-        itemType: 'comparator',
-        x: 3000,
-        y: 1050,
-        unlocked: true,
-        dependencies: ['react_express']
-    },
-    {
-        id: 'java_javascript_master',
-        title: 'Java/JavaScript Master',
-        description: 'Achieved mastery in both Java and JavaScript',
-        itemType: 'diamond_sword',
-        x: 3000,
-        y: 1450,
-        unlocked: true,
-        dependencies: ['restful_api']
-    },
-    
-    // Below C/C++ (going down)
-    {
-        id: 'linux_unix_foundations',
-        title: 'Linux/Unix Foundations',
-        description: 'Mastered Linux and Unix system foundations',
-        itemType: 'command_block',
-        x: 4000,
-        y: 650,
-        unlocked: true,
-        dependencies: ['cpp_foundation']
-    },
-    {
-        id: 'oop',
-        title: 'OOP',
-        description: 'Mastered Object-Oriented Programming principles',
-        itemType: 'enchanted_book',
-        x: 4000,
-        y: 850,
-        unlocked: true,
-        dependencies: ['linux_unix_foundations']
-    },
-    {
-        id: 'build_3d_game_cpp',
-        title: 'Build a Deployable 3D Game using C/C++',
-        description: 'Built and deployed a 3D game using C/C++',
-        itemType: 'command_block',
-        x: 4000,
-        y: 1050,
-        unlocked: false,
-        dependencies: ['oop']
-    },
-    
-    // Below Cloud/Deployment Foundations (going down)
-    {
-        id: 'gcs_google_deployment',
-        title: 'GCS/Google Deployment',
-        description: 'Mastered Google Cloud Storage and deployment',
-        itemType: 'end_crystal',
-        x: 4500,
-        y: 1050,
-        unlocked: true,
-        dependencies: ['cloud_deployment_foundations']
-    },
-    {
-        id: 'aws_mastery',
-        title: 'AWS (EC2, Lambda, Redshift)',
-        description: 'Mastered AWS services including EC2, Lambda, and Redshift',
-        itemType: 'beacon',
-        x: 4500,
-        y: 1250,
-        unlocked: true,
-        dependencies: ['gcs_google_deployment']
-    },
-    {
-        id: 'deploy_ursim_aws',
-        title: 'Deploying UrSim With AWS',
-        description: 'Deployed UrSim application using AWS',
-        itemType: 'end_crystal',
-        x: 4500,
-        y: 1450,
-        unlocked: false,
-        dependencies: ['aws_mastery']
-    },
-    
-    // Below Containerization (going down)
-    {
-        id: 'docker',
-        title: 'Docker',
-        description: 'Mastered Docker containerization',
-        itemType: 'shulker_box',
-        x: 5000,
-        y: 650,
-        unlocked: true,
-        dependencies: ['containerization']
-    },
-    {
-        id: 'kubernetes',
-        title: 'Kubernetes',
-        description: 'Mastered Kubernetes orchestration',
-        itemType: 'end_crystal',
-        x: 5000,
-        y: 850,
-        unlocked: true,
-        dependencies: ['docker']
-    },
-    
-    // Below SQL/Database (going down)
-    {
-        id: 'data_visualization_master',
-        title: 'Data Visualization Master',
-        description: 'Mastered data visualization techniques',
-        itemType: 'filled_map',
-        x: 3500,
-        y: 650,
-        unlocked: true,
-        dependencies: ['sql_database']
-    },
-    {
-        id: 'postgresql',
-        title: 'PostgreSQL',
-        description: 'Mastered PostgreSQL database',
-        itemType: 'ender_chest',
-        x: 3500,
-        y: 850,
-        unlocked: true,
-        dependencies: ['data_visualization_master']
-    },
-    {
-        id: 'etl_pipelines',
-        title: 'ETL Pipelines',
-        description: 'Mastered ETL pipeline design and implementation',
-        itemType: 'hopper',
-        x: 3500,
-        y: 1050,
-        unlocked: true,
-        dependencies: ['postgresql']
-    },
-    {
-        id: 'big_data_warehousing',
-        title: 'Big Data/Data Warehousing',
-        description: 'Mastered big data processing and data warehousing',
-        itemType: 'ender_chest',
-        x: 3500,
-        y: 1250,
-        unlocked: true,
-        dependencies: ['etl_pipelines']
     },
     
     // ========== INTERNSHIPS/EXPERIENCE PATH (CENTER/DOWN) ==========
@@ -434,18 +140,58 @@ export const achievements = [
     },
     {
         id: 'modernized_homeowner_systems',
-        title: 'Modernized Homeowner Systems',
-        description: 'Modernized homeowner systems',
+        title: 'Deploy 1st HOA Portal',
+        description: 'Deployed first HOA Portal',
         itemType: 'ender_chest',
-        x: 1200,
+        x: 1400,
         y: 500,
         unlocked: true,
         dependencies: ['first_internship']
     },
     {
+        id: 'lease_renewal_eda',
+        title: 'Lease Renewal EDA',
+        description: 'Lease Renewal EDA',
+        itemType: 'filled_map',
+        x: 1700,
+        y: 500,
+        unlocked: true,
+        dependencies: ['modernized_homeowner_systems']
+    },
+    {
+        id: 'major_data_migration',
+        title: 'Major Data Migration',
+        description: 'Major Data Migration',
+        itemType: 'hopper',
+        x: 2000,
+        y: 500,
+        unlocked: true,
+        dependencies: ['lease_renewal_eda']
+    },
+    {
+        id: 'deploy_5_hoa_portals',
+        title: '5 HOA Portals',
+        description: 'Deployed 5 HOA Portals',
+        itemType: 'ender_chest',
+        x: 1600,
+        y: 300,
+        unlocked: true,
+        dependencies: ['modernized_homeowner_systems']
+    },
+    {
+        id: 'reached_1000_homes',
+        title: 'Reached 1000 Homes',
+        description: 'Reached 1000 Homes',
+        itemType: 'emerald_block',
+        x: 1800,
+        y: 300,
+        unlocked: true,
+        dependencies: ['deploy_5_hoa_portals']
+    },
+    {
         id: 'clinic_website',
-        title: 'Random Connect',
-        description: 'Met a random person and within 24 hours started building profit-oriented software',
+        title: 'Second Opportunity',
+        description: 'Second opportunity',
         itemType: 'ender_pearl',
         x: 1000,
         y: 700,
@@ -453,24 +199,24 @@ export const achievements = [
         dependencies: ['first_internship']
     },
     {
-        id: 'modernized_website_analytics',
-        title: 'Modernized Website and Data Analytics',
-        description: 'Modernized website and implemented data analytics solutions',
-        itemType: 'redstone_lamp',
+        id: 'second_opportunity',
+        title: 'Redesign Legacy Website',
+        description: 'Redesign Legacy Website',
+        itemType: 'book',
         x: 1500,
         y: 700,
         unlocked: true,
         dependencies: ['clinic_website']
     },
     {
-        id: 'set_up_1000_appointments',
-        title: 'Set Up 1000 Appointments Online',
-        description: 'Enabled 1000+ online appointments through the modernized site',
-        itemType: 'emerald_block',
-        x: 1500,
-        y: 900,
-        unlocked: false,
-        dependencies: ['modernized_website_analytics']
+        id: 'modernized_website_analytics',
+        title: 'Enhanced Google Analytics',
+        description: 'Enhanced Google Analytics',
+        itemType: 'comparator',
+        x: 1900,
+        y: 700,
+        unlocked: true,
+        dependencies: ['clinic_website']
     },
     {
         id: 'ursim_cofounder',
@@ -483,14 +229,24 @@ export const achievements = [
         dependencies: ['clinic_website']
     },
     {
+        id: 'optimized_dfs_lineups',
+        title: 'Optimized DFS Lineups',
+        description: 'Optimized DFS Lineups',
+        itemType: 'emerald_block',
+        x: 1200,
+        y: 900,
+        unlocked: true,
+        dependencies: ['ursim_cofounder']
+    },
+    {
         id: 'reach_1000_users',
         title: 'Reach 1000 Users',
         description: 'Grow UrSim to reach 1000 active users',
         itemType: 'emerald_block',
-        x: 1200,
+        x: 1400,
         y: 900,
         unlocked: false,
-        dependencies: ['ursim_cofounder']
+        dependencies: ['optimized_dfs_lineups']
     },
     {
         id: 'winning_emory_hacks',

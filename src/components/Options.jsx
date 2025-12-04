@@ -16,8 +16,8 @@ const Options = ({ onBack }) => {
 
     const handleDownloadPDF = () => {
         const link = document.createElement('a');
-        link.href = '/SWEcartertierney.pdf';
-        link.download = 'SWEcartertierney.pdf';
+        link.href = '/SWE.pdf';
+        link.download = 'SWE.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

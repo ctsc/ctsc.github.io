@@ -16,6 +16,10 @@ const Education = ({ onBack }) => {
     const [touchStart, setTouchStart] = useState(null);
     const [pinchStart, setPinchStart] = useState(null);
     const [lastPinchDistance, setLastPinchDistance] = useState(null);
+    
+    // Border panning state
+    const [borderPan, setBorderPan] = useState({ x: 0, y: 0 });
+    const panIntervalRef = useRef(null);
 
     // Get achievement by ID
     const getAchievement = (id) => achievements.find(a => a.id === id);
@@ -56,6 +60,7 @@ const Education = ({ onBack }) => {
                 x: e.clientX - pan.x, 
                 y: e.clientY - pan.y 
             });
+            setBorderPan({ x: 0, y: 0 }); // Stop border panning when dragging
         }
     };
 
@@ -65,11 +70,50 @@ const Education = ({ onBack }) => {
                 x: e.clientX - dragStart.x,
                 y: e.clientY - dragStart.y
             });
+        } else {
+            // Check if mouse is near borders for auto-panning
+            if (canvasRef.current) {
+                const rect = canvasRef.current.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+                const horizontalThreshold = 350; // pixels from edge for left/right
+                const verticalThreshold = 200; // pixels from edge for top/bottom
+                const panSpeed = 16; // pixels per frame
+                
+                let panX = 0;
+                let panY = 0;
+                
+                // Check left border
+                if (mouseX < horizontalThreshold) {
+                    panX = panSpeed * (1 - mouseX / horizontalThreshold);
+                }
+                // Check right border
+                else if (mouseX > rect.width - horizontalThreshold) {
+                    panX = -panSpeed * (1 - (rect.width - mouseX) / horizontalThreshold);
+                }
+                
+                // Check top border
+                if (mouseY < verticalThreshold) {
+                    panY = panSpeed * (1 - mouseY / verticalThreshold);
+                }
+                // Check bottom border
+                else if (mouseY > rect.height - verticalThreshold) {
+                    panY = -panSpeed * (1 - (rect.height - mouseY) / verticalThreshold);
+                }
+                
+                setBorderPan({ x: panX, y: panY });
+            }
         }
     };
 
     const handleMouseUp = () => {
         setIsDragging(false);
+        setBorderPan({ x: 0, y: 0 }); // Stop border panning when drag ends
+    };
+    
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+        setBorderPan({ x: 0, y: 0 }); // Stop panning when mouse leaves
     };
 
     // Touch handlers for mobile pan/zoom
@@ -161,6 +205,34 @@ const Education = ({ onBack }) => {
             canvas.removeEventListener('wheel', wheelHandler);
         };
     }, []);
+    
+    // Auto-pan when mouse is near borders
+    useEffect(() => {
+        if (borderPan.x !== 0 || borderPan.y !== 0) {
+            // Start panning
+            if (!panIntervalRef.current) {
+                panIntervalRef.current = setInterval(() => {
+                    setPan(prevPan => ({
+                        x: prevPan.x + borderPan.x,
+                        y: prevPan.y + borderPan.y
+                    }));
+                }, 16); // ~60fps
+            }
+        } else {
+            // Stop panning
+            if (panIntervalRef.current) {
+                clearInterval(panIntervalRef.current);
+                panIntervalRef.current = null;
+            }
+        }
+        
+        return () => {
+            if (panIntervalRef.current) {
+                clearInterval(panIntervalRef.current);
+                panIntervalRef.current = null;
+            }
+        };
+    }, [borderPan]);
 
     const connections = getConnections();
 
@@ -224,7 +296,7 @@ const Education = ({ onBack }) => {
                     onMouseDown={handleMouseDown}
                     onMouseMove={handleMouseMove}
                     onMouseUp={handleMouseUp}
-                    onMouseLeave={handleMouseUp}
+                    onMouseLeave={handleMouseLeave}
                     onTouchStart={handleTouchStart}
                     onTouchMove={handleTouchMove}
                     onTouchEnd={handleTouchEnd}

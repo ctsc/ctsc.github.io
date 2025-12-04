@@ -1,16 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import '../styles/minecraft.css';
 
 const Multiplayer = ({ onBack }) => {
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 640);
-        };
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
     const servers = [
         {
             id: 1,
@@ -44,8 +35,8 @@ const Multiplayer = ({ onBack }) => {
 
     return (
         <div className="app-container mc-bg">
-            <div className="menu-container multiplayer-container" style={{ width: isMobile ? '100%' : '1100px', maxWidth: '95vw', padding: isMobile ? '10px' : '0' }}>
-                <h1 style={{ color: 'white', marginBottom: '25px', textShadow: '2px 2px 0 #3f3f3f', fontSize: isMobile ? '28px' : '40px' }}>Play Multiplayer</h1>
+            <div className="menu-container" style={{ width: '800px' }}>
+                <h1 style={{ color: 'white', marginBottom: '20px', textShadow: '2px 2px 0 #3f3f3f' }}>Play Multiplayer</h1>
 
                 <div className="world-list">
                     {servers.map((server) => (
@@ -82,14 +73,14 @@ const Multiplayer = ({ onBack }) => {
                 </div>
 
                 <div className="button-row">
-                    <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={() => alert('Please select a server first (click on one!)')}>Join Server</button>
-                    <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={() => alert('Direct Connect...')}>Direct Connect</button>
-                    <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={() => alert('Add Server...')}>Add Server</button>
+                    <button className="mc-button" style={{ width: '200px' }} onClick={() => alert('Please select a server first (click on one!)')}>Join Server</button>
+                    <button className="mc-button" style={{ width: '200px' }} onClick={() => alert('Direct Connect...')}>Direct Connect</button>
+                    <button className="mc-button" style={{ width: '200px' }} onClick={() => alert('Add Server...')}>Add Server</button>
                 </div>
 
                 <div className="button-row" style={{ marginTop: '10px' }}>
-                    <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={() => alert('Refreshing...')}>Refresh</button>
-                    <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={onBack}>Cancel</button>
+                    <button className="mc-button" style={{ width: '200px' }} onClick={() => alert('Refreshing...')}>Refresh</button>
+                    <button className="mc-button" style={{ width: '200px' }} onClick={onBack}>Cancel</button>
                 </div>
             </div>
         </div>

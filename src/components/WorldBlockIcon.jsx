@@ -4,6 +4,7 @@ import * as THREE from 'three';
 /**
  * 3D Minecraft-style block icon for world selection
  * Shows hover and selection animations
+ * Uses actual Minecraft block textures
  */
 const WorldBlockIcon = ({ 
     isSelected = false, 
@@ -16,38 +17,36 @@ const WorldBlockIcon = ({
     const cameraRef = useRef(null);
     const blockRef = useRef(null);
     const animationFrameRef = useRef(null);
+    const textureLoaderRef = useRef(null);
     const [isHovered, setIsHovered] = useState(false);
 
-    // Helper function to brighten a color
-    const brightenColor = (color, factor = 1.3) => {
-        const r = Math.min(255, Math.floor((color >> 16) & 0xFF) * factor);
-        const g = Math.min(255, Math.floor((color >> 8) & 0xFF) * factor);
-        const b = Math.min(255, Math.floor(color & 0xFF) * factor);
-        return (r << 16) | (g << 8) | b;
+    // Map block types to Minecraft block texture names
+    // Using a CDN that hosts Minecraft textures
+    const blockTextureMap = {
+        grass: 'grass_block',
+        stone: 'stone',
+        dirt: 'dirt',
+        wood: 'oak_planks',
+        redstone: 'redstone_block',
+        gold: 'gold_block',
+        emerald: 'emerald_block',
+        brick: 'bricks',
+        bookshelf: 'bookshelf',
+        obsidian: 'obsidian',
+        iron: 'iron_block',
+        diamond: 'diamond_block',
+        default: 'sandstone' // Default to sandstone as requested
     };
 
-    // Block type colors - brighter versions
-    const blockColors = {
-        grass: { top: brightenColor(0x7cb342), side: brightenColor(0x8d6e63), bottom: brightenColor(0x5d4037) },
-        stone: { top: brightenColor(0x9e9e9e), side: brightenColor(0x9e9e9e), bottom: brightenColor(0x9e9e9e) },
-        dirt: { top: brightenColor(0x8d6e63), side: brightenColor(0x8d6e63), bottom: brightenColor(0x8d6e63) },
-        wood: { top: brightenColor(0x5d4037), side: brightenColor(0x6d4c41), bottom: brightenColor(0x5d4037) },
-        // New block types for projects
-        redstone: { top: brightenColor(0xaa0000), side: brightenColor(0xcc0000), bottom: brightenColor(0x880000) }, // Redstone block - for automation/pipeline
-        gold: { top: brightenColor(0xf4d03f), side: brightenColor(0xffd700), bottom: brightenColor(0xd4af37) }, // Gold block - for e-commerce
-        emerald: { top: brightenColor(0x00d982), side: brightenColor(0x00ff95), bottom: brightenColor(0x00b870) }, // Emerald block - for commerce/analytics
-        brick: { top: brightenColor(0xb85c38), side: brightenColor(0xc96a3d), bottom: brightenColor(0xa04a2e) }, // Brick - for housing
-        bookshelf: { top: brightenColor(0x8b4513), side: brightenColor(0x654321), bottom: brightenColor(0x8b4513) }, // Bookshelf - for library
-        obsidian: { top: brightenColor(0x1a1a2e), side: brightenColor(0x16213e), bottom: brightenColor(0x0f3460) }, // Obsidian - for security/tools
-        iron: { top: brightenColor(0xd4d4d4), side: brightenColor(0xe8e8e8), bottom: brightenColor(0xc0c0c0) }, // Iron block - for tools/automation
-        diamond: { top: brightenColor(0x4dd0e1), side: brightenColor(0x00bcd4), bottom: brightenColor(0x0097a7) }, // Diamond - for valuable projects
-        default: { top: brightenColor(0x7cb342), side: brightenColor(0x8d6e63), bottom: brightenColor(0x5d4037) }
-    };
-
-    const colors = blockColors[blockType] || blockColors.default;
+    // Get texture name for block type
+    const textureName = blockTextureMap[blockType] || blockTextureMap.default;
 
     useEffect(() => {
         if (!containerRef.current) return;
+
+        // Create texture loader
+        const loader = new THREE.TextureLoader();
+        textureLoaderRef.current = loader;
 
         // Create scene
         const scene = new THREE.Scene();
@@ -77,20 +76,81 @@ const WorldBlockIcon = ({
         containerRef.current.appendChild(canvas);
         rendererRef.current = renderer;
 
-        // Create block with different colors for each face
+        // Create block geometry
         const geometry = new THREE.BoxGeometry(1, 1, 1);
         
-        // Create materials for each face
-        const materials = [
-            new THREE.MeshStandardMaterial({ color: colors.side }), // right
-            new THREE.MeshStandardMaterial({ color: colors.side }), // left
-            new THREE.MeshStandardMaterial({ color: colors.top }), // top
-            new THREE.MeshStandardMaterial({ color: colors.bottom }), // bottom
-            new THREE.MeshStandardMaterial({ color: colors.side }), // front
-            new THREE.MeshStandardMaterial({ color: colors.side })  // back
+        // Load textures for each face
+        // For Minecraft blocks, we need top, side, and bottom textures
+        // Using a reliable Minecraft texture CDN
+        const textureUrl = `https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.20.1/assets/minecraft/textures/block/${textureName}.png`;
+        
+        // Load the main texture (will be used for all faces)
+        loader.load(
+            textureUrl,
+            // onLoad callback
+            (texture) => {
+                // Configure texture for pixelated Minecraft look
+                texture.magFilter = THREE.NearestFilter;
+                texture.minFilter = THREE.NearestFilter;
+                texture.wrapS = THREE.RepeatWrapping;
+                texture.wrapT = THREE.RepeatWrapping;
+                
+                // Use the same texture for all faces (can be customized per block type later)
+                // For Minecraft blocks, we typically use the same texture on all sides
+                // except for special blocks like grass which we can handle separately
+                const materials = [
+                    new THREE.MeshStandardMaterial({ map: texture }), // right
+                    new THREE.MeshStandardMaterial({ map: texture }), // left
+                    new THREE.MeshStandardMaterial({ map: texture }), // top
+                    new THREE.MeshStandardMaterial({ map: texture }), // bottom
+                    new THREE.MeshStandardMaterial({ map: texture }), // front
+                    new THREE.MeshStandardMaterial({ map: texture })  // back
+                ];
+                
+                // Update block materials if block already exists
+                if (blockRef.current) {
+                    // Dispose old materials
+                    if (Array.isArray(blockRef.current.material)) {
+                        blockRef.current.material.forEach(mat => {
+                            if (mat.map) mat.map.dispose();
+                            mat.dispose();
+                        });
+                    }
+                    blockRef.current.material = materials;
+                }
+            },
+            // onProgress callback (optional)
+            undefined,
+            // onError callback
+            (error) => {
+                console.warn(`Failed to load texture for ${textureName}, using fallback color`);
+                // Fallback to colored materials if texture fails to load
+                const fallbackColor = 0x888888;
+                const materials = [
+                    new THREE.MeshStandardMaterial({ color: fallbackColor }), // right
+                    new THREE.MeshStandardMaterial({ color: fallbackColor }), // left
+                    new THREE.MeshStandardMaterial({ color: fallbackColor }), // top
+                    new THREE.MeshStandardMaterial({ color: fallbackColor }), // bottom
+                    new THREE.MeshStandardMaterial({ color: fallbackColor }), // front
+                    new THREE.MeshStandardMaterial({ color: fallbackColor })  // back
+                ];
+                if (blockRef.current) {
+                    blockRef.current.material = materials;
+                }
+            }
+        );
+        
+        // Create initial materials (will be replaced when texture loads)
+        const initialMaterials = [
+            new THREE.MeshStandardMaterial({ color: 0x888888 }), // right
+            new THREE.MeshStandardMaterial({ color: 0x888888 }), // left
+            new THREE.MeshStandardMaterial({ color: 0x888888 }), // top
+            new THREE.MeshStandardMaterial({ color: 0x888888 }), // bottom
+            new THREE.MeshStandardMaterial({ color: 0x888888 }), // front
+            new THREE.MeshStandardMaterial({ color: 0x888888 })  // back
         ];
 
-        const block = new THREE.Mesh(geometry, materials);
+        const block = new THREE.Mesh(geometry, initialMaterials);
         block.rotation.x = 0.5;
         block.rotation.y = 0.5;
         scene.add(block);
@@ -147,15 +207,19 @@ const WorldBlockIcon = ({
                     if (object.geometry) object.geometry.dispose();
                     if (object.material) {
                         if (Array.isArray(object.material)) {
-                            object.material.forEach(material => material.dispose());
+                            object.material.forEach(material => {
+                                if (material.map) material.map.dispose();
+                                material.dispose();
+                            });
                         } else {
+                            if (object.material.map) object.material.map.dispose();
                             object.material.dispose();
                         }
                     }
                 });
             }
         };
-    }, [size, colors, isHovered, isSelected]);
+    }, [size, textureName, isHovered, isSelected]);
 
     return (
         <div
