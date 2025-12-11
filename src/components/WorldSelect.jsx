@@ -24,9 +24,18 @@ const WorldSelect = ({ onBack }) => {
         }
     };
 
+    const handleDownloadPDF = () => {
+        const link = document.createElement('a');
+        link.href = '/SWE.pdf';
+        link.download = 'SWE.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <div className="app-container mc-bg">
-            <div className="menu-container world-select-container" style={{ width: isMobile ? '100%' : '1100px', maxWidth: '95vw', padding: isMobile ? '10px' : '0' }}>
+            <div className="menu-container world-select-container" style={{ width: isMobile ? 'calc(100% - 30px)' : '1100px', maxWidth: isMobile ? 'calc(100% - 30px)' : 'calc(100vw - 40px)', padding: '0' }}>
                 <h1 style={{ color: 'white', marginBottom: '25px', textShadow: '2px 2px 0 #3f3f3f', fontSize: isMobile ? '28px' : '40px' }}>Select World</h1>
 
                 <div className="world-list">
@@ -68,11 +77,10 @@ const WorldSelect = ({ onBack }) => {
                         Play Selected World
                     </button>
                     <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={() => setIsBookOpen(true)}>Edit</button>
-                    <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={() => alert('Cannot delete portfolio projects!')}>Delete</button>
                 </div>
 
                 <div className="button-row" style={{ marginTop: '10px' }}>
-                    <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={() => alert('Re-creating world...')}>Re-Create</button>
+                    <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={handleDownloadPDF}>Download Resume</button>
                     <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={onBack}>Cancel</button>
                 </div>
             </div>

@@ -3,8 +3,9 @@ import { resumeData } from '../data/resume';
 import '../styles/minecraft.css';
 
 const Options = ({ onBack }) => {
-    const [activeTab, setActiveTab] = useState('skills'); // skills, experience
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
+    const [expandedQuests, setExpandedQuests] = useState({});
+    const [hoveredQuest, setHoveredQuest] = useState(null);
 
     useEffect(() => {
         const handleResize = () => {
@@ -13,6 +14,35 @@ const Options = ({ onBack }) => {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+
+    const toggleQuest = (index) => {
+        setExpandedQuests(prev => ({
+            ...prev,
+            [index]: !prev[index]
+        }));
+    };
+
+    const calculateProgress = (date) => {
+        if (date.includes('Present')) {
+            // For ongoing quests, calculate based on start date
+            const dateMatch = date.match(/(\w{3})\s(\d{4})/);
+            if (dateMatch) {
+                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                const startMonth = months.indexOf(dateMatch[1]);
+                const startYear = parseInt(dateMatch[2]);
+                const now = new Date();
+                const currentMonth = now.getMonth();
+                const currentYear = now.getFullYear();
+                
+                const totalMonths = (currentYear - startYear) * 12 + (currentMonth - startMonth);
+                // Estimate 12 months for typical project duration, cap at 85% for ongoing
+                const progress = Math.min(85, (totalMonths / 12) * 100);
+                return Math.max(50, progress); // Minimum 50% for ongoing
+            }
+            return 75; // Default for ongoing
+        }
+        return 100; // Completed quests
+    };
 
     const handleDownloadPDF = () => {
         const link = document.createElement('a');
@@ -25,29 +55,12 @@ const Options = ({ onBack }) => {
 
     return (
         <div className="app-container mc-bg">
-            <div className="menu-container options-container" style={{ width: isMobile ? '100%' : '1200px', maxWidth: '95vw', height: isMobile ? 'auto' : '87vh', minHeight: isMobile ? '100vh' : 'auto', padding: isMobile ? '10px' : '0' }}>
+            <div className="menu-container options-container" style={{ width: isMobile ? 'calc(100% - 30px)' : '1200px', maxWidth: isMobile ? 'calc(100% - 30px)' : 'calc(100vw - 40px)', height: isMobile ? 'auto' : '87vh', minHeight: isMobile ? 'auto' : 'auto', padding: '0' }}>
                 <h1 style={{ color: 'white', marginBottom: '15px', textShadow: '2px 2px 0 #3f3f3f', fontSize: isMobile ? '28px' : '40px' }}>Game Options</h1>
 
-                {/* Tabs */}
-                <div style={{ display: 'flex', gap: '10px', marginBottom: '10px', flexWrap: isMobile ? 'wrap' : 'nowrap' }}>
-                    <button
-                        className="mc-button"
-                        style={{ width: isMobile ? '100%' : '200px', backgroundColor: activeTab === 'skills' ? '#a8a8a8' : undefined }}
-                        onClick={() => setActiveTab('skills')}
-                    >
-                        Skills
-                    </button>
-                    <button
-                        className="mc-button"
-                        style={{ width: isMobile ? '100%' : '200px', backgroundColor: activeTab === 'experience' ? '#a8a8a8' : undefined }}
-                        onClick={() => setActiveTab('experience')}
-                    >
-                        Experience
-                    </button>
-                </div>
 
-                {/* Content Area */}
-                <div className="options-content" style={{
+                    {/* Content Area */}
+                    <div className="options-content" style={{
                     flex: 1,
                     width: '100%',
                     background: 'rgba(0,0,0,0.5)',
@@ -65,52 +78,64 @@ const Options = ({ onBack }) => {
                     minHeight: isMobile ? '300px' : '400px',
                     maxHeight: isMobile ? '60vh' : 'none'
                 }}>
-
-                    {activeTab === 'skills' && (
-                        <div className="settings-list">
-                            <h2 style={{ color: '#ffff55', marginBottom: '15px', textShadow: '2px 2px 0 #3f3f3f', fontSize: isMobile ? '20px' : '24px' }}>Character Stats</h2>
-                            {Object.entries(resumeData.skills).map(([category, items]) => {
-                                const categoryNames = {
-                                    cloudContainerization: 'Cloud/Containerization',
-                                    dataScienceMachineLearning: 'Data Science/Machine Learning',
-                                    dataEngineering: 'Data Engineering'
-                                };
-                                const displayName = categoryNames[category] || category.replace(/([A-Z])/g, ' $1').trim();
-                                return (
-                                    <div key={category} style={{ marginBottom: '15px' }}>
-                                        <div style={{ color: '#aaa', marginBottom: '5px', textTransform: 'capitalize' }}>{displayName}:</div>
-                                        <div style={{ color: '#fff' }}>{items}</div>
-                                    </div>
-                                );
-                            })}
+                    <div className="quest-log-container">
+                            <h2 className="quest-log-title">Adventure Log</h2>
+                            <div className="quest-grid">
+                                {resumeData.experience.map((job, index) => {
+                                    const isExpanded = expandedQuests[index];
+                                    const progress = calculateProgress(job.date);
+                                    const isHovered = hoveredQuest === index;
+                                    
+                                    return (
+                                        <div
+                                            key={index}
+                                            className={`quest-card ${isExpanded ? 'quest-card-expanded' : ''} ${isHovered ? 'quest-card-hovered' : ''}`}
+                                            onMouseEnter={() => setHoveredQuest(index)}
+                                            onMouseLeave={() => setHoveredQuest(null)}
+                                            onClick={() => toggleQuest(index)}
+                                        >
+                                            <div className="quest-card-header">
+                                                <div className="quest-header-content">
+                                                    <div className="quest-title-row">
+                                                        <h3 className="quest-title">{job.role}</h3>
+                                                        <div className="quest-progress-container">
+                                                            <div className="quest-progress-bar">
+                                                                <div 
+                                                                    className="quest-progress-fill"
+                                                                    style={{ width: `${progress}%` }}
+                                                                ></div>
+                                                            </div>
+                                                            <span className="quest-progress-text">{Math.round(progress)}%</span>
+                                                        </div>
+                                                    </div>
+                                                    <div className="quest-meta">
+                                                        <span className="quest-location">📍 {job.company}</span>
+                                                        <span className="quest-date">⏰ {job.date}</span>
+                                                    </div>
+                                                </div>
+                                                <div className={`quest-chevron ${isExpanded ? 'quest-chevron-expanded' : ''}`}>
+                                                    ▼
+                                                </div>
+                                            </div>
+                                            <div className={`quest-content ${isExpanded ? 'quest-content-expanded' : ''}`}>
+                                                <div className="quest-details">
+                                                    {job.points.map((point, i) => (
+                                                        <div key={i} className="quest-point">
+                                                            <span className="quest-point-icon">⚡</span>
+                                                            <span className="quest-point-text">{point}</span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
                         </div>
-                    )}
-
-                    {activeTab === 'experience' && (
-                        <div className="settings-list">
-                            <h2 style={{ color: '#ffff55', marginBottom: '15px', textShadow: '2px 2px 0 #3f3f3f', fontSize: isMobile ? '20px' : '24px' }}>Adventure Log</h2>
-                            {resumeData.experience.map((job, index) => (
-                                <div key={index} style={{ marginBottom: '20px', borderBottom: '1px solid #555', paddingBottom: '10px' }}>
-                                    <div style={{ fontSize: isMobile ? '18px' : '22px', color: '#fff' }}>{job.role}</div>
-                                    <div style={{ color: '#aaa', marginBottom: '10px', fontSize: isMobile ? '14px' : '16px' }}>{job.company} | {job.date}</div>
-                                    <ul style={{ listStyle: 'none', paddingLeft: '0' }}>
-                                        {job.points.map((point, i) => (
-                                            <li key={i} style={{ marginBottom: '5px', display: 'flex' }}>
-                                                <span style={{ color: '#ffff55', marginRight: '10px' }}>&gt;</span>
-                                                {point}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))}
-                        </div>
-                    )}
-
-
                 </div>
 
                 <div className="button-row">
-                    <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={handleDownloadPDF}>Download PDF</button>
+                    <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={handleDownloadPDF}>Download Resume</button>
                     <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={onBack}>Done</button>
                 </div>
             </div>

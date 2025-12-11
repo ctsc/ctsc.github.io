@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/minecraft.css';
 
 const Multiplayer = ({ onBack }) => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 640);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
     const servers = [
         {
             id: 1,
@@ -33,10 +42,19 @@ const Multiplayer = ({ onBack }) => {
         window.open(link, '_blank');
     };
 
+    const handleDownloadPDF = () => {
+        const link = document.createElement('a');
+        link.href = '/SWE.pdf';
+        link.download = 'SWE.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <div className="app-container mc-bg">
-            <div className="menu-container" style={{ width: '800px' }}>
-                <h1 style={{ color: 'white', marginBottom: '20px', textShadow: '2px 2px 0 #3f3f3f' }}>Play Multiplayer</h1>
+            <div className="menu-container" style={{ width: isMobile ? 'calc(100% - 30px)' : '800px', maxWidth: isMobile ? 'calc(100% - 30px)' : 'calc(100vw - 40px)' }}>
+                <h1 style={{ color: 'white', marginBottom: '20px', textShadow: '2px 2px 0 #3f3f3f', fontSize: isMobile ? '28px' : '40px' }}>Play Multiplayer</h1>
 
                 <div className="world-list">
                     {servers.map((server) => (
@@ -57,8 +75,8 @@ const Multiplayer = ({ onBack }) => {
                                     {server.motd}
                                 </div>
                             </div>
-                            <div className="server-status" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'center', marginRight: '10px' }}>
-                                <div style={{ color: '#aaa', fontSize: '14px' }}>{server.players}</div>
+                            <div className="server-status" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'center', marginRight: isMobile ? '5px' : '10px', flexShrink: 0 }}>
+                                <div style={{ color: '#aaa', fontSize: isMobile ? '12px' : '14px' }}>{server.players}</div>
                                 <div style={{ display: 'flex', gap: '2px', marginTop: '4px' }}>
                                     {/* Ping Bars */}
                                     <div style={{ width: '4px', height: '6px', background: '#0f0' }}></div>
@@ -73,14 +91,8 @@ const Multiplayer = ({ onBack }) => {
                 </div>
 
                 <div className="button-row">
-                    <button className="mc-button" style={{ width: '200px' }} onClick={() => alert('Please select a server first (click on one!)')}>Join Server</button>
-                    <button className="mc-button" style={{ width: '200px' }} onClick={() => alert('Direct Connect...')}>Direct Connect</button>
-                    <button className="mc-button" style={{ width: '200px' }} onClick={() => alert('Add Server...')}>Add Server</button>
-                </div>
-
-                <div className="button-row" style={{ marginTop: '10px' }}>
-                    <button className="mc-button" style={{ width: '200px' }} onClick={() => alert('Refreshing...')}>Refresh</button>
-                    <button className="mc-button" style={{ width: '200px' }} onClick={onBack}>Cancel</button>
+                    <button className="mc-button" style={{ width: isMobile ? '100%' : '200px', maxWidth: isMobile ? 'none' : '200px' }} onClick={handleDownloadPDF}>Download Resume</button>
+                    <button className="mc-button" style={{ width: isMobile ? '100%' : '200px', maxWidth: isMobile ? 'none' : '200px' }} onClick={onBack}>Cancel</button>
                 </div>
             </div>
         </div>

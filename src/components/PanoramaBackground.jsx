@@ -5,7 +5,7 @@ import * as THREE from 'three';
  * Rotating panorama background similar to Minecraft's main menu
  * Includes parallax effect based on mouse movement
  */
-const PanoramaBackground = ({ imagePath = '/1370592.jpeg' }) => {
+const PanoramaBackground = ({ imagePath = '/background.jpg' }) => {
     const containerRef = useRef(null);
     const sceneRef = useRef(null);
     const rendererRef = useRef(null);

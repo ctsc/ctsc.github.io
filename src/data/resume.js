@@ -28,16 +28,6 @@ export const resumeData = {
             ]
         },
         {
-            role: "Co-Founder",
-            company: "UrSim",
-            date: "Oct 2025 - Present",
-            points: [
-                "Designed frontend architecture for a scalable web-app with React/Typescript/AWS to deliver lineups to users.",
-                "Engineered an optimizer with quantitative finance techniques(Monte Carlo, GARCH) using Python to solve constrained problems, generating 20-100 optimal lineups with 89.6% efficiency.",
-                "Deploying SaaS desktop/web applications with monthly subscription pricing model to drive recurring revenue."
-            ]
-        },
-        {
             role: "Software Developer",
             company: "Paulk Clinic",
             date: "Aug 2025 - Present",
@@ -74,11 +64,10 @@ export const resumeData = {
         }
     ],
     skills: {
-        languages: "Python, Java, C#/C++, JavaScript/TypeScript, SQL, PHP, HTML/CSS, Dart",
-        dataEngineering: "Apache Kafka, Apache Spark, ETL/EDA Pipelines, Big Data",
-        databases: "PostgreSQL, MySQL, MongoDB, NoSQL",
-        cloudContainerization: "AWS (S3, Redshift, Lambda), Docker, Kubernetes, Linux/Unix, GCS, Firebase",
-        frameworks: "React, React Native, Node.js, ExpressJS, Spring Boot, FastAPI, Flutter, Tailwind CSS, Bootstrap, REST APIs",
-        dataScienceMachineLearning: "Pandas, NumPy, Scikit-learn, XGBoost, Power BI, PyTorch, MatPlotLib, Seaborn, Plotly, GenAI"
+        languages: "Python, GoLang, Java, C++, JavaScript/TypeScript, SQL, PHP/HTML/CSS, Dart",
+        frameworks: "FastAPI, ReactJS, NodeJS, AngularJS, ExpressJS, React Native, Flutter, Spring Boot",
+        toolsCloud: "Google Cloud Services/Firebase, AWS, REST APIs, Agile/Scrum, Jira, Git/Bash, CI/CD, Docker, Kubernetes, Linux/Unix",
+        dataScienceML: "PyTorch, Scikit-Learn, Pandas, NumPy, Power BI, Deep Learning, XGBoost, MatPlotLib, Seaborn, Plotly, GenAI",
+        dataEngineering: "Apache Kafka, Apache Spark, ETL/EDA Pipelines, Big Data, PostgreSQL, MySQL, MongoDB, NoSQL"
     }
 };
