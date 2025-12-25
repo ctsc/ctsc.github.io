@@ -26,8 +26,8 @@ const WorldSelect = ({ onBack }) => {
 
     const handleDownloadPDF = () => {
         const link = document.createElement('a');
-        link.href = '/SWE.pdf';
-        link.download = 'SWE.pdf';
+        link.href = '/sweai_carter_tierney.pdf';
+        link.download = 'sweai_carter_tierney.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -35,8 +35,8 @@ const WorldSelect = ({ onBack }) => {
 
     return (
         <div className="app-container mc-bg">
-            <div className="menu-container world-select-container" style={{ width: isMobile ? 'calc(100% - 30px)' : '1100px', maxWidth: isMobile ? 'calc(100% - 30px)' : 'calc(100vw - 40px)', padding: '0' }}>
-                <h1 style={{ color: 'white', marginBottom: '25px', textShadow: '2px 2px 0 #3f3f3f', fontSize: isMobile ? '28px' : '40px' }}>Select World</h1>
+            <div className="menu-container world-select-container" style={{ width: isMobile ? 'calc(100% - 30px)' : '1100px', maxWidth: isMobile ? 'calc(100% - 30px)' : 'calc(100vw - 40px)', padding: isMobile ? '20px 15px' : '30px 20px', paddingTop: isMobile ? '60px' : '100px' }}>
+                <h1 style={{ color: 'white', marginBottom: '25px', marginTop: '0', textShadow: '2px 2px 0 #3f3f3f', fontSize: isMobile ? '28px' : '40px' }}>Select World</h1>
 
                 <div className="world-list">
                     {projects.map((project) => (
@@ -56,10 +56,11 @@ const WorldSelect = ({ onBack }) => {
                                 <div className="world-name">{project.name}</div>
                                 <div className="world-details">
                                     {project.name} ({project.date})
-                                    <br />
-                                    <span style={{ color: '#aaa' }}>{project.mode}</span>
                                 </div>
                                 <div className="world-desc" style={{ color: '#888', fontSize: '18px', marginTop: '4px' }}>
+                                    {project.description}
+                                </div>
+                                <div className="world-desc" style={{ color: '#aaa', fontSize: '16px', marginTop: '4px' }}>
                                     {project.tech}
                                 </div>
                             </div>

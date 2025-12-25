@@ -35,6 +35,8 @@ const WorldBlockIcon = ({
         obsidian: 'obsidian',
         iron: 'iron_block',
         diamond: 'diamond_block',
+        note: 'note_block',
+        observer: 'observer',
         default: 'sandstone' // Default to sandstone as requested
     };
 

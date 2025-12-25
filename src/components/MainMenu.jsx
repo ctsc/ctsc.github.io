@@ -21,7 +21,7 @@ const MainMenu = ({ onNavigate }) => {
                     Projects
                 </button>
                 <button className="mc-button" onClick={() => onNavigate('contact')}>
-                    Social Links
+                    About//Links
                 </button>
                 <button className="mc-button" onClick={() => onNavigate('options')}>
                     Experience
