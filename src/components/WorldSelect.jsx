@@ -53,11 +53,8 @@ const WorldSelect = ({ onBack }) => {
                                 />
                             </div>
                             <div className="world-info">
-                                <div className="world-name">{project.name}</div>
-                                <div className="world-details">
-                                    {project.name} ({project.date})
-                                </div>
-                                <div className="world-desc" style={{ color: '#888', fontSize: '18px', marginTop: '4px' }}>
+                                <div className="world-name" style={{ color: '#ffff55' }}>{project.name} ({project.date})</div>
+                                <div className="world-desc" style={{ color: 'white', fontSize: '18px', marginTop: '4px' }}>
                                     {project.description}
                                 </div>
                                 <div className="world-desc" style={{ color: '#aaa', fontSize: '16px', marginTop: '4px' }}>

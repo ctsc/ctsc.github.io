@@ -55,8 +55,8 @@ const Options = ({ onBack }) => {
 
     return (
         <div className="app-container mc-bg">
-            <div className="menu-container options-container" style={{ width: isMobile ? 'calc(100% - 30px)' : '1200px', maxWidth: isMobile ? 'calc(100% - 30px)' : 'calc(100vw - 40px)', height: isMobile ? 'auto' : '87vh', minHeight: isMobile ? 'auto' : 'auto', padding: isMobile ? '20px 15px' : '30px 20px', paddingTop: isMobile ? '60px' : '100px' }}>
-                <h1 style={{ color: 'white', marginBottom: '15px', marginTop: '0', textShadow: '2px 2px 0 #3f3f3f', fontSize: isMobile ? '28px' : '40px' }}>Game Options</h1>
+            <div className="menu-container options-container" style={{ width: isMobile ? 'calc(100% - 30px)' : '1400px', maxWidth: isMobile ? 'calc(100% - 30px)' : 'calc(100vw - 40px)', height: isMobile ? 'auto' : '90vh', minHeight: isMobile ? 'auto' : 'auto', padding: isMobile ? '20px 15px' : '30px 20px', paddingTop: isMobile ? '60px' : '100px' }}>
+                <h1 style={{ color: 'white', marginBottom: '15px', marginTop: '0', textShadow: '2px 2px 0 #3f3f3f', fontSize: isMobile ? '28px' : '40px' }}>Adventure Log</h1>
 
 
                     {/* Content Area */}
@@ -75,11 +75,10 @@ const Options = ({ onBack }) => {
                     color: 'white',
                     fontFamily: 'var(--font-mojangles)',
                     fontSize: isMobile ? '18px' : '22px',
-                    minHeight: isMobile ? '300px' : '400px',
-                    maxHeight: isMobile ? '60vh' : 'none'
+                    minHeight: isMobile ? '300px' : '500px',
+                    maxHeight: isMobile ? '60vh' : '75vh'
                 }}>
                     <div className="quest-log-container">
-                            <h2 className="quest-log-title">Adventure Log</h2>
                             <div className="quest-grid">
                                 {resumeData.experience.map((job, index) => {
                                     const isExpanded = expandedQuests[index];

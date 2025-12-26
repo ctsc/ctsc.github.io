@@ -4,7 +4,7 @@ export const projects = [
         name: "Emotion/Fatigue Detection",
         date: "Present",
         tech: "PyTorch, Computer Vision, Neural Networks",
-        description: "Reliable fatigue and distraction risk index suitable for real-time, on-device driver monitoring. Evaluated gaze, eyelid closure, head-pose dynamics, and yawning frequency using PyTorch models and analyze short-window temporal patterns with a neural risk classifier.",
+        description: "Real-time driver fatigue detection system built with PyTorch and computer vision neural networks. Analyzes gaze patterns, eyelid closure, and head-pose dynamics to prevent accidents. Deployed for on-device monitoring with high accuracy risk classification.",
         link: "https://github.com/ctsc/fatiguecheck",
         blockType: "iron" // Iron = technology/monitoring equipment
     },
@@ -13,7 +13,7 @@ export const projects = [
         name: "Voice Vitals",
         date: "11/2025",
         tech: "FastAPI, PyTorch, React, Firebase, ML/DL",
-        description: "Hackathon winning dementia detection through vocal features with ML/DL models.",
+        description: "Hackathon-winning dementia detection platform using PyTorch deep learning models to analyze vocal biomarkers. Built with FastAPI backend, React frontend, and Firebase integration. Enables early-stage cognitive health screening through voice analysis.",
         link: "https://github.com/ctsc/VoiceVital",
         blockType: "note" // Note block = audio/voice/health monitoring
     },
@@ -22,17 +22,26 @@ export const projects = [
         name: "UrSim",
         date: "11/2025",
         tech: "React, TypeScript, AWS, Python, Monte Carlo, GARCH",
-        description: "Quant optimizer for daily fantasy sport lineups -- SaaS web app for MRR.",
+        description: "SaaS fantasy sports optimizer using Python quantitative finance techniques (Monte Carlo, GARCH) to generate optimal lineups. React/TypeScript frontend with AWS infrastructure drives monthly recurring revenue. Achieves 89.6% efficiency generating 20-100 optimal lineups per optimization.",
         link: "#",
         blockType: "diamond" // Diamond = valuable/startup
+    },
+    {
+        id: 10,
+        name: "Admission Prediction",
+        date: "11/2025",
+        tech: "Python, Scikit-learn, Pandas, NumPy, EDA",
+        description: "College admission rate prediction model using Scikit-learn (kNN, Decision Tree, Linear Regression) on merged College Scorecard, IPEDS, and FSA datasets. Achieved RMSE 0.1576 and R² 0.5615 with 20 interpretable features across 610 institutions. Comprehensive EDA and feature engineering pipeline enables data-driven admission insights.",
+        link: "https://github.com/Mamasmess333/Admit_Predict/tree/new_admit_predict",
+        blockType: "bookshelf" // Bookshelf = analysis/education tool
     },
     {
         id: 2,
         name: "E-Commerce Analytics",
         date: "10/2025",
         tech: "Kafka, Spark, Docker",
-        description: "Real-time data pipeline that processes transactions per minute with ML-powered fraud detection, customer analytics, and interactive visualization - built to demonstrate enterprise-level data engineering skills.",
-        link: "https://github.com/ctsc/ecommerce-analytics",
+        description: "Enterprise real-time data pipeline processing high-volume transactions with Kafka and Spark. ML-powered fraud detection and customer analytics reduce risk and boost revenue. Docker containerization enables scalable deployment and monitoring.",
+        link: "https://github.com/ctsc/Ecommerce-Realtime-Analytics",
         blockType: "emerald" // Emerald = commerce/valuable
     },
     {
@@ -40,7 +49,7 @@ export const projects = [
         name: "Housing Price ML",
         date: "09/2025",
         tech: "XGBoost, Scikit-learn",
-        description: "Predict housing prices based on property features, location attributes, and market factors. The system leverages multiple regression models to provide accurate price estimates and actionable insights for real estate stakeholders.",
+        description: "Machine learning price prediction model using XGBoost and Scikit-learn regression techniques. Analyzes property features, location data, and market trends to deliver accurate estimates. Empowers real estate stakeholders with data-driven pricing insights.",
         link: "https://github.com/ctsc/Housing_Price_Prediction",
         blockType: "brick" // Brick = housing/construction
     },
@@ -49,7 +58,7 @@ export const projects = [
         name: "Automated Data Pipeline",
         date: "02/2025",
         tech: "Python, ETL, AWS",
-        description: "A production-ready automated data pipeline designed to process millions of data points with incremental loading, scheduling, data quality checks, and comprehensive monitoring.",
+        description: "Production ETL pipeline built with Python and AWS services processing millions of data points. Implements incremental loading, automated scheduling, and data quality validation. Comprehensive monitoring ensures reliable data delivery and system uptime.",
         link: "https://github.com/ctsc/Automated_Data_Pipeline",
         blockType: "redstone" // Redstone = automation/power
     },
@@ -58,7 +67,7 @@ export const projects = [
         name: "Static Analysis Tool",
         date: "11/2023",
         tech: "Python, AST",
-        description: "Python script for detecting security vulnerabilities, PLC project.",
+        description: "Security vulnerability detection tool using Python AST parsing to analyze code structure. Identifies potential security risks and code quality issues in PLC projects. Automated static analysis streamlines code review and reduces manual inspection time.",
         link: "https://github.com/ctsc/StaticAnalysisTool",
         blockType: "bookshelf" // Bookshelf = library/analysis tool
     },
@@ -67,7 +76,7 @@ export const projects = [
         name: "Data Visualization Dashboard",
         date: "05/2024",
         tech: "Python, Data Visualization, Analytics",
-        description: "A comprehensive analytics dashboard for visualizing data engineering metrics, pipeline performance, and business intelligence insights. This project demonstrates professional-grade data visualization techniques and real-time analytics monitoring capabilities.",
+        description: "Analytics dashboard built with Python visualization libraries tracking data pipeline performance and business metrics. Real-time monitoring enables proactive issue detection and performance optimization. Delivers actionable business intelligence insights through interactive visualizations.",
         link: "https://github.com/ctsc/Data_Analytics_Visual_Dashboard",
         blockType: "gold" // Gold = valuable insights/data
     },
@@ -76,7 +85,7 @@ export const projects = [
         name: "Library Database Management",
         date: "02/2024",
         tech: "Full-Stack, Database, Web Application",
-        description: "A full-stack web application for managing library operations including catalog management, member services, book circulation, and automated fine calculation.",
+        description: "Full-stack library management system automating catalog operations, member services, and book circulation. Database-driven architecture streamlines library workflows and reduces manual overhead. Automated fine calculation and reporting improve operational efficiency.",
         link: "https://github.com/ctsc/Library-Database-Management-System",
         blockType: "wood" // Wood = library/books
     }
