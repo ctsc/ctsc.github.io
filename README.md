@@ -2,7 +2,7 @@
 
 My personal website showcasing software engineering and data engineering projects.
 
-Live at: **[ctsc.github.io](https://ctsc.github.io)**
+Live at: **[cartertierney.com](https://cartertierney.com)**
 
 ---
 
