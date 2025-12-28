@@ -2,13 +2,17 @@
 
 My personal website showcasing software engineering and data engineering projects.
 
-Live at: **[cartertierney.com](https://cartertierney.com)**
+Live at: **[ctsc.io](https://ctsc.io)** (hosted on Vercel)
 
 ---
 
 ## About
 
 Clean, professional portfolio site built for recruiters and hiring managers. No fluff—just my projects, skills, and contact info.
+
+## Deployment
+
+This site is deployed on Vercel and automatically deploys on every push to the `main` branch.
 
 
 ## Contact
