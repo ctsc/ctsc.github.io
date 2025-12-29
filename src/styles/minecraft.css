@@ -1578,6 +1578,12 @@
     height: 48px;
 }
 
+@media (max-width: 640px) {
+    .cursor-ink-blot-main {
+        display: none;
+    }
+}
+
 @keyframes blobPulse {
     0%, 100% {
         border-radius: 50% 40% 60% 30% / 60% 30% 70% 40%;

@@ -35,9 +35,6 @@ const MainMenu = ({ onNavigate }) => {
             </div>
 
             <div className="bottom-mobile-container">
-                <div className="version-text">cartercraft 1.7.10 (Personal Website)</div>
-                <div className="copyright-text">Copyright ctsc AB. Do not distribute!</div>
-                
                 {/* Floating Blocks Toggle Button removed - code preserved in BlockParticles.jsx */}
             </div>
         </div>
