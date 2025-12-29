@@ -68,7 +68,18 @@ const WorldSelect = ({ onBack }) => {
                             <div className="world-info">
                                 <div className="world-name" style={{ color: '#ffff55' }}>{project.name} ({project.date})</div>
                                 <div className="world-desc" style={{ color: 'white', fontSize: '18px', marginTop: '4px' }}>
-                                    {project.description}
+                                    {Array.isArray(project.description) ? (
+                                        <ul style={{ listStyle: 'none', paddingLeft: '0', margin: '4px 0' }}>
+                                            {project.description.map((point, index) => (
+                                                <li key={index} style={{ marginBottom: '4px', paddingLeft: '16px', position: 'relative' }}>
+                                                    <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
+                                                    {point}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    ) : (
+                                        project.description
+                                    )}
                                 </div>
                                 <div className="world-desc" style={{ color: '#aaa', fontSize: '16px', marginTop: '4px' }}>
                                     {project.tech}

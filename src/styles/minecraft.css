@@ -158,7 +158,7 @@
 @media (max-width: 640px) {
     .menu-container {
         margin-top: -40px;
-        padding: var(--mobile-component-spacing) var(--mobile-padding-sides);
+        padding: var(--mobile-component-spacing) 0;
         margin-bottom: var(--mobile-padding-bottom);
         width: 100%;
         max-width: 100%;
@@ -194,17 +194,7 @@
 @media (max-width: 640px) {
     .version-text,
     .copyright-text {
-        font-size: 14px;
-        bottom: calc(var(--mobile-padding-sides) + var(--safe-area-inset-bottom));
-        max-width: calc(50% - var(--mobile-padding-sides));
-    }
-    
-    .version-text {
-        left: var(--mobile-padding-sides);
-    }
-    
-    .copyright-text {
-        right: var(--mobile-padding-sides);
+        display: none;
     }
 }
 

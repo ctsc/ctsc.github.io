@@ -306,7 +306,7 @@ const Multiplayer = ({ onBack }) => {
                                             fontWeight: 'bold',
                                             textShadow: '1px 1px 0 #3f3f3f'
                                         }}>
-                                            Graduate Teaching Assistant - GSU in Atlanta, GA (Jan 2025 - Present)
+                                            Graduate Teaching Assistant - GSU in Atlanta, GA (Jan 2026 - Present)
                                         </div>
                                         <ul style={{ 
                                             listStyle: 'none', 
