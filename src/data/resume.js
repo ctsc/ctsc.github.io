@@ -18,6 +18,15 @@ export const resumeData = {
     ],
     experience: [
         {
+            role: "Graduate Teaching Assistant",
+            company: "Georgia State University",
+            date: "Jan 2026",
+            points: [
+                "Teaching Assistant for computer science courses, facilitating student learning and comprehension of complex programming concepts.",
+                "Mentoring students through coursework, assignments, and technical challenges to support academic success."
+            ]
+        },
+        {
             role: "Winner",
             company: "Emory Hacks: VoiceVitals",
             date: "Nov 2025",

@@ -44,8 +44,8 @@ const Multiplayer = ({ onBack }) => {
 
     const handleDownloadPDF = () => {
         const link = document.createElement('a');
-        link.href = '/sweai_carter_tierney.pdf';
-        link.download = 'sweai_carter_tierney.pdf';
+        link.href = '/CarterTierney.pdf';
+        link.download = 'CarterTierney.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
