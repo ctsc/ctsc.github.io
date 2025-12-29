@@ -55,16 +55,18 @@ const Multiplayer = ({ onBack }) => {
         <div className="app-container mc-bg">
             <div className="menu-container multiplayer-container" style={{ 
                 width: isMobile ? '100%' : '1400px', 
-                maxWidth: isMobile ? '95vw' : 'calc(100vw - 40px)', 
-                padding: isMobile ? '20px 15px' : '30px 20px', 
+                maxWidth: isMobile ? '100%' : 'calc(100vw - 40px)', 
+                padding: isMobile ? '20px 16px' : '30px 20px', 
                 paddingTop: isMobile ? '20px' : '40px',
+                paddingBottom: isMobile ? 'calc(20px + env(safe-area-inset-bottom, 0px))' : '30px',
                 display: 'flex',
                 flexDirection: 'column',
-                alignItems: 'center'
+                alignItems: 'center',
+                boxSizing: 'border-box'
             }}>
                 <h1 style={{ 
                     color: 'white', 
-                    marginBottom: '30px', 
+                    marginBottom: isMobile ? '16px' : '30px', 
                     marginTop: '0', 
                     textShadow: '2px 2px 0 #3f3f3f', 
                     fontSize: isMobile ? '28px' : '40px',
@@ -76,10 +78,11 @@ const Multiplayer = ({ onBack }) => {
                 <div style={{
                     display: 'flex',
                     flexDirection: isMobile ? 'column' : 'row',
-                    gap: isMobile ? '20px' : '20px',
+                    gap: isMobile ? '16px' : '20px',
                     width: '100%',
                     alignItems: 'stretch',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    marginBottom: isMobile ? '16px' : '20px'
                 }}>
                     {/* Left Side - Social Links */}
                     <div style={{
@@ -91,7 +94,7 @@ const Multiplayer = ({ onBack }) => {
                     }}>
                         <h2 style={{ 
                             color: 'white', 
-                            marginBottom: '15px', 
+                            marginBottom: isMobile ? '12px' : '15px', 
                             marginTop: '0', 
                             textShadow: '2px 2px 0 #3f3f3f', 
                             fontSize: isMobile ? '22px' : '28px',
@@ -146,7 +149,7 @@ const Multiplayer = ({ onBack }) => {
                     }}>
                         <h2 style={{ 
                             color: 'white', 
-                            marginBottom: '15px', 
+                            marginBottom: isMobile ? '12px' : '15px', 
                             marginTop: '0', 
                             textShadow: '2px 2px 0 #3f3f3f', 
                             fontSize: isMobile ? '22px' : '28px',
@@ -399,10 +402,10 @@ const Multiplayer = ({ onBack }) => {
                 {/* Buttons Row - Centered at Bottom */}
                 <div className="button-row" style={{ 
                     width: '100%', 
-                    marginTop: '30px',
+                    marginTop: isMobile ? '16px' : '30px',
                     display: 'flex',
                     flexDirection: isMobile ? 'column' : 'row',
-                    gap: '10px',
+                    gap: isMobile ? '12px' : '10px',
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>

@@ -48,10 +48,20 @@ const FeedbackBook = ({ isOpen, onClose }) => {
 
     return (
         <div className="mc-book-overlay" onClick={handleOverlayClick}>
-            <div className="mc-book-container" onClick={(e) => e.stopPropagation()} style={{ width: isMobile ? '95vw' : '700px', padding: isMobile ? '20px' : '40px 50px' }}>
+            <div className="mc-book-container" onClick={(e) => e.stopPropagation()} style={{ 
+                width: isMobile ? 'calc(100vw - 32px)' : '700px', 
+                maxWidth: isMobile ? 'calc(100vw - 32px)' : '700px',
+                padding: isMobile ? '16px' : '40px 50px',
+                paddingTop: isMobile ? 'calc(16px + 44px)' : '40px',
+                paddingBottom: isMobile ? 'calc(16px + env(safe-area-inset-bottom, 0px))' : '40px',
+                boxSizing: 'border-box'
+            }}>
                 <button className="mc-book-close" onClick={onClose} style={{ width: isMobile ? '44px' : '35px', height: isMobile ? '44px' : '35px', fontSize: isMobile ? '24px' : '28px' }}>×</button>
                 
-                <h2 className="mc-book-title" style={{ fontSize: isMobile ? '20px' : '32px', marginBottom: isMobile ? '15px' : '30px' }}>Let Me Know What You Think</h2>
+                <h2 className="mc-book-title" style={{ 
+                    fontSize: isMobile ? '20px' : '32px', 
+                    marginBottom: isMobile ? '16px' : '30px' 
+                }}>Let Me Know What You Think</h2>
                 
                 <textarea
                     className="mc-book-textarea"
@@ -59,7 +69,12 @@ const FeedbackBook = ({ isOpen, onClose }) => {
                     onChange={(e) => setFeedback(e.target.value)}
                     placeholder="Type your feedback here..."
                     rows={isMobile ? '8' : '12'}
-                    style={{ fontSize: isMobile ? '16px' : '20px', padding: isMobile ? '12px' : '20px', minHeight: isMobile ? '200px' : '300px' }}
+                    style={{ 
+                        fontSize: isMobile ? '16px' : '20px', 
+                        padding: isMobile ? '12px' : '20px', 
+                        minHeight: isMobile ? '200px' : '300px',
+                        marginBottom: isMobile ? '16px' : '20px'
+                    }}
                 />
                 
                 <div className="mc-book-actions">

@@ -24,8 +24,23 @@ const Education = ({ onBack }) => {
 
     return (
         <div className="app-container mc-bg">
-            <div className="menu-container options-container" style={{ width: isMobile ? 'calc(100% - 30px)' : '1200px', maxWidth: isMobile ? 'calc(100% - 30px)' : 'calc(100vw - 40px)', height: isMobile ? 'auto' : '87vh', minHeight: isMobile ? 'auto' : 'auto', padding: isMobile ? '20px 15px' : '30px 20px', paddingTop: isMobile ? '60px' : '100px' }}>
-                <h1 style={{ color: 'white', marginBottom: '15px', marginTop: '0', textShadow: '2px 2px 0 #3f3f3f', fontSize: isMobile ? '28px' : '40px' }}>Game Options</h1>
+            <div className="menu-container options-container" style={{ 
+                width: isMobile ? '100%' : '1200px', 
+                maxWidth: isMobile ? '100%' : 'calc(100vw - 40px)', 
+                height: isMobile ? 'auto' : '87vh', 
+                minHeight: isMobile ? 'auto' : 'auto', 
+                padding: isMobile ? '20px 16px' : '30px 20px', 
+                paddingTop: isMobile ? '20px' : '100px',
+                paddingBottom: isMobile ? 'calc(20px + env(safe-area-inset-bottom, 0px))' : '30px',
+                boxSizing: 'border-box'
+            }}>
+                <h1 style={{ 
+                    color: 'white', 
+                    marginBottom: isMobile ? '16px' : '15px', 
+                    marginTop: '0', 
+                    textShadow: '2px 2px 0 #3f3f3f', 
+                    fontSize: isMobile ? '28px' : '40px' 
+                }}>Game Options</h1>
 
                     {/* Content Area */}
                     <div className="options-content" style={{
@@ -37,14 +52,15 @@ const Education = ({ onBack }) => {
                     borderLeftColor: '#505050',
                     borderBottomColor: '#fff',
                     borderRightColor: '#fff',
-                    padding: isMobile ? '15px' : '20px',
-                    marginBottom: '10px',
+                    padding: isMobile ? '16px' : '20px',
+                    marginBottom: isMobile ? '16px' : '10px',
                     overflow: 'auto',
                     color: 'white',
                     fontFamily: 'var(--font-mojangles)',
                     fontSize: isMobile ? '18px' : '22px',
                     minHeight: isMobile ? '300px' : '400px',
-                    maxHeight: isMobile ? '60vh' : 'none'
+                    maxHeight: isMobile ? '60vh' : 'none',
+                    boxSizing: 'border-box'
                 }}>
                     <div className="skills-container">
                         <h2 className="skills-title">Character Stats</h2>

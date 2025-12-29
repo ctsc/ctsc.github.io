@@ -55,8 +55,23 @@ const Options = ({ onBack }) => {
 
     return (
         <div className="app-container mc-bg">
-            <div className="menu-container options-container" style={{ width: isMobile ? 'calc(100% - 30px)' : '1400px', maxWidth: isMobile ? 'calc(100% - 30px)' : 'calc(100vw - 40px)', height: isMobile ? 'auto' : '90vh', minHeight: isMobile ? 'auto' : 'auto', padding: isMobile ? '20px 15px' : '30px 20px', paddingTop: isMobile ? '60px' : '100px' }}>
-                <h1 style={{ color: 'white', marginBottom: '15px', marginTop: '0', textShadow: '2px 2px 0 #3f3f3f', fontSize: isMobile ? '28px' : '40px' }}>Adventure Log</h1>
+            <div className="menu-container options-container" style={{ 
+                width: isMobile ? '100%' : '1400px', 
+                maxWidth: isMobile ? '100%' : 'calc(100vw - 40px)', 
+                height: isMobile ? 'auto' : '90vh', 
+                minHeight: isMobile ? 'auto' : 'auto', 
+                padding: isMobile ? '20px 16px' : '30px 20px', 
+                paddingTop: isMobile ? '20px' : '100px',
+                paddingBottom: isMobile ? 'calc(20px + env(safe-area-inset-bottom, 0px))' : '30px',
+                boxSizing: 'border-box'
+            }}>
+                <h1 style={{ 
+                    color: 'white', 
+                    marginBottom: isMobile ? '16px' : '15px', 
+                    marginTop: '0', 
+                    textShadow: '2px 2px 0 #3f3f3f', 
+                    fontSize: isMobile ? '28px' : '40px' 
+                }}>Adventure Log</h1>
 
 
                     {/* Content Area */}
@@ -69,14 +84,15 @@ const Options = ({ onBack }) => {
                     borderLeftColor: '#505050',
                     borderBottomColor: '#fff',
                     borderRightColor: '#fff',
-                    padding: isMobile ? '15px' : '20px',
-                    marginBottom: '10px',
+                    padding: isMobile ? '16px' : '20px',
+                    marginBottom: isMobile ? '16px' : '10px',
                     overflow: 'auto',
                     color: 'white',
                     fontFamily: 'var(--font-mojangles)',
                     fontSize: isMobile ? '18px' : '22px',
                     minHeight: isMobile ? '300px' : '500px',
-                    maxHeight: isMobile ? '60vh' : '75vh'
+                    maxHeight: isMobile ? '60vh' : '75vh',
+                    boxSizing: 'border-box'
                 }}>
                     <div className="quest-log-container">
                             <div className="quest-grid">

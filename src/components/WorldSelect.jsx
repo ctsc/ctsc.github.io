@@ -35,8 +35,21 @@ const WorldSelect = ({ onBack }) => {
 
     return (
         <div className="app-container mc-bg">
-            <div className="menu-container world-select-container" style={{ width: isMobile ? 'calc(100% - 30px)' : '1100px', maxWidth: isMobile ? 'calc(100% - 30px)' : 'calc(100vw - 40px)', padding: isMobile ? '20px 15px' : '30px 20px', paddingTop: isMobile ? '60px' : '100px' }}>
-                <h1 style={{ color: 'white', marginBottom: '25px', marginTop: '0', textShadow: '2px 2px 0 #3f3f3f', fontSize: isMobile ? '28px' : '40px' }}>Select World</h1>
+            <div className="menu-container world-select-container" style={{ 
+                width: isMobile ? '100%' : '1100px', 
+                maxWidth: isMobile ? '100%' : 'calc(100vw - 40px)', 
+                padding: isMobile ? '20px 16px' : '30px 20px', 
+                paddingTop: isMobile ? '20px' : '100px',
+                paddingBottom: isMobile ? 'calc(20px + env(safe-area-inset-bottom, 0px))' : '30px',
+                boxSizing: 'border-box'
+            }}>
+                <h1 style={{ 
+                    color: 'white', 
+                    marginBottom: isMobile ? '16px' : '25px', 
+                    marginTop: '0', 
+                    textShadow: '2px 2px 0 #3f3f3f', 
+                    fontSize: isMobile ? '28px' : '40px' 
+                }}>Select World</h1>
 
                 <div className="world-list">
                     {projects.map((project) => (
@@ -77,7 +90,7 @@ const WorldSelect = ({ onBack }) => {
                     <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={() => setIsBookOpen(true)}>Edit</button>
                 </div>
 
-                <div className="button-row" style={{ marginTop: '10px' }}>
+                <div className="button-row" style={{ marginTop: isMobile ? '12px' : '10px' }}>
                     <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={handleDownloadPDF}>Download Resume</button>
                     <button className="mc-button" style={{ width: isMobile ? '100%' : '260px', maxWidth: isMobile ? 'none' : '260px' }} onClick={onBack}>Cancel</button>
                 </div>
