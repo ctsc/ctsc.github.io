@@ -2,7 +2,7 @@
 
 My personal website showcasing software engineering and data engineering projects.
 
-Live at: **[ctsc.io](https://ctsc.io)** (hosted on Vercel)
+Live at: **[cartertierney.tech](https://cartertierney.tech)** (hosted on Vercel)
 
 ---
 
