@@ -20,7 +20,7 @@ export const resumeData = {
         {
             role: "Graduate Teaching Assistant",
             company: "Georgia State University",
-            date: "Jan 2026",
+            date: "Present",
             points: [
                 "Teaching Assistant for computer science courses, facilitating student learning and comprehension of complex programming concepts.",
                 "Mentoring students through coursework, assignments, and technical challenges to support academic success."

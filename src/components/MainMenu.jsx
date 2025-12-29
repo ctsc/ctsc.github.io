@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/minecraft.css';
-import PanoramaBackground from './PanoramaBackground';
 // BlockParticles import kept but not used - code preserved in BlockParticles.jsx
 // import BlockParticles from './BlockParticles';
 
@@ -8,8 +7,7 @@ const MainMenu = ({ onNavigate }) => {
     // Particle-related state and effects removed - code preserved in BlockParticles.jsx
 
     return (
-        <div className="app-container mc-bg">
-            <PanoramaBackground />
+        <div className="app-container mc-bg-scrolling">
             {/* BlockParticles component removed from rendering - code preserved in BlockParticles.jsx */}
             <div className="menu-container">
                 <div className="mc-logo">

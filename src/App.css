@@ -12,6 +12,7 @@
     box-sizing: border-box;
     touch-action: pan-y pinch-zoom;
     -webkit-overflow-scrolling: touch;
+    cursor: none !important;
 }
 
 /* Mobile adjustments */

@@ -22,7 +22,12 @@ const Options = ({ onBack }) => {
         }));
     };
 
-    const calculateProgress = (date) => {
+    const calculateProgress = (date, role) => {
+        // Special case for Graduate Teaching Assistant
+        if (role === "Graduate Teaching Assistant") {
+            return 5;
+        }
+        
         if (date.includes('Present')) {
             // For ongoing quests, calculate based on start date
             const dateMatch = date.match(/(\w{3})\s(\d{4})/);
@@ -98,7 +103,7 @@ const Options = ({ onBack }) => {
                             <div className="quest-grid">
                                 {resumeData.experience.map((job, index) => {
                                     const isExpanded = expandedQuests[index];
-                                    const progress = calculateProgress(job.date);
+                                    const progress = calculateProgress(job.date, job.role);
                                     const isHovered = hoveredQuest === index;
                                     
                                     return (

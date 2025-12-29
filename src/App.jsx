@@ -6,6 +6,7 @@ import Multiplayer from './components/Multiplayer';
 import Options from './components/Options';
 import Education from './components/Education';
 import LoadingScreen from './components/LoadingScreen';
+import CursorTrail from './components/CursorTrail';
 
 function App() {
     const [screen, setScreen] = useState('menu'); // menu, projects, contact, options, education
@@ -90,6 +91,7 @@ function App() {
 
     return (
         <>
+            <CursorTrail />
             {screen === 'menu' && <MainMenu onNavigate={handleNavigate} />}
             {screen === 'projects' && <WorldSelect onBack={() => handleNavigate('menu')} />}
             {screen === 'contact' && <Multiplayer onBack={() => handleNavigate('menu')} />}
