@@ -39,26 +39,26 @@ export const resumeData = {
             ]
         },
         {
-            role: "Technical Operations Intern",
-            company: "Ardent Residential",
-            date: "May 2022 - Aug 2022",
-            points: [
-                "Migrated 300+ HOA communities between management platforms, ensuring data accuracy and continuity of operations",
-                "Standardized property and community records across new systems, improving data consistency and platform usability",
-                "Audited legacy system data for inconsistencies before migration, preventing downstream reporting and billing issues",
-                "Verified end-to-end data integrity post-migration, ensuring 100% reliable access for managers and board members"
-            ]
-        },
-        {
             role: "Software Engineer Intern",
             company: "Alpha Web Advisors",
-            date: "Oct 2024 - Aug 2025",
+            date: "October 2024 - August 2025",
             points: [
                 "Migrated 500+ properties (20K+ records) to PostgreSQL with 35+ validation rules, achieving zero data loss.",
                 "Optimized SQL queries, boosting data accuracy from 92% to 99.8% and cutting query time 18x (3.2s → 180ms)",
                 "Performed EDA on occupancy and pricing data to optimize lease fee adjustments, projecting a 3-5% rise in rental income.",
                 "Delivered Power BI data visualized insights within Agile sprints, replacing Excel workflows.",
                 "Deployed AWS Amplify//RDS deployment pipelines, increasing system uptime to 99.9% for 1300+ users."
+            ]
+        },
+        {
+            role: "Technical Operations Intern",
+            company: "Ardent Residential",
+            date: "May 2022 - August 2022",
+            points: [
+                "Migrated 300+ HOA communities between management platforms, ensuring data accuracy and continuity of operations",
+                "Standardized property and community records across new systems, improving data consistency and platform usability",
+                "Audited legacy system data for inconsistencies before migration, preventing downstream reporting and billing issues",
+                "Verified end-to-end data integrity post-migration, ensuring 100% reliable access for managers and board members"
             ]
         },
         {
