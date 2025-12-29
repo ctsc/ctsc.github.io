@@ -315,11 +315,7 @@ const Multiplayer = ({ onBack }) => {
                                         }}>
                                             <li style={{ marginBottom: '6px', paddingLeft: '20px', position: 'relative' }}>
                                                 <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                                Teaching Assistant for Computer Organization and Architecture, facilitating student comprehension of low-level systems design and hardware-software interactions
-                                            </li>
-                                            <li style={{ marginBottom: '6px', paddingLeft: '20px', position: 'relative' }}>
-                                                <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                                Mentoring students through complex concepts including processor architecture, memory hierarchies, and assembly language programming
+                                                Teaching Assistant for Computer Organization and Architecture, mentoring students through complex systems design concepts
                                             </li>
                                         </ul>
                                     </div>
@@ -333,7 +329,7 @@ const Multiplayer = ({ onBack }) => {
                                             fontWeight: 'bold',
                                             textShadow: '1px 1px 0 #3f3f3f'
                                         }}>
-                                            Full Stack Developer - Paulk Clinic (Freelance) (8/25 - present)
+                                            Software Developer - Paulk Clinic (Freelance) (Aug 2025 - Dec 2025)
                                         </div>
                                         <ul style={{ 
                                             listStyle: 'none', 
@@ -342,11 +338,34 @@ const Multiplayer = ({ onBack }) => {
                                         }}>
                                             <li style={{ marginBottom: '6px', paddingLeft: '20px', position: 'relative' }}>
                                                 <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                                Solo developer who completely redesigned frontend and backend for chiropractic clinic
+                                                Solo developer who redesigned clinic website, improving patient engagement and driving data-driven business decisions
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    {/* Ardent Residential Experience */}
+                                    <div style={{ marginBottom: '12px' }}>
+                                        <div style={{ 
+                                            color: '#ffff55', 
+                                            fontSize: isMobile ? '15px' : '17px',
+                                            marginBottom: '6px',
+                                            fontWeight: 'bold',
+                                            textShadow: '1px 1px 0 #3f3f3f'
+                                        }}>
+                                            Technical Operations Intern - Ardent Residential (May 2022 - Aug 2022)
+                                        </div>
+                                        <ul style={{ 
+                                            listStyle: 'none', 
+                                            paddingLeft: '0',
+                                            margin: '0'
+                                        }}>
+                                            <li style={{ marginBottom: '6px', paddingLeft: '20px', position: 'relative' }}>
+                                                <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
+                                                Migrated 300+ HOA communities between management platforms, ensuring data accuracy and operational continuity
                                             </li>
                                             <li style={{ marginBottom: '6px', paddingLeft: '20px', position: 'relative' }}>
                                                 <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                                Visualizing valuable insights from website data to drive business decisions
+                                                Standardized records and verified data integrity across systems, preventing reporting issues and ensuring reliable access
                                             </li>
                                         </ul>
                                     </div>
@@ -369,15 +388,11 @@ const Multiplayer = ({ onBack }) => {
                                         }}>
                                             <li style={{ marginBottom: '6px', paddingLeft: '20px', position: 'relative' }}>
                                                 <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                                Built software and data systems for HOAs and communities in Atlanta
+                                                Built and maintained software systems for HOAs, serving 1,300+ users through homeowner portals and dashboards
                                             </li>
                                             <li style={{ marginBottom: '6px', paddingLeft: '20px', position: 'relative' }}>
                                                 <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                                Engineered and maintained deployment of homeowner portals and HOA dashboards for 1,300+ residents/users
-                                            </li>
-                                            <li style={{ marginBottom: '6px', paddingLeft: '20px', position: 'relative' }}>
-                                                <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                                Business consultant and web services developer for property management solutions
+                                                Developed property management solutions and provided business consulting for community operations
                                             </li>
                                         </ul>
                                     </div>

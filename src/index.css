@@ -84,7 +84,10 @@ body {
 
 @media (max-width: 640px) {
   #root {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
     padding-top: var(--safe-area-inset-top);
     padding-left: var(--safe-area-inset-left);
     padding-right: var(--safe-area-inset-right);

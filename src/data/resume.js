@@ -30,12 +30,23 @@ export const resumeData = {
         {
             role: "Software Developer",
             company: "Paulk Clinic",
-            date: "Aug 2025 - Present",
+            date: "Aug 2025 - Dec 2025",
             points: [
                 "Architected website frontend using PHP/CSS, achieving 25% surge in patient engagement//25% reduction in bounce rate.",
                 "Optimized website with WordPress plugins, boosting performance by 60% and cutting page load time from 4.2s to 1.7s.",
                 "Highlighting trends and patterns using Google Analytics to support decision-making.",
                 "Maintaining HIPAA compliance and clean code through SDLC practices in a heavily regulated industry."
+            ]
+        },
+        {
+            role: "Technical Operations Intern",
+            company: "Ardent Residential",
+            date: "May 2022 - Aug 2022",
+            points: [
+                "Migrated 300+ HOA communities between management platforms, ensuring data accuracy and continuity of operations",
+                "Standardized property and community records across new systems, improving data consistency and platform usability",
+                "Audited legacy system data for inconsistencies before migration, preventing downstream reporting and billing issues",
+                "Verified end-to-end data integrity post-migration, ensuring 100% reliable access for managers and board members"
             ]
         },
         {
