@@ -352,7 +352,7 @@ const Multiplayer = ({ onBack }) => {
                                             fontWeight: 'bold',
                                             textShadow: '1px 1px 0 #3f3f3f'
                                         }}>
-                                            Software Engineer Intern - Alpha Web Advisors (Oct 2024 - Aug 2025)
+                                            Software//Data Engineer Intern - Alpha Web Advisors (Oct 2024 - Aug 2025)
                                         </div>
                                         <ul style={{ 
                                             listStyle: 'none', 
@@ -361,11 +361,11 @@ const Multiplayer = ({ onBack }) => {
                                         }}>
                                             <li style={{ marginBottom: '6px', paddingLeft: '20px', position: 'relative' }}>
                                                 <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                                Built and maintained software systems for HOAs, serving 1,300+ users through homeowner portals and dashboards
+                                                Migrated 500+ property records to PostgreSQL using AWS S3//Glue, achieving zero data loss and optimized SQL queries, boosting data accuracy from 92% to 99.8%
                                             </li>
                                             <li style={{ marginBottom: '6px', paddingLeft: '20px', position: 'relative' }}>
                                                 <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                                Developed property management solutions and provided business consulting for community operations
+                                                Architected web apps using React//Typescript, providing homeowner residential portals//HOA dashboard boards and deployed AWS Amplify//RDS deployment pipelines, increasing system uptime to 99.9% for 1300+ users
                                             </li>
                                         </ul>
                                     </div>

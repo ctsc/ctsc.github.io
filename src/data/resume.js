@@ -39,15 +39,12 @@ export const resumeData = {
             ]
         },
         {
-            role: "Software Engineer Intern",
+            role: "Software//Data Engineer Intern",
             company: "Alpha Web Advisors",
             date: "October 2024 - August 2025",
             points: [
-                "Migrated 500+ properties (20K+ records) to PostgreSQL with 35+ validation rules, achieving zero data loss.",
-                "Optimized SQL queries, boosting data accuracy from 92% to 99.8% and cutting query time 18x (3.2s → 180ms)",
-                "Performed EDA on occupancy and pricing data to optimize lease fee adjustments, projecting a 3-5% rise in rental income.",
-                "Delivered Power BI data visualized insights within Agile sprints, replacing Excel workflows.",
-                "Deployed AWS Amplify//RDS deployment pipelines, increasing system uptime to 99.9% for 1300+ users."
+                "Migrated 500+ property records to PostgreSQL using AWS S3//Glue, achieving zero data loss and optimized SQL queries, boosting data accuracy from 92% to 99.8%",
+                "Architected web apps using React//Typescript, providing homeowner residential portals//HOA dashboard boards and deployed AWS Amplify//RDS deployment pipelines, increasing system uptime to 99.9% for 1300+ users"
             ]
         },
         {
