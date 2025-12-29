@@ -230,11 +230,12 @@
 @media (max-width: 640px) {
     .world-list {
         height: auto;
-        max-height: 50vh;
+        max-height: none;
         padding: var(--mobile-component-spacing);
         margin-bottom: var(--mobile-component-spacing);
         border: 2px solid #a0a0a0;
         box-sizing: border-box;
+        overflow-y: auto;
     }
 }
 
@@ -1508,13 +1509,17 @@
 
 /* Bottom mobile container for footer text */
 .bottom-mobile-container {
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     box-sizing: border-box;
 }
 
 @media (max-width: 640px) {
     .bottom-mobile-container {
+        position: relative;
         padding: 0 var(--mobile-padding-sides);
         padding-bottom: calc(var(--mobile-padding-sides) + var(--safe-area-inset-bottom));
         margin-top: var(--mobile-component-spacing);
