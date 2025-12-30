@@ -176,7 +176,7 @@ const Multiplayer = ({ onBack }) => {
                                 {/* Personal Section */}
                                 <div style={{ marginBottom: '20px' }}>
                                     <div style={{ 
-                                        color: '#ffff55', 
+                                        color: '#87CEEB', 
                                         fontSize: isMobile ? '16px' : '18px',
                                         marginBottom: '10px',
                                         fontWeight: 'bold',
@@ -190,40 +190,28 @@ const Multiplayer = ({ onBack }) => {
                                         margin: '0'
                                     }}>
                                         <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                            6'4, 235lbs, stronger than most pro athletes (650 deadlift, 365 bench)
+                                            <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
+                                            6'4, 235lbs
                                         </li>
                                         <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                            Competitive weightlifting (will be the strongest Python user)
+                                            <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
+                                            I have 4 sisters and 1 brother
                                         </li>
                                         <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                            I have 5 siblings
-                                        </li>
-                                        <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
+                                            <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
                                             New York Jets #1 Fan
                                         </li>
                                         <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                            Crunchyroll Background Binge Enthusiast
-                                        </li>
-                                        <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
+                                            <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
                                             Favorite movie: Rocky
                                         </li>
                                         <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
+                                            <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
                                             Current Anime: Kingdom
                                         </li>
                                         <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                            Math nerd drawn to CS originally to become a teacher so I can help students learn to code earlier//efficiently
-                                        </li>
-                                        <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                            School, internships, freelance work, and personal projects build my path to ML//AI Software Engineering, and future CS professor
+                                            <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
+                                            Hobbies//Interests: Powerlifting, coffee, touching grass, eating food, anime, cleaning my apartment
                                         </li>
                                     </ul>
                                 </div>
@@ -231,7 +219,7 @@ const Multiplayer = ({ onBack }) => {
                                 {/* Education Section */}
                                 <div style={{ marginBottom: '20px' }}>
                                     <div style={{ 
-                                        color: '#ffff55', 
+                                        color: '#87CEEB', 
                                         fontSize: isMobile ? '16px' : '18px',
                                         marginBottom: '10px',
                                         fontWeight: 'bold',
@@ -245,15 +233,15 @@ const Multiplayer = ({ onBack }) => {
                                         margin: '0'
                                     }}>
                                         <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
+                                            <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
                                             Master's CS student at GSU in Atlanta (Current GPA: 3.76)
                                         </li>
                                         <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
+                                            <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
                                             Bachelor's at GSU, Dec 2025
                                         </li>
                                         <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
+                                            <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
                                             Dual enrolled at KSU at ages 16/17 with 3.8 GPA
                                         </li>
                                     </ul>
@@ -262,7 +250,7 @@ const Multiplayer = ({ onBack }) => {
                                 {/* Professional Section */}
                                 <div style={{ marginBottom: '20px' }}>
                                     <div style={{ 
-                                        color: '#ffff55', 
+                                        color: '#87CEEB', 
                                         fontSize: isMobile ? '16px' : '18px',
                                         marginBottom: '10px',
                                         fontWeight: 'bold',
@@ -276,32 +264,49 @@ const Multiplayer = ({ onBack }) => {
                                         margin: '0 0 12px 0'
                                     }}>
                                         <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                            Results-driven and passionate software engineer
+                                            <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
+                                            Eager to solve problems, master frameworks, and learn new skills. Thrive when making a measurable difference
                                         </li>
                                         <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                            Eager to solve problems, master frameworks, and learn new skills
+                                            <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
+                                            Redesigned legacy clinic website system, boosted patient engagement 25% and cut load times by 60%
                                         </li>
                                         <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                            Get excited about impactful products that require technical depth and creative problem-solving
+                                            <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
+                                            Migrated property records for thousands of homeowners in Atlanta with zero data loss, improved accuracy to 99.8%
                                         </li>
                                         <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                            Thrive when making a measurable difference
+                                            <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
+                                            1300+ Atlanta homeowners use a dashboard I built//deployed
                                         </li>
                                         <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
-                                            Won my first hackathon I competed in; planning to attend multiple hackathons in 2026
+                                            <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
+                                            Teaching assistant mentoring students through complex systems - love helping others level up their skills
+                                        </li>
+                                        <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
+                                            <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
+                                            Won Emory Hacks 2025, was the first hackathon I competed in. Planning to attend more in 2026
                                         </li>
                                     </ul>
+                                </div>
+
+                                {/* Experiences Section */}
+                                <div style={{ marginBottom: '20px' }}>
+                                    <div style={{ 
+                                        color: '#87CEEB', 
+                                        fontSize: isMobile ? '16px' : '18px',
+                                        marginBottom: '10px',
+                                        fontWeight: 'bold',
+                                        textShadow: '1px 1px 0 #3f3f3f'
+                                    }}>
+                                        Experiences
+                                    </div>
                                     
                                     {/* Graduate Teaching Assistant Experience */}
                                     <div style={{ marginBottom: '12px' }}>
                                         <div style={{ 
-                                            color: '#ffff55', 
-                                            fontSize: isMobile ? '15px' : '17px',
+                                            color: '#B0E0E6', 
+                                            fontSize: isMobile ? '13px' : '15px',
                                             marginBottom: '6px',
                                             fontWeight: 'bold',
                                             textShadow: '1px 1px 0 #3f3f3f'
@@ -314,7 +319,7 @@ const Multiplayer = ({ onBack }) => {
                                             margin: '0'
                                         }}>
                                             <li style={{ marginBottom: '6px', paddingLeft: '20px', position: 'relative' }}>
-                                                <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
+                                                <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
                                                 Teaching Assistant for Computer Organization and Architecture, mentoring students through complex systems design concepts
                                             </li>
                                         </ul>
@@ -323,8 +328,8 @@ const Multiplayer = ({ onBack }) => {
                                     {/* Paulk Clinic Experience */}
                                     <div style={{ marginBottom: '12px' }}>
                                         <div style={{ 
-                                            color: '#ffff55', 
-                                            fontSize: isMobile ? '15px' : '17px',
+                                            color: '#B0E0E6', 
+                                            fontSize: isMobile ? '13px' : '15px',
                                             marginBottom: '6px',
                                             fontWeight: 'bold',
                                             textShadow: '1px 1px 0 #3f3f3f'
@@ -337,7 +342,7 @@ const Multiplayer = ({ onBack }) => {
                                             margin: '0'
                                         }}>
                                             <li style={{ marginBottom: '6px', paddingLeft: '20px', position: 'relative' }}>
-                                                <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
+                                                <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
                                                 Solo developer who redesigned clinic website, improving patient engagement and driving data-driven business decisions
                                             </li>
                                         </ul>
@@ -346,8 +351,8 @@ const Multiplayer = ({ onBack }) => {
                                     {/* Alpha Web Advisors Experience */}
                                     <div style={{ marginBottom: '12px' }}>
                                         <div style={{ 
-                                            color: '#ffff55', 
-                                            fontSize: isMobile ? '15px' : '17px',
+                                            color: '#B0E0E6', 
+                                            fontSize: isMobile ? '13px' : '15px',
                                             marginBottom: '6px',
                                             fontWeight: 'bold',
                                             textShadow: '1px 1px 0 #3f3f3f'
@@ -360,11 +365,11 @@ const Multiplayer = ({ onBack }) => {
                                             margin: '0'
                                         }}>
                                             <li style={{ marginBottom: '6px', paddingLeft: '20px', position: 'relative' }}>
-                                                <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
+                                                <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
                                                 Migrated 500+ property records to PostgreSQL using AWS S3//Glue, achieving zero data loss and optimized SQL queries, boosting data accuracy from 92% to 99.8%
                                             </li>
                                             <li style={{ marginBottom: '6px', paddingLeft: '20px', position: 'relative' }}>
-                                                <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
+                                                <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
                                                 Architected web apps using React//Typescript, providing homeowner residential portals//HOA dashboard boards and deployed AWS Amplify//RDS deployment pipelines, increasing system uptime to 99.9% for 1300+ users
                                             </li>
                                         </ul>
@@ -373,8 +378,8 @@ const Multiplayer = ({ onBack }) => {
                                     {/* Ardent Residential Experience */}
                                     <div style={{ marginBottom: '12px' }}>
                                         <div style={{ 
-                                            color: '#ffff55', 
-                                            fontSize: isMobile ? '15px' : '17px',
+                                            color: '#B0E0E6', 
+                                            fontSize: isMobile ? '13px' : '15px',
                                             marginBottom: '6px',
                                             fontWeight: 'bold',
                                             textShadow: '1px 1px 0 #3f3f3f'
@@ -387,11 +392,11 @@ const Multiplayer = ({ onBack }) => {
                                             margin: '0'
                                         }}>
                                             <li style={{ marginBottom: '6px', paddingLeft: '20px', position: 'relative' }}>
-                                                <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
+                                                <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
                                                 Migrated 300+ HOA communities between management platforms, ensuring data accuracy and operational continuity
                                             </li>
                                             <li style={{ marginBottom: '6px', paddingLeft: '20px', position: 'relative' }}>
-                                                <span style={{ position: 'absolute', left: '0', color: '#ffff55' }}>•</span>
+                                                <span style={{ position: 'absolute', left: '0', color: '#000000' }}>•</span>
                                                 Standardized records and verified data integrity across systems, preventing reporting issues and ensuring reliable access
                                             </li>
                                         </ul>
