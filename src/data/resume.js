@@ -22,8 +22,9 @@ export const resumeData = {
             company: "Georgia State University",
             date: "Present",
             points: [
-                "Teaching Assistant for computer science courses, facilitating student learning and comprehension of complex programming concepts.",
-                "Mentoring students through coursework, assignments, and technical challenges to support academic success."
+                "Helping to run the learning experience for core CS courses",
+                "Support lectures, break down difficult concepts, and work directly with students lacking in exposure to topics",
+                "Assist teacher with course planning, grading, and office hours"
             ]
         },
         {
@@ -33,7 +34,7 @@ export const resumeData = {
             points: [
                 "Built FastAPI + PyTorch ML pipelines that analyze voice recordings, achieving ~65% accuracy in detecting early dementia indicators.",
                 "Engineered doctor/patient dashboards (React + Firebase) with secure audio streaming for clinical trial/data collection.",
-                "Recognized as a MLHacks research project for innovating voice-based health monitoring and telehealth for cognitive disabilities."
+                "Recognized as a MLHacks winner for innovating voice-based health monitoring and telehealth for cognitive disabilities."
             ]
         },
         {
@@ -41,10 +42,10 @@ export const resumeData = {
             company: "Paulk Clinic",
             date: "Aug 2025 - Dec 2025",
             points: [
-                "Architected website frontend using PHP/CSS, achieving 25% surge in patient engagement//25% reduction in bounce rate.",
-                "Optimized website with WordPress plugins, boosting performance by 60% and cutting page load time from 4.2s to 1.7s.",
-                "Highlighting trends and patterns using Google Analytics to support decision-making.",
-                "Maintaining HIPAA compliance and clean code through SDLC practices in a heavily regulated industry."
+                "Architected a frontend/backend chiropractic clinic administrative//blog website, improving patient engagement and driving data-driven business decisions",
+                "Worked directly with owner to deliver to his standards and expectations",
+                "Redesigned frontend for modernized UI//UX patterns to maximize user engagement and page views, while reduce bounce rate",
+                "Optimized backend for faster load times and easier administrative overhead, providing clinic contact, appointment scheduling, and document maintenance"
             ]
         },
         {
@@ -52,8 +53,10 @@ export const resumeData = {
             company: "Alpha Web Advisors",
             date: "October 2024 - August 2025",
             points: [
-                "Migrated 500+ property records to PostgreSQL using AWS S3//Glue, achieving zero data loss and optimized SQL queries, boosting data accuracy from 92% to 99.8%",
-                "Architected web apps using React//Typescript, providing homeowner residential portals//HOA dashboard boards and deployed AWS Amplify//RDS deployment pipelines, increasing system uptime to 99.9% for 1300+ users"
+                "Worked within a team of web services software engineers at a business and property consulting firm, partnering directly with property management companies",
+                "On the software side, helped design and build HOA portals and homeowner-facing websites used by 1,300+ residents to manage community information, maintenance requests, and billing workflows",
+                "In parallel, optimized data-driven pricing and operational decisions by analyzing property and lease data to inform annual rent adjustment strategies",
+                "Contributed to large-scale data migrations involving 20K+ property records, ensuring zero data loss, and improved database performance through SQL query optimization"
             ]
         },
         {
@@ -61,10 +64,8 @@ export const resumeData = {
             company: "Ardent Residential",
             date: "May 2022 - August 2022",
             points: [
-                "Migrated 300+ HOA communities between management platforms, ensuring data accuracy and continuity of operations",
-                "Standardized property and community records across new systems, improving data consistency and platform usability",
-                "Audited legacy system data for inconsistencies before migration, preventing downstream reporting and billing issues",
-                "Verified end-to-end data integrity post-migration, ensuring 100% reliable access for managers and board members"
+                "Helped migrate major property and HOA data between systems, ensured records were consistent and accurate, and validated that homeowners and board members could reliably access information after the transition",
+                "Worked with property managers and board members to ensure technical operation enhancements through migration of systems efficiently"
             ]
         },
         {
@@ -81,9 +82,9 @@ export const resumeData = {
         }
     ],
     skills: {
-        languages: "Python, GoLang, Java, C++, JavaScript/TypeScript, SQL, PHP/HTML/CSS, Dart",
+        languages: "Python, Java, C++, JavaScript/TypeScript, SQL, PHP/HTML/CSS, Dart",
         frameworks: "FastAPI, ReactJS, NodeJS, AngularJS, ExpressJS, React Native, Flutter, Spring Boot",
-        toolsCloud: "Google Cloud Services/Firebase, AWS, REST APIs, Agile/Scrum, Jira, Git/Bash, CI/CD, Docker, Kubernetes, Linux/Unix",
+        toolsCloud: "Google Cloud Services/Firebase, AWS, REST APIs, Agile/Scrum, Git/Bash, CI/CD, Docker, Linux/Unix",
         dataScienceML: "PyTorch, Scikit-Learn, Pandas, NumPy, Power BI, Deep Learning, XGBoost, MatPlotLib, Seaborn, Plotly, GenAI",
         dataEngineering: "Apache Kafka, Apache Spark, ETL/EDA Pipelines, Big Data, PostgreSQL, MySQL, MongoDB, NoSQL"
     }

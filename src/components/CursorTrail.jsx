@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/minecraft.css';
+import '../styles/theme.css';
 
 const CursorTrail = () => {
     const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });

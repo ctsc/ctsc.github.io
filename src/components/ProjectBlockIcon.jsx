@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
 /**
- * 3D Minecraft-style block icon for world selection
+ * 3D Minecraft-style block icon for project selection
  * Shows hover and selection animations
  * Uses actual Minecraft block textures
  */
-const WorldBlockIcon = ({ 
+const ProjectBlockIcon = ({ 
     isSelected = false, 
     blockType = 'grass', // grass, stone, dirt, wood, etc.
     size = 64 
@@ -237,5 +237,5 @@ const WorldBlockIcon = ({
     );
 };
 
-export default WorldBlockIcon;
+export default ProjectBlockIcon;
 

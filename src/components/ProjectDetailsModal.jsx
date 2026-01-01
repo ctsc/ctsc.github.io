@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/minecraft.css';
+import '../styles/theme.css';
 
-const FeedbackBook = ({ isOpen, onClose }) => {
+const ProjectDetailsModal = ({ isOpen, onClose }) => {
     const [feedback, setFeedback] = useState('');
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
 
@@ -87,5 +87,5 @@ const FeedbackBook = ({ isOpen, onClose }) => {
     );
 };
 
-export default FeedbackBook;
+export default ProjectDetailsModal;
 

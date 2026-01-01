@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/minecraft.css';
+import '../styles/theme.css';
 
 /**
  * Loading screen component that displays the dirt_background image
@@ -7,6 +7,18 @@ import '../styles/minecraft.css';
  */
 const LoadingScreen = ({ isVisible }) => {
     const [opacity, setOpacity] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 640);
+        };
+        
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     useEffect(() => {
         if (isVisible) {
@@ -46,7 +58,7 @@ const LoadingScreen = ({ isVisible }) => {
             <div
                 style={{
                     color: '#fff',
-                    fontSize: '32px',
+                    fontSize: isMobile ? '24px' : '32px',
                     textShadow: '2px 2px 0px #3f3f3f',
                     textAlign: 'center',
                     opacity: opacity

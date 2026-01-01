@@ -1,10 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import MainMenu from './components/MainMenu';
-import WorldSelect from './components/WorldSelect';
-import Multiplayer from './components/Multiplayer';
-import Options from './components/Options';
-import Education from './components/Education';
+import ProjectsPage from './components/ProjectsPage';
 import LoadingScreen from './components/LoadingScreen';
 import CursorTrail from './components/CursorTrail';
 
@@ -93,10 +90,7 @@ function App() {
         <>
             <CursorTrail />
             {screen === 'menu' && <MainMenu onNavigate={handleNavigate} />}
-            {screen === 'projects' && <WorldSelect onBack={() => handleNavigate('menu')} />}
-            {screen === 'contact' && <Multiplayer onBack={() => handleNavigate('menu')} />}
-            {screen === 'options' && <Options onBack={() => handleNavigate('menu')} />}
-            {screen === 'education' && <Education onBack={() => handleNavigate('menu')} />}
+            {screen === 'projects' && <ProjectsPage onBack={() => handleNavigate('menu')} />}
             {showLoadingScreen && <LoadingScreen isVisible={isLoading} />}
         </>
     );

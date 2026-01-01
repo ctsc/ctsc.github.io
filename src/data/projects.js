@@ -26,12 +26,12 @@ export const projects = [
     },
     {
         id: 5,
-        name: "UrSim",
+        name: "Fantasy Sports Lineup Optimizer",
         date: "11/2025",
         tech: "React, TypeScript, AWS, Python, Monte Carlo, GARCH",
         description: [
             "SaaS fantasy sports optimizer using Python quantitative finance (Monte Carlo, GARCH) to generate optimal lineups",
-            "React/TypeScript frontend with AWS infrastructure drives monthly recurring revenue",
+            "React//TypeScript frontend with projections API and Python backend",
             "Achieves 89.6% efficiency generating 20-100 optimal lineups per optimization"
         ],
         link: "#",
