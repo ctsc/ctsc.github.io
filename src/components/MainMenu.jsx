@@ -155,11 +155,7 @@ const MainMenu = ({ onNavigate }) => {
                                 }}>
                                     <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
                                         <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
-                                        6'4, 235lbs
-                                    </li>
-                                    <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                        <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
-                                        brother of 4 sisters and 1 brother
+                                        Brother of 4 sisters and 1 brother
                                     </li>
                                     <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
                                         <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
@@ -179,7 +175,7 @@ const MainMenu = ({ onNavigate }) => {
                                     </li>
                                     <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
                                         <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
-                                        2024 USAPl Georgia State Champion Ages 18-19
+                                        6'4 + 2024 USAPL Georgia State Champion Ages 18-19
                                     </li>
                                     <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
                                         <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
