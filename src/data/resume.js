@@ -54,10 +54,10 @@ export const resumeData = {
             company: "Alpha Web Advisors",
             date: "October 2024 - August 2025",
             points: [
-                "Worked within a team of web services software engineers at a business and property consulting firm, partnering directly with property management companies",
-                "On the software side, helped design and build HOA portals and homeowner-facing websites used by 1,300+ residents to manage community information, maintenance requests, and billing workflows",
-                "In parallel, optimized data-driven pricing and operational decisions by analyzing property and lease data to inform annual rent adjustment strategies",
-                "Contributed to large-scale data migrations involving 20K+ property records, ensuring zero data loss, and improved database performance through SQL query optimization"
+                "Collaborated within a team of web services software engineers at a business and property consulting firm, partnering directly with property management companies",
+                "Architected and built HOA portals and homeowner-facing websites used by 1,300+ residents to manage community information, maintenance requests, and billing workflows",
+                "Optimized data-driven pricing and operational decisions by analyzing property and lease data to inform annual rent adjustment strategies",
+                "Migrated 20K+ property records in large-scale data migrations, ensuring zero data loss, and improved database performance through SQL query optimization"
             ]
         },
         {
@@ -65,8 +65,8 @@ export const resumeData = {
             company: "Ardent Residential",
             date: "May 2022 - August 2022",
             points: [
-                "Helped migrate major property and HOA data between systems, ensured records were consistent and accurate, and validated that homeowners and board members could reliably access information after the transition",
-                "Worked with property managers and board members to ensure technical operation enhancements through migration of systems efficiently"
+                "Migrated major property and HOA data between systems, ensured records were consistent and accurate, and validated that homeowners and board members could reliably access information after the transition",
+                "Communicated with property managers and board members to ensure technical operation enhancements through migration of systems efficiently"
             ]
         },
         {
