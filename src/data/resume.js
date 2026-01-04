@@ -32,9 +32,10 @@ export const resumeData = {
             company: "Emory Hacks: VoiceVitals",
             date: "Nov 2025",
             points: [
-                "Built FastAPI + PyTorch ML pipelines that analyze voice recordings, achieving ~65% accuracy in detecting early dementia indicators.",
-                "Engineered doctor/patient dashboards (React + Firebase) with secure audio streaming for clinical trial/data collection.",
-                "Recognized as a MLHacks winner for innovating voice-based health monitoring and telehealth for cognitive disabilities."
+                "Built FastAPI + PyTorch ML pipelines to analyze voice audio features, classifying audio clips for early dementia detection",
+                "Optimized feature extraction and model pipeline using an ensemble model to raise predictive performance and robustness",
+                "Deployed a scalable doctor/patient dashboard with secure audio storage for clinical trial data collection",
+                "Engineered 153 features using spectral, prosodic, and voice quality analysis to improve model sensitivity and precision"
             ]
         },
         {

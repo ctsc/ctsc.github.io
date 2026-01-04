@@ -79,7 +79,7 @@ const ProjectsPage = ({ onBack }) => {
                                         <ul style={{ listStyle: 'none', paddingLeft: '0', margin: '4px 0' }}>
                                             {project.description.map((point, index) => (
                                                 <li key={index} style={{ marginBottom: '4px', paddingLeft: '16px', position: 'relative' }}>
-                                                    <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
+                                                    <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>*</span>
                                                     {point}
                                                 </li>
                                             ))}

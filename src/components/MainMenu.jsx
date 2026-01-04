@@ -333,7 +333,7 @@ const MainMenu = ({ onNavigate }) => {
                                                         </div>
                                                     </div>
                                                     <div className="quest-meta">
-                                                        <span className="quest-location">📍 {job.company}</span>
+                                                        <span className="quest-location">{job.company}</span>
                                                         <span className="quest-date">⏰ {job.date}</span>
                                                     </div>
                                                 </div>
@@ -345,7 +345,7 @@ const MainMenu = ({ onNavigate }) => {
                                                 <div className="quest-details">
                                                     {job.points.map((point, i) => (
                                                         <div key={i} className="quest-point">
-                                                            <span className="quest-point-icon" style={{ color: '#4682B4' }}>⚡</span>
+                                                            <span className="quest-point-icon" style={{ color: '#4682B4' }}>*</span>
                                                             <span className="quest-point-text">{point}</span>
                                                         </div>
                                                     ))}
