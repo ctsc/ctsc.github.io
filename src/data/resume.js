@@ -32,6 +32,7 @@ export const resumeData = {
             company: "Emory Hacks: VoiceVitals",
             date: "Nov 2025",
             points: [
+                "Won Emory Hacks 2025, was the first hackathon I competed in. Planning to attend more in 2026",
                 "Built FastAPI + PyTorch ML pipelines to analyze voice audio features, classifying audio clips for early dementia detection",
                 "Optimized feature extraction and model pipeline using an ensemble model to raise predictive performance and robustness",
                 "Deployed a scalable doctor/patient dashboard with secure audio storage for clinical trial data collection",

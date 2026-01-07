@@ -34,7 +34,7 @@ const ProjectsPage = ({ onBack }) => {
     };
 
     return (
-        <div className="app-container mc-bg">
+        <div className="app-container mc-bg-scrolling">
             <div className="menu-container world-select-container" style={{ 
                 width: isMobile ? '100%' : '1100px', 
                 maxWidth: isMobile ? '100%' : 'calc(100vw - 40px)', 
@@ -54,7 +54,11 @@ const ProjectsPage = ({ onBack }) => {
                     fontSize: isMobile ? '28px' : '40px' 
                 }}>Select World</h1>
 
-                <div className="world-list">
+                <div className="world-list" style={{
+                    maxHeight: isMobile ? '60vh' : 'none',
+                    overflowY: isMobile ? 'auto' : 'visible',
+                    overflowX: 'hidden'
+                }}>
                     {projects.map((project) => (
                         <div
                             key={project.id}

@@ -196,6 +196,54 @@
     font-weight: normal;
     position: relative;
     text-align: center;
+    transition: color 0.5s ease, text-shadow 0.5s ease, -webkit-text-fill-color 0.5s ease, background-clip 0.5s ease;
+    display: inline-block;
+}
+
+.mc-logo-rainbow {
+    background: linear-gradient(
+        90deg,
+        #ff0000 0%,
+        #ff7f00 14.28%,
+        #ffff00 28.56%,
+        #00ff00 42.84%,
+        #0000ff 57.12%,
+        #4b0082 71.4%,
+        #9400d3 85.68%,
+        #ff0000 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: shimmer 3s linear infinite, wave 2s ease-in-out infinite;
+    text-shadow: none;
+    transition: color 0.5s ease, text-shadow 0.5s ease, -webkit-text-fill-color 0.5s ease, background-clip 0.5s ease;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0px) scaleY(1);
+    }
+    25% {
+        transform: translateY(-5px) scaleY(1.02);
+    }
+    50% {
+        transform: translateY(0px) scaleY(1);
+    }
+    75% {
+        transform: translateY(-3px) scaleY(1.01);
+    }
 }
 
 .mc-splash {
@@ -210,15 +258,26 @@
     animation: bounce 0.5s infinite alternate;
 }
 
+.mc-logo-rainbow .mc-splash {
+    color: var(--mc-yellow) !important;
+    -webkit-text-fill-color: var(--mc-yellow) !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+}
+
 @media (max-width: 640px) {
     .mc-logo {
         margin-bottom: var(--mobile-component-spacing);
         font-size: 72px;
+        padding-right: 60px;
+        overflow: visible;
     }
     
     .mc-splash {
         font-size: 24px;
-        right: -40px;
+        right: -30px;
+        bottom: -5px;
     }
 }
 

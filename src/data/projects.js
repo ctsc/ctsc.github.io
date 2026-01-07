@@ -44,10 +44,12 @@ export const projects = [
         id: 2,
         name: "Ecommerce fraud analytics pipeline",
         date: "10/2025",
-        tech: "Kafka, Spark, Docker",
+        tech: "Kafka, Spark, PostgreSQL, Docker, Plotly",
         description: [
-            "Enterprise real-time data pipeline processing high-volume transactions with Kafka and Spark",
-            "ML-powered fraud detection and customer analytics reduce risk and boost revenue through Docker containerization"
+            "Built a real-time e-commerce analytics pipeline handling 10k+ tx/min with <1s latency using Kafka, Spark, PostgreSQL, and Docker",
+            "Implemented ML-based fraud detection (Isolation Forest) with 95%+ accuracy in streaming production data",
+            "Delivered customer segmentation, cohort analytics, and recommendations, visualized via a real-time Plotly Dash dashboard",
+            "Fully containerized and production-tested with Docker Compose, monitoring, and automated data quality checks"
         ],
         link: "https://github.com/ctsc/Ecommerce-Realtime-Analytics",
         blockType: "emerald" // Emerald = commerce/valuable

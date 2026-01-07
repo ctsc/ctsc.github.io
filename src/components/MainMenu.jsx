@@ -6,6 +6,8 @@ const MainMenu = ({ onNavigate }) => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
     const [expandedQuests, setExpandedQuests] = useState({});
     const [hoveredQuest, setHoveredQuest] = useState(null);
+    const [isPhotoGalleryOpen, setIsPhotoGalleryOpen] = useState(false);
+    const [isHoveringLogo, setIsHoveringLogo] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
@@ -88,12 +90,19 @@ const MainMenu = ({ onNavigate }) => {
                 padding: isMobile ? '20px 16px' : '30px 20px',
                 paddingTop: isMobile ? '68px' : '88px',
                 paddingBottom: isMobile ? 'calc(20px + env(safe-area-inset-bottom, 0px))' : '30px',
+                paddingRight: isMobile ? '24px' : '20px',
                 boxSizing: 'border-box',
                 margin: '0 auto',
-                minHeight: '100%'
+                minHeight: '100%',
+                overflow: 'visible'
             }}>
                 {/* Logo */}
-                <div className="mc-logo" style={{ marginBottom: isMobile ? '24px' : '32px' }}>
+                <div 
+                    className={`mc-logo ${isHoveringLogo ? 'mc-logo-rainbow' : ''}`}
+                    style={{ marginBottom: isMobile ? '24px' : '32px' }}
+                    onMouseEnter={() => setIsHoveringLogo(true)}
+                    onMouseLeave={() => setIsHoveringLogo(false)}
+                >
                     Carter Tierney
                     <div className="mc-splash">Hire Me!</div>
                 </div>
@@ -153,6 +162,14 @@ const MainMenu = ({ onNavigate }) => {
                                     paddingLeft: '0',
                                     margin: '0'
                                 }}>
+                                    <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
+                                        <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
+                                        Student Graduating Spring 2027 M.S. B.S Georgia State University
+                                    </li>
+                                    <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
+                                        <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
+                                        Exploring Software Engineering using Data and Machine Learning/AI driven solutions.
+                                    </li>
                                     <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
                                         <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
                                         Brother of 4 sisters and 1 brother
@@ -223,43 +240,48 @@ const MainMenu = ({ onNavigate }) => {
                                 </ul>
                             </div>
 
-                            {/* Professional Section */}
+                            {/* Photo Gallery Section */}
                             <div style={{ marginBottom: '20px' }}>
-                                <div style={{ 
-                                    color: '#87CEEB', 
-                                    fontSize: isMobile ? '16px' : '18px',
-                                    marginBottom: '10px',
-                                    fontWeight: 'bold',
-                                    textShadow: '1px 1px 0 #3f3f3f'
-                                }}>
-                                    Professional
-                                </div>
-                                <ul style={{ 
-                                    listStyle: 'none', 
-                                    paddingLeft: '0',
-                                    margin: '0 0 12px 0'
-                                }}>
-                                    <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                        <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
-                                        Teaching assistant mentoring students through complex systems - love helping others level up their skills
-                                    </li>
-                                    <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                        <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
-                                        Redesigned local chiropractic clinic website and admin system. Enhanced SEO and gained 15x homepage monthly views.
-                                    </li>
-                                    <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                        <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
-                                        Migrated property records for thousands of homeowners in Atlanta with zero data loss
-                                    </li>
-                                    <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                        <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
-                                        Built websites and portals to serve 1300+ homeowners and HOA board members across ATL
-                                    </li>
-                                    <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                        <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
-                                        Won Emory Hacks 2025, was the first hackathon I competed in. Planning to attend more in 2026
-                                    </li>
-                                </ul>
+                                <button
+                                    className="mc-button"
+                                    onClick={() => setIsPhotoGalleryOpen(!isPhotoGalleryOpen)}
+                                    style={{
+                                        width: '100%',
+                                        marginBottom: isPhotoGalleryOpen ? '12px' : '0'
+                                    }}
+                                >
+                                    Photo Gallery
+                                </button>
+                                {isPhotoGalleryOpen && (
+                                    <div style={{
+                                        padding: isMobile ? '16px' : '20px',
+                                        background: 'rgba(0,0,0,0.3)',
+                                        border: '1px solid rgba(255,255,255,0.2)',
+                                        marginTop: '12px',
+                                        display: 'grid',
+                                        gridTemplateColumns: 'repeat(2, 1fr)',
+                                        gap: isMobile ? '12px' : '16px'
+                                    }}>
+                                        {Array.from({ length: 10 }, (_, i) => (
+                                            <div
+                                                key={i}
+                                                style={{
+                                                    aspectRatio: '1',
+                                                    background: 'rgba(255,255,255,0.1)',
+                                                    border: '2px solid rgba(255,255,255,0.3)',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    color: 'rgba(255,255,255,0.5)',
+                                                    fontSize: isMobile ? '14px' : '16px',
+                                                    fontFamily: 'var(--font-mojangles), monospace'
+                                                }}
+                                            >
+                                                Photo {i + 1}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
 
                             {/* Closing Statement */}
