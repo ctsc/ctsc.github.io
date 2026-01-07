@@ -246,13 +246,12 @@ const MainMenu = ({ onNavigate }) => {
                                     className="mc-button"
                                     onClick={() => setIsPhotoGalleryOpen(!isPhotoGalleryOpen)}
                                     style={{
-                                        width: '100%',
-                                        marginBottom: isPhotoGalleryOpen ? '12px' : '0'
+                                        width: '100%'
                                     }}
                                 >
                                     Photo Gallery
                                 </button>
-                                {isPhotoGalleryOpen && (
+                                <div className={`photo-gallery-container ${isPhotoGalleryOpen ? 'photo-gallery-open' : 'photo-gallery-closed'}`}>
                                     <div style={{
                                         padding: isMobile ? '16px' : '20px',
                                         background: 'rgba(0,0,0,0.3)',
@@ -262,26 +261,59 @@ const MainMenu = ({ onNavigate }) => {
                                         gridTemplateColumns: 'repeat(2, 1fr)',
                                         gap: isMobile ? '12px' : '16px'
                                     }}>
-                                        {Array.from({ length: 10 }, (_, i) => (
-                                            <div
-                                                key={i}
-                                                style={{
-                                                    aspectRatio: '1',
-                                                    background: 'rgba(255,255,255,0.1)',
-                                                    border: '2px solid rgba(255,255,255,0.3)',
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    color: 'rgba(255,255,255,0.5)',
-                                                    fontSize: isMobile ? '14px' : '16px',
-                                                    fontFamily: 'var(--font-mojangles), monospace'
-                                                }}
-                                            >
-                                                Photo {i + 1}
-                                            </div>
-                                        ))}
+                                        {[
+                                            '1741323783582618267.JPG',
+                                            'IMG_3788.JPG',
+                                            'IMG_0148.PNG',
+                                            'IMG_2854.jpg',
+                                            'IMG_7931.jpg',
+                                            'IMG_7976.jpg',
+                                            'IMG_1896.jpg',
+                                            'IMG_0180.PNG',
+                                            'IMG_0595.jpg',
+                                            'IMG_0989.jpg'
+                                        ].map((photoName, i) => {
+                                            const isTwinFrPhoto = photoName === 'IMG_7931.jpg';
+                                            return (
+                                                <div
+                                                    key={i}
+                                                    className={`photo-gallery-item ${isTwinFrPhoto ? 'photo-gallery-twin-fr' : ''}`}
+                                                    style={{
+                                                        aspectRatio: '1',
+                                                        background: 'rgba(255,255,255,0.1)',
+                                                        border: '2px solid rgba(255,255,255,0.3)',
+                                                        overflow: 'hidden',
+                                                        position: 'relative'
+                                                    }}
+                                                >
+                                                    <img
+                                                        src={`/photogallery/${photoName}`}
+                                                        alt={`Photo ${i + 1}`}
+                                                        className="photo-gallery-image"
+                                                        style={{
+                                                            width: '100%',
+                                                            height: '100%',
+                                                            objectFit: 'cover',
+                                                            display: 'block'
+                                                        }}
+                                                        onError={(e) => {
+                                                            e.target.style.display = 'none';
+                                                            e.target.parentElement.style.display = 'flex';
+                                                            e.target.parentElement.style.alignItems = 'center';
+                                                            e.target.parentElement.style.justifyContent = 'center';
+                                                            e.target.parentElement.innerHTML = `<span style="color: rgba(255,255,255,0.5); font-size: ${isMobile ? '14px' : '16px'}; font-family: var(--font-mojangles), monospace;">Photo ${i + 1}</span>`;
+                                                        }}
+                                                    />
+                                                    {isTwinFrPhoto && (
+                                                        <div className="photo-gallery-twin-fr-text">
+                                                            twin fr
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            );
+                                        })}
                                     </div>
-                                )}
+                                </div>
                             </div>
 
                             {/* Closing Statement */}

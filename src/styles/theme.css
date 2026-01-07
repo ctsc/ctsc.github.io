@@ -1750,3 +1750,103 @@
         transform: scale(1.02);
     }
 }
+
+/* Photo Gallery Container Animation */
+.photo-gallery-container {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+    margin-top: 0;
+}
+
+.photo-gallery-container.photo-gallery-open {
+    max-height: 2000px;
+    opacity: 1;
+    margin-top: 12px;
+}
+
+.photo-gallery-container.photo-gallery-closed {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+}
+
+@media (max-width: 640px) {
+    .photo-gallery-container.photo-gallery-open {
+        margin-top: 12px;
+    }
+}
+
+/* Photo Gallery Hover Effects */
+.photo-gallery-item {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.photo-gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.photo-gallery-image {
+    filter: brightness(0.7);
+    transition: filter 0.3s ease, outline 0.3s ease, outline-offset 0.3s ease;
+    outline: 4px solid rgba(255, 255, 255, 0.8);
+    outline-offset: -4px;
+}
+
+.photo-gallery-item:hover .photo-gallery-image {
+    filter: brightness(1.2);
+    outline: 2px solid var(--mc-yellow);
+    outline-offset: -2px;
+}
+
+.photo-gallery-item:hover::before {
+    opacity: 0;
+}
+
+/* Twin FR text overlay */
+.photo-gallery-twin-fr-text {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-family: 'Apple Garamond', 'Garamond', serif;
+    color: #000000;
+    font-size: 54px;
+    font-weight: normal;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    pointer-events: none;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.photo-gallery-twin-fr:hover .photo-gallery-twin-fr-text {
+    opacity: 1;
+}
+
+@media (max-width: 640px) {
+    .photo-gallery-item:active .photo-gallery-image {
+        filter: brightness(1.1);
+        outline: 2px solid var(--mc-yellow);
+        outline-offset: -2px;
+    }
+    
+    .photo-gallery-item:active::before {
+        opacity: 0.2;
+    }
+    
+    .photo-gallery-twin-fr:active .photo-gallery-twin-fr-text {
+        opacity: 1;
+    }
+}
