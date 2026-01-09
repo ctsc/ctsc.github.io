@@ -1761,7 +1761,7 @@
 }
 
 .photo-gallery-container.photo-gallery-open {
-    max-height: 2000px;
+    max-height: 3500px;
     opacity: 1;
     margin-top: 12px;
 }

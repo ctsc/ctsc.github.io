@@ -253,7 +253,10 @@ const MainMenu = ({ onNavigate }) => {
                                 </button>
                                 <div className={`photo-gallery-container ${isPhotoGalleryOpen ? 'photo-gallery-open' : 'photo-gallery-closed'}`}>
                                     <div style={{
-                                        padding: isMobile ? '16px' : '20px',
+                                        paddingTop: isMobile ? '16px' : '20px',
+                                        paddingLeft: isMobile ? '16px' : '20px',
+                                        paddingRight: isMobile ? '16px' : '20px',
+                                        paddingBottom: isMobile ? '24px' : '28px',
                                         background: 'rgba(0,0,0,0.3)',
                                         border: '1px solid rgba(255,255,255,0.2)',
                                         marginTop: '12px',

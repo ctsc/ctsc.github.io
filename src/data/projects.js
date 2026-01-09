@@ -6,7 +6,7 @@ export const projects = [
         tech: "PHP, CSS, HTML, Deployment/Config, SEO",
         description: [
             "Client collaboration to redesign legacy clinic website achieving 6x increase in homepage views and 15x increase in conversions",
-            "HIPAA-compliant implementation using modern UI/UX patterns resulting in 60% increase in user engagement",
+            "HIPAA-compliant implementation using modern UI/UX patterns resulting in 6x increase in user engagement",
             "Full-stack redesign with PHP/CSS/HTML and SEO optimization delivering improved performance and accessibility"
         ],
         link: "https://thepaulkclinic.com",

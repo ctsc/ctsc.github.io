@@ -26,8 +26,8 @@ const ProjectsPage = ({ onBack }) => {
 
     const handleDownloadPDF = () => {
         const link = document.createElement('a');
-        link.href = '/CarterTierney.pdf';
-        link.download = 'CarterTierney.pdf';
+        link.href = '/_CarterTierney.pdf';
+        link.download = '_CarterTierney.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

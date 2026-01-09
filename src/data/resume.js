@@ -44,10 +44,11 @@ export const resumeData = {
             company: "Paulk Clinic",
             date: "Aug 2025 - Dec 2025",
             points: [
-                "Architected a frontend/backend chiropractic clinic administrative//blog website, improving patient engagement and driving data-driven business decisions",
-                "Worked directly with owner to deliver to his standards and expectations",
-                "Redesigned frontend for modernized UI//UX patterns to maximize user engagement and page views, while reduce bounce rate",
-                "Optimized backend for faster load times and easier administrative overhead, providing clinic contact, appointment scheduling, and document maintenance"
+                "Worked directly with the clinic owner on a freelance contract to redesign an outdated legacy website frontend/backend",
+                "Redesigned outdated page layouts using PHP//CSS, followed client requirements, and delivered a 15x increase in website conversions",
+                "Restructured contact workflows using custom forms and UX patterns, achieving a 3.5x increase in contact page views",
+                "Revamped homepage UI/UX design using PHP/CSS to modernize outdated styles",
+                "Optimized backend for faster load times using PHP to reduce page load times by 50%"
             ]
         },
         {
@@ -55,10 +56,9 @@ export const resumeData = {
             company: "Alpha Web Advisors",
             date: "October 2024 - August 2025",
             points: [
-                "Collaborated within a team of web services software engineers at a business and property consulting firm, partnering directly with property management companies",
-                "Architected and built HOA portals and homeowner-facing websites used by 1,300+ residents to manage community information, maintenance requests, and billing workflows",
-                "Optimized data-driven pricing and operational decisions by analyzing property and lease data to inform annual rent adjustment strategies",
-                "Migrated 20K+ property records in large-scale data migrations, ensuring zero data loss, and improved database performance through SQL query optimization"
+                "Architected HOA dashboard/residential portal websites using React/Typescript, providing access to 1300+ users",
+                "Visualized insights using PowerBI within Agile sprints, replacing Excel workflows with automated dashboards",
+                "Deployed deployment pipelines using AWS Amplify, maintaining 99.9% uptime for 12 communities"
             ]
         },
         {
@@ -66,8 +66,8 @@ export const resumeData = {
             company: "Ardent Residential",
             date: "May 2022 - August 2022",
             points: [
-                "Migrated major property and HOA data between systems, ensured records were consistent and accurate, and validated that homeowners and board members could reliably access information after the transition",
-                "Communicated with property managers and board members to ensure technical operation enhancements through migration of systems efficiently"
+                "Migrated HOA/Property data between management systems, ensured records were accurate, and validated that board members could reliably access information after the transition",
+                "Communicated with property managers and board members to verify technical operation enhancements through migration of systems efficiently"
             ]
         },
         {
@@ -76,10 +76,9 @@ export const resumeData = {
             date: "2018 - Present",
             points: [
                 "Officiated youth and adult soccer matches, ensuring fair play.",
-                "Trained kitchen staff on food preparation techniques, safety protocols, and efficiency standards.",
-                "Managed daily operations including staff scheduling, inventory control, and customer service standards.",
-                "Provided exceptional table service and ensured guest satisfaction.",
-                "Ranked #1 bartender across 30+ locations (350 employees) by increasing premium sales through targeted promotions."
+                "Served 100,000+ customers across different restaraunts",
+                "Managed daily operations of a restaraunt at 17, oversaw staff scheduling and inventory control",
+                "2025 Bartaco:Ranked #1 bartender across 30+ locations (350 employees) through targeted sales promotions/competitions"
             ]
         }
     ],
@@ -87,7 +86,7 @@ export const resumeData = {
         languages: "Python, Java, C++, JavaScript/TypeScript, SQL, PHP/HTML/CSS, Dart",
         frameworks: "FastAPI, ReactJS, NodeJS, AngularJS, ExpressJS, React Native, Flutter, Spring Boot",
         toolsCloud: "Google Cloud Services/Firebase, AWS, REST APIs, Agile/Scrum, Git/Bash, CI/CD, Docker, Linux/Unix",
-        dataScienceML: "PyTorch, Scikit-Learn, Pandas, NumPy, Power BI, Deep Learning, XGBoost, MatPlotLib, Seaborn, Plotly, GenAI",
-        dataEngineering: "Apache Kafka, Apache Spark, ETL/EDA Pipelines, Big Data, PostgreSQL, MySQL, MongoDB, NoSQL"
+        dataScienceML: "PyTorch, Scikit-Learn, Pandas, NumPy, Power BI, XGBoost, MatPlotLib, Seaborn, Plotly, GenAI/LLMs",
+        dataEngineering: "Apache Kafka, Apache Spark, ETL/EDA Pipelines, PostgreSQL, MySQL, NoSQL"
     }
 };
