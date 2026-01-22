@@ -168,7 +168,7 @@ const MainMenu = ({ onNavigate }) => {
                                     </li>
                                     <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
                                         <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
-                                        Exploring Software Engineering using Data and Machine Learning/AI driven solutions.
+                                        Problem Solver
                                     </li>
                                     <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
                                         <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>

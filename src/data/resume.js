@@ -45,18 +45,15 @@ export const resumeData = {
             date: "Aug 2025 - Dec 2025",
             points: [
                 "Worked directly with the clinic owner on a freelance contract to redesign an outdated legacy website frontend/backend",
-                "Redesigned outdated page layouts using PHP//CSS, followed client requirements, and delivered a 15x increase in website conversions",
-                "Restructured contact workflows using custom forms and UX patterns, achieving a 3.5x increase in contact page views",
-                "Revamped homepage UI/UX design using PHP/CSS to modernize outdated styles",
-                "Optimized backend for faster load times using PHP to reduce page load times by 50%"
+                "redesigned legacy website UI/UX design using PHP/CSS, achieved 15x contact page conversion rate"
             ]
         },
         {
-            role: "Software//Data Engineer Intern",
+            role: "Software Engineering Internship",
             company: "Alpha Web Advisors",
             date: "October 2024 - August 2025",
             points: [
-                "Architected HOA dashboard/residential portal websites using React/Typescript, providing access to 1300+ users",
+                "Engineered resident portals for rent payments, maintenance scheduling, and lease office communication for 1300+ users across ATL. Tech stack: React/Typescript/NodeJS/Express/PostgreSQL",
                 "Visualized insights using PowerBI within Agile sprints, replacing Excel workflows with automated dashboards",
                 "Deployed deployment pipelines using AWS Amplify, maintaining 99.9% uptime for 12 communities"
             ]
@@ -66,8 +63,8 @@ export const resumeData = {
             company: "Ardent Residential",
             date: "May 2022 - August 2022",
             points: [
-                "Migrated HOA/Property data between management systems, ensured records were accurate, and validated that board members could reliably access information after the transition",
-                "Communicated with property managers and board members to verify technical operation enhancements through migration of systems efficiently"
+                "Migrated management platforms for 300+ HOA's with 0 data loss or operation interuptance",
+                "Communicated with property managers and board members to verify technical operation enhancements"
             ]
         },
         {
@@ -83,9 +80,9 @@ export const resumeData = {
         }
     ],
     skills: {
-        languages: "Python, Java, C++, JavaScript/TypeScript, SQL, PHP/HTML/CSS, Dart",
-        frameworks: "FastAPI, ReactJS, NodeJS, AngularJS, ExpressJS, React Native, Flutter, Spring Boot",
-        toolsCloud: "Google Cloud Services/Firebase, AWS, REST APIs, Agile/Scrum, Git/Bash, CI/CD, Docker, Linux/Unix",
+        languages: "Python, Java, JavaScript/TypeScript, SQL, PHP/HTML/CSS",
+        frameworks: "FastAPI, ReactJS, NodeJS, ExpressJS, React Native, Flutter, Spring Boot",
+        toolsCloud: "Google Cloud Services/Firebase, AWS, Azure, SDLC, REST APIs, Agile/Scrum, Git/Bash, CI/CD, Docker, Linux/Unix",
         dataScienceML: "PyTorch, Scikit-Learn, Pandas, NumPy, Power BI, XGBoost, MatPlotLib, Seaborn, Plotly, GenAI/LLMs",
         dataEngineering: "Apache Kafka, Apache Spark, ETL/EDA Pipelines, PostgreSQL, MySQL, NoSQL"
     }
