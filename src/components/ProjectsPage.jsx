@@ -78,11 +78,17 @@ const ProjectsPage = ({ onBack }) => {
                             </div>
                             <div className="world-info">
                                 <div className="world-name" style={{ color: '#87CEEB' }}>{project.name}</div>
-                                <div className="world-desc" style={{ color: 'white', fontSize: isMobile ? '16px' : '18px', marginTop: '4px' }}>
+                                <div className="world-desc" style={{ 
+                                    color: 'white', 
+                                    fontSize: isMobile ? '16px' : '18px', 
+                                    marginTop: '8px',
+                                    lineHeight: '1.7',
+                                    letterSpacing: '0.3px'
+                                }}>
                                     {Array.isArray(project.description) ? (
                                         <ul style={{ listStyle: 'none', paddingLeft: '0', margin: '4px 0' }}>
                                             {project.description.map((point, index) => (
-                                                <li key={index} style={{ marginBottom: '4px', paddingLeft: '16px', position: 'relative' }}>
+                                                <li key={index} style={{ marginBottom: '8px', paddingLeft: '16px', position: 'relative' }}>
                                                     <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>*</span>
                                                     {point}
                                                 </li>
@@ -92,7 +98,12 @@ const ProjectsPage = ({ onBack }) => {
                                         project.description
                                     )}
                                 </div>
-                                <div className="world-desc" style={{ color: '#aaa', fontSize: isMobile ? '14px' : '16px', marginTop: '4px' }}>
+                                <div className="world-desc" style={{ 
+                                    color: '#aaa', 
+                                    fontSize: isMobile ? '18.2px' : '20.8px',
+                                    marginTop: '12px',
+                                    fontWeight: '500'
+                                }}>
                                     {project.tech}
                                 </div>
                             </div>

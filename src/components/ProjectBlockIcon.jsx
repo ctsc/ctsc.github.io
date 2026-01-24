@@ -37,6 +37,7 @@ const ProjectBlockIcon = ({
         diamond: 'diamond_block',
         note: 'note_block',
         observer: 'observer',
+        burgundy: 'netherrack', // Purple/burgundy color for healthcare
         default: 'sandstone' // Default to sandstone as requested
     };
 

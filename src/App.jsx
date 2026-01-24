@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import MainMenu from './components/MainMenu';
-import ProjectsPage from './components/ProjectsPage';
 import LoadingScreen from './components/LoadingScreen';
 import CursorTrail from './components/CursorTrail';
 
@@ -89,8 +88,7 @@ function App() {
     return (
         <>
             <CursorTrail />
-            {screen === 'menu' && <MainMenu onNavigate={handleNavigate} />}
-            {screen === 'projects' && <ProjectsPage onBack={() => handleNavigate('menu')} />}
+            <MainMenu />
             {showLoadingScreen && <LoadingScreen isVisible={isLoading} />}
         </>
     );

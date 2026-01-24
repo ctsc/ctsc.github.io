@@ -25,10 +25,19 @@ export const resumeData = {
                 "Helping to run the learning experience for core CS courses",
                 "Support lectures, break down difficult concepts, and work directly with students lacking in exposure to topics",
                 "Assist teacher with course planning, grading, and office hours"
+            ],
+            skills: [
+                "Assembly Language",
+                "C",
+                "Linux/Unix",
+                "Snowball",
+                "Computer Architecture",
+                "University Teaching",
+                "Technical Communication"
             ]
         },
         {
-            role: "Winner",
+            role: "HealthCare Track 1st Place",
             company: "Emory Hacks: VoiceVitals",
             date: "Nov 2025",
             points: [
@@ -37,15 +46,38 @@ export const resumeData = {
                 "Optimized feature extraction and model pipeline using an ensemble model to raise predictive performance and robustness",
                 "Deployed a scalable doctor/patient dashboard with secure audio storage for clinical trial data collection",
                 "Engineered 153 features using spectral, prosodic, and voice quality analysis to improve model sensitivity and precision"
+            ],
+            skills: [
+                "React.js",
+                "NodeJS",
+                "Firebase",
+                "Machine Learning",
+                "Deep Learning",
+                "Research Skills",
+                "TypeScript",
+                "JavaScript",
+                "Google Cloud Platform (GCP)",
+                "PyTorch",
+                "FastAPI",
+                "React",
+                "Git/Github"
             ]
         },
         {
-            role: "Software Developer",
+            role: "Freelance Software Developer",
             company: "Paulk Clinic",
             date: "Aug 2025 - Dec 2025",
             points: [
                 "Worked directly with the clinic owner on a freelance contract to redesign an outdated legacy website frontend/backend",
-                "redesigned legacy website UI/UX design using PHP/CSS, achieved 15x contact page conversion rate"
+                "Redesigned legacy website UI/UX design using PHP/CSS, achieved 15x contact page conversion rate"
+            ],
+            skills: [
+                "PHP",
+                "JavaScript",
+                "CSS/HTML",
+                "Time Management",
+                "WordPress",
+                "Client Communication"
             ]
         },
         {
@@ -56,6 +88,22 @@ export const resumeData = {
                 "Engineered resident portals for rent payments, maintenance scheduling, and lease office communication for 1300+ users across ATL. Tech stack: React/Typescript/NodeJS/Express/PostgreSQL",
                 "Visualized insights using PowerBI within Agile sprints, replacing Excel workflows with automated dashboards",
                 "Deployed deployment pipelines using AWS Amplify, maintaining 99.9% uptime for 12 communities"
+            ],
+            skills: [
+                "Agile Methodologies",
+                "Python",
+                "TypeScript",
+                "PostgreSQL",
+                "SQL",
+                "Database Management System (DBMS)",
+                "React.js",
+                "JavaScript",
+                "Data Visualization",
+                "Amazon Web Services (AWS)",
+                "Microsoft Power BI",
+                "Software Development Life Cycle (SDLC)",
+                "NodeJS",
+                "Git/Github"
             ]
         },
         {
@@ -65,6 +113,13 @@ export const resumeData = {
             points: [
                 "Migrated management platforms for 300+ HOA's with 0 data loss or operation interuptance",
                 "Communicated with property managers and board members to verify technical operation enhancements"
+            ],
+            skills: [
+                "Security and Data Integrity",
+                "Data Validation",
+                "Data Migration",
+                "Cross-Team Communication",
+                "Microsoft Teams"
             ]
         },
         {
@@ -76,6 +131,14 @@ export const resumeData = {
                 "Served 100,000+ customers across different restaraunts",
                 "Managed daily operations of a restaraunt at 17, oversaw staff scheduling and inventory control",
                 "2025 Bartaco:Ranked #1 bartender across 30+ locations (350 employees) through targeted sales promotions/competitions"
+            ],
+            skills: [
+                "Communication",
+                "Teamwork",
+                "Client-Oriented Mindset",
+                "Customer Service Management",
+                "Customer Service",
+                "Leadership"
             ]
         }
     ],

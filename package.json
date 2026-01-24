@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@tweenjs/tween.js": "^25.0.0",
     "framer-motion": "^10.16.4",
     "minecraft-items-react": "^0.1.2",

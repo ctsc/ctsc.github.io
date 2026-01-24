@@ -3,26 +3,17 @@ export const projects = [
         id: 7,
         name: "Paulk Clinic Website",
         date: "",
-        tech: "PHP, CSS, HTML, Deployment/Config, SEO",
-        description: [
-            "Client collaboration to redesign legacy clinic website achieving 6x increase in homepage views and 15x increase in conversions",
-            "HIPAA-compliant implementation using modern UI/UX patterns resulting in 6x increase in user engagement",
-            "Full-stack redesign with PHP/CSS/HTML and SEO optimization delivering improved performance and accessibility"
-        ],
+        tech: "PHP, CSS, HTML, Deployment/Config, SEO, DevOps",
+        description: "Led full-stack redesign of legacy healthcare website using PHP/CSS/HTML with HIPAA-compliant architecture and SEO optimization. Delivered modern UI/UX patterns and DevOps workflows that achieved 6x increase in homepage views and 15x boost in patient conversions.",
         link: "https://thepaulkclinic.com",
-        blockType: "iron" // Iron = healthcare/medical infrastructure
+        blockType: "burgundy" // Burgundy/purple = healthcare/medical
     },
     {
         id: 6,
         name: "Voice Vitals",
         date: "11/2025",
         tech: "FastAPI, PyTorch, React, Firebase, ML/DL",
-        description: [
-            "Built FastAPI + PyTorch ML pipelines to analyze voice audio features, classifying audio clips for early dementia detection",
-            "Optimized feature extraction and model pipeline using an ensemble model to raise predictive performance and robustness",
-            "Deployed a scalable doctor/patient dashboard with secure audio storage for clinical trial data collection",
-            "Engineered 153 features using spectral, prosodic, and voice quality analysis to improve model sensitivity and precision"
-        ],
+        description: "Engineered FastAPI and PyTorch ML pipelines analyzing 153 spectral and prosodic audio features using ensemble models for early dementia detection. Innovated and deployed a React-based web app with Firebase integration and secure data storage for clinical trial usage.",
         link: "https://github.com/ctsc/VoiceVital",
         blockType: "note" // Note block = audio/voice/health monitoring
     },
@@ -31,12 +22,7 @@ export const projects = [
         name: "Fantasy Sports Lineup Optimizer",
         date: "11/2025",
         tech: "Typescript/React, BILP, ML, Python, Monte Carlo",
-        description: [
-            "Built DFS lineup optimization using integer programming and genetic algorithms to generate DraftKings lineups",
-            "Built real-time web and desktop apps using Node/React/Typescript, with interactive lineup generation, and CSV exports",
-            "Optimized multi-entry strategies using quantitative risk modeling to increase cash rates in tournaments",
-            "Ranked lineups in the top 0.01% using mathematically constrained optimization strategies"
-        ],
+        description: "Developed full-stack DFS optimization platform using TypeScript/React frontend with Node API integration, implementing BILP and genetic algorithms with Monte Carlo simulations. Engineered mathematically constrained strategies that ranked lineups in the top 0.01% and increased tournament cash rates.",
         link: "https://github.com/shawtes/mlb-draftkings-system",
         blockType: "diamond" // Diamond = valuable/startup
     },
@@ -45,25 +31,8 @@ export const projects = [
         name: "Ecommerce fraud analytics pipeline",
         date: "10/2025",
         tech: "Kafka, Spark, PostgreSQL, Docker, Plotly",
-        description: [
-            "Built a real-time e-commerce analytics pipeline handling 10k+ tx/min with <1s latency using Kafka, Spark, PostgreSQL, and Docker",
-            "Implemented ML-based fraud detection (Isolation Forest) with 95%+ accuracy in streaming production data",
-            "Delivered customer segmentation, cohort analytics, and recommendations, visualized via a real-time Plotly Dash dashboard",
-            "Fully containerized and production-tested with Docker Compose, monitoring, and automated data quality checks"
-        ],
+        description: "Architected production-grade real-time analytics pipeline processing 10k+ transactions per minute with sub-second latency using Kafka, Spark, and PostgreSQL. Implemented ML-based fraud detection with Isolation Forest achieving 95%+ accuracy, fully containerized with Docker and automated monitoring.",
         link: "https://github.com/ctsc/Ecommerce-Realtime-Analytics",
         blockType: "emerald" // Emerald = commerce/valuable
-    },
-    {
-        id: 4,
-        name: "Static Analysis Tool",
-        date: "11/2023",
-        tech: "Python, AST",
-        description: [
-            "Security vulnerability detection tool using Python AST parsing to analyze code structure",
-            "Identifies potential security risks and code quality issues, streamlining code review and reducing manual inspection time"
-        ],
-        link: "https://github.com/ctsc/StaticAnalysisTool",
-        blockType: "bookshelf" // Bookshelf = library/analysis tool
     },
 ];
