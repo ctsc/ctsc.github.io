@@ -1901,37 +1901,19 @@
 .photo-gallery-item {
     position: relative;
     cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.photo-gallery-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .photo-gallery-image {
-    filter: brightness(0.7);
-    transition: filter 0.3s ease, outline 0.3s ease, outline-offset 0.3s ease;
-    outline: 4px solid rgba(255, 255, 255, 0.8);
-    outline-offset: -4px;
+    filter: brightness(1);
+    outline: none;
+    outline-offset: 0;
+    transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .photo-gallery-item:hover .photo-gallery-image {
-    filter: brightness(1.2);
-    outline: 2px solid var(--mc-yellow);
-    outline-offset: -2px;
-}
-
-.photo-gallery-item:hover::before {
-    opacity: 0;
+    filter: brightness(1.05);
+    transform: scale(1.03);
 }
 
 /* Twin FR text overlay */
@@ -1956,13 +1938,8 @@
 
 @media (max-width: 640px) {
     .photo-gallery-item:active .photo-gallery-image {
-        filter: brightness(1.1);
-        outline: 2px solid var(--mc-yellow);
-        outline-offset: -2px;
-    }
-    
-    .photo-gallery-item:active::before {
-        opacity: 0.2;
+        filter: brightness(1.03);
+        transform: scale(1.02);
     }
     
     .photo-gallery-twin-fr:active .photo-gallery-twin-fr-text {

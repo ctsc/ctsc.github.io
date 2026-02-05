@@ -51,7 +51,7 @@ const MainMenu = () => {
         }
         intervalRef.current = setInterval(() => {
             navigateToIndex((prevIndex) => (prevIndex + 1) % 5);
-        }, 4000);
+        }, 10000);
     };
 
     // Helper function to handle navigation with transition
@@ -133,6 +133,19 @@ const MainMenu = () => {
         return 100; // Completed quests
     };
 
+    const copyEmailToClipboard = () => {
+        const email = "cartertierney0@gmail.com";
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email).then(() => {
+                alert("Email copied to clipboard: " + email);
+            }).catch(() => {
+                window.prompt("Copy this email address:", email);
+            });
+        } else {
+            window.prompt("Copy this email address:", email);
+        }
+    };
+    
     const servers = [
         {
             id: 1,
@@ -153,15 +166,19 @@ const MainMenu = () => {
         {
             id: 3,
             name: "Email Relay",
-            motd: "cartertierney0@gmail.com",
+            motd: "cartertierney0@gmail.com (click to copy)",
             players: "1/1",
             ping: 1,
             link: "mailto:cartertierney0@gmail.com"
         }
     ];
 
-    const handleJoin = (link) => {
-        window.open(link, '_blank');
+    const handleJoin = (server) => {
+        if (server.name === "Email Relay") {
+            copyEmailToClipboard();
+        } else {
+            window.open(server.link, '_blank');
+        }
     };
 
     // Scroll to section handlers
@@ -428,12 +445,11 @@ const MainMenu = () => {
                                     paddingLeft: '0',
                                     lineHeight: '1.6'
                                 }}>
-                                    I was led to Computer Science through a passion for math, software, and inherent curiosity for what drives the world around me. The values that drive me are curiosity, passion, service, and community.
+                                    I was led to Computer Science through a passion for math, software, video games, and inherent curiosity for what drives the world around me. The values that drive me are curiosity, passion, service, and community.
                                     I completed my undergrad in 3 years and pursuing my Master's as I serve as a Teaching/Research Assistant for Georgia State University.
                                     <br></br>   
                                     
                                     
-                                    Outside of school/professional experiences, for the last 6 years I've been competing as a weightlifter//powerlifter while also working full-time jobs to support myself through high school/college. Currently I am preparing for 2026 PA Georgia State Championships as a 100kg Junior Lifter
                                 </p>
                             </div>
 
@@ -810,7 +826,7 @@ const MainMenu = () => {
                                 <div
                                     key={server.id}
                                     className="world-item"
-                                    onClick={() => handleJoin(server.link)}
+                                    onClick={() => handleJoin(server)}
                                     style={{
                                         cursor: 'pointer',
                                         touchAction: 'manipulation'
@@ -992,6 +1008,10 @@ const MainMenu = () => {
                                             justifyContent: 'center',
                                             width: isMobile ? '28px' : '32px',
                                             height: isMobile ? '28px' : '32px'
+                                        }}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            copyEmailToClipboard();
                                         }}
                                         onMouseEnter={(e) => e.target.style.color = '#B8E3F5'}
                                         onMouseLeave={(e) => e.target.style.color = '#87CEEB'}

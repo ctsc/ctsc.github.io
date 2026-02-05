@@ -85,9 +85,9 @@ export const resumeData = {
             company: "Alpha Web Advisors",
             date: "October 2024 - August 2025",
             points: [
-                "Engineered resident portals for rent payments, maintenance scheduling, and lease office communication for 1300+ users across ATL. Tech stack: React/Typescript/NodeJS/Express/PostgreSQL",
-                "Visualized insights using PowerBI within Agile sprints, replacing Excel workflows with automated dashboards",
-                "Deployed deployment pipelines using AWS Amplify, maintaining 99.9% uptime for 12 communities"
+                "Built full-stack platforms enabling HOA management, rent payments, maintenance tracking, and resident feedback using TypeScript, React, Node.js, Express, and PostgreSQL to provide access to 1300+ users",
+                "Deployed web-app using Vercel, Render, and Supabase for secure auth, data storage, and reliable uptime",
+                "Visualized property data using Power BI within Agile sprints, replacing Excel workflows with automation"
             ],
             skills: [
                 "Agile Methodologies",
@@ -99,7 +99,6 @@ export const resumeData = {
                 "React.js",
                 "JavaScript",
                 "Data Visualization",
-                "Amazon Web Services (AWS)",
                 "Microsoft Power BI",
                 "Software Development Life Cycle (SDLC)",
                 "NodeJS",
