@@ -11,18 +11,36 @@ export const resumeData = {
     },
     education: [
         {
-            school: "University of Georgia",
-            degree: "B.S. Computer Science",
-            date: "Expected Dec 2025"
+            school: "Georgia State University",
+            degree: "M.S. Computer Science (Current) | B.S. Computer Science",
+            date: "GPA 3.76 | Expected Spring 2027",
+            honors: "President IEEE GSU chapter, VP Outreach progsu, President Barbell Club, Hackathon Winner",
+            courses: "Cloud Computing, Machine Learning, Algorithms/Data Structures, Data Science, Network Security"
         }
     ],
     experience: [
         {
+            role: "VP Outreach progsu / President IEEE",
+            company: "Georgia State University",
+            date: "Jan 2026 - Present",
+            points: [
+                "Leading outreach initiatives to alumni/students for largest CS community on campus (500+ members)",
+                "Managing student board for GSU IEEE chapter to plan for GSU's largest hackathon in decades"
+            ],
+            skills: [
+                "Leadership",
+                "Event Planning",
+                "Community Building",
+                "Public Speaking",
+                "IEEE"
+            ]
+        },
+        {
             role: "Graduate Teaching Assistant",
             company: "Georgia State University",
-            date: "Present",
+            date: "Jan 2026 - Present",
             points: [
-                "Helping to run the learning experience for core CS courses",
+                "Teaching lab instructions and technical support in assembly language, Linux/Unix systems, memory hierarchy, and processor architecture for a cohort of 90+ students",
                 "Support lectures, break down difficult concepts, and work directly with students lacking in exposure to topics",
                 "Assist teacher with course planning, grading, and office hours"
             ],
@@ -30,8 +48,8 @@ export const resumeData = {
                 "Assembly Language",
                 "C",
                 "Linux/Unix",
-                "Snowball",
                 "Computer Architecture",
+                "Memory Hierarchy",
                 "University Teaching",
                 "Technical Communication"
             ]
@@ -59,7 +77,28 @@ export const resumeData = {
                 "Google Cloud Platform (GCP)",
                 "PyTorch",
                 "FastAPI",
+                "Git/Github"
+            ]
+        },
+        {
+            role: "NCR Voyix Track 2nd Place",
+            company: "UGAHacks XI: wdym86",
+            date: "Feb 2026",
+            points: [
+                "Won 2nd place in the NCR Voyix track at UGAHacks XI",
+                "Innovated restaurant operations combining admin overhead, inventory management, and POS across 25+ pages and 130+ API endpoints",
+                "Constructed a ground-up forecasting model in NumPy for inventory optimization and sales projections, automating reorder timing",
+                "Implemented Gemini API for inventory risk, reorder optimization, and supplier strategy using RAG-grounded personalized logistics"
+            ],
+            skills: [
                 "React",
+                "NodeJS",
+                "FastAPI",
+                "Gemini API",
+                "AWS",
+                "Docker",
+                "NumPy",
+                "RAG",
                 "Git/Github"
             ]
         },
@@ -68,25 +107,26 @@ export const resumeData = {
             company: "Paulk Clinic",
             date: "Aug 2025 - Dec 2025",
             points: [
-                "Worked directly with the clinic owner on a freelance contract to redesign an outdated legacy website frontend/backend",
-                "Redesigned legacy website UI/UX design using PHP/CSS, achieved 15x contact page conversion rate"
+                "Architected the owner's requirements in agile sprints by following the SDLC to redesign a legacy clinic website",
+                "Optimized UI/UX design and page layouts using PHP/CSS to modernize styles, resulting in a 6x increase in user engagement and 15x increase in contact form conversions"
             ],
             skills: [
                 "PHP",
                 "JavaScript",
                 "CSS/HTML",
+                "Agile/SDLC",
                 "Time Management",
                 "WordPress",
                 "Client Communication"
             ]
         },
         {
-            role: "Software Engineering Internship",
+            role: "Software Engineering Intern",
             company: "Alpha Web Advisors",
-            date: "October 2024 - August 2025",
+            date: "Oct 2024 - Aug 2025",
             points: [
-                "Built full-stack platforms enabling HOA management, rent payments, maintenance tracking, and resident feedback using TypeScript, React, Node.js, Express, and PostgreSQL to provide access to 1300+ users",
-                "Deployed web-app using Vercel, Render, and Supabase for secure auth, data storage, and reliable uptime",
+                "Built full-stack platforms enabling HOA management, rent payments, maintenance tracking, and resident feedback using TypeScript, React, Node.js, Express, and PostgreSQL to provide resident portals to 1300+ users",
+                "Deployed web-apps using Vercel, Render, and Supabase for secure auth, data storage, and reliable uptime",
                 "Visualized property data using Power BI within Agile sprints, replacing Excel workflows with automation"
             ],
             skills: [
@@ -102,23 +142,25 @@ export const resumeData = {
                 "Microsoft Power BI",
                 "Software Development Life Cycle (SDLC)",
                 "NodeJS",
-                "Git/Github"
+                "Git/Github",
+                "Vercel"
             ]
         },
         {
             role: "Technical Operations Intern",
             company: "Ardent Residential",
-            date: "May 2022 - August 2022",
+            date: "May 2023 - Aug 2023",
             points: [
-                "Migrated management platforms for 300+ HOA's with 0 data loss or operation interuptance",
-                "Communicated with property managers and board members to verify technical operation enhancements"
+                "Migrated management platforms using Python scripts, ensuring data accuracy and operations for 300+ HOA's",
+                "Standardized property records across new systems using SQL, improving data consistency and platform usability"
             ],
             skills: [
+                "Python",
+                "SQL",
                 "Security and Data Integrity",
                 "Data Validation",
                 "Data Migration",
-                "Cross-Team Communication",
-                "Microsoft Teams"
+                "Cross-Team Communication"
             ]
         },
         {
@@ -127,9 +169,9 @@ export const resumeData = {
             date: "2018 - Present",
             points: [
                 "Officiated youth and adult soccer matches, ensuring fair play.",
-                "Served 100,000+ customers across different restaraunts",
-                "Managed daily operations of a restaraunt at 17, oversaw staff scheduling and inventory control",
-                "2025 Bartaco:Ranked #1 bartender across 30+ locations (350 employees) through targeted sales promotions/competitions"
+                "Served 100,000+ customers across different restaurants",
+                "Managed daily operations of a restaurant at 17, oversaw staff scheduling and inventory control",
+                "2025 Bartaco: Ranked #1 bartender across 30+ locations (350 employees) through targeted sales promotions/competitions"
             ],
             skills: [
                 "Communication",
@@ -142,9 +184,9 @@ export const resumeData = {
         }
     ],
     skills: {
-        languages: "Python, Java, JavaScript/TypeScript, SQL, PHP/HTML/CSS",
-        frameworks: "FastAPI, ReactJS, NodeJS, ExpressJS, React Native, Flutter, Spring Boot",
-        toolsCloud: "Google Cloud Services/Firebase, AWS, Azure, SDLC, REST APIs, Agile/Scrum, Git/Bash, CI/CD, Docker, Linux/Unix",
+        languages: "Python, TypeScript/JavaScript, SQL, PHP/HTML/CSS",
+        frameworks: "ReactJS, NodeJS, Express, FastAPI, Numpy, Pandas, PyTorch, Scikit-Learn, XGBoost",
+        toolsCloud: "Git, Docker, CI/CD, PostgreSQL, REST APIs, GCS, Firebase, Vercel, Agile/Scrum, SDLC, Power BI",
         dataScienceML: "PyTorch, Scikit-Learn, Pandas, NumPy, Power BI, XGBoost, MatPlotLib, Seaborn, Plotly, GenAI/LLMs",
         dataEngineering: "Apache Kafka, Apache Spark, ETL/EDA Pipelines, PostgreSQL, MySQL, NoSQL"
     }

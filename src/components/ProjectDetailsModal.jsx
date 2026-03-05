@@ -85,8 +85,8 @@ const ProjectDetailsModal = ({ isOpen, onClose }) => {
     return (
         <div className="mc-book-overlay" onClick={handleOverlayClick}>
             <div className="mc-book-container" onClick={(e) => e.stopPropagation()} style={{ 
-                width: isMobile ? 'calc(100vw - 32px)' : '700px', 
-                maxWidth: isMobile ? 'calc(100vw - 32px)' : '700px',
+                width: isMobile ? 'calc(100vw - 32px)' : '700px',
+                maxWidth: 'calc(100vw - 32px)',
                 padding: isMobile ? '16px' : '40px 50px',
                 paddingTop: isMobile ? 'calc(16px + 44px)' : '40px',
                 paddingBottom: isMobile ? 'calc(16px + env(safe-area-inset-bottom, 0px))' : '40px',

@@ -1,5 +1,18 @@
 export const projects = [
     {
+        id: 8,
+        name: "wdym86 - 2nd Place UGAHacks XI",
+        date: "02/2026",
+        tech: "React, NodeJS, FastAPI, Gemini, AWS, Docker",
+        description: [
+            "Innovated restaurant operations combining admin overhead, inventory management, and POS across 25+ pages and 130+ API endpoints",
+            "Constructed a ground-up forecasting model in NumPy for inventory optimization and sales projections, automating reorder timing",
+            "Implemented Gemini API for inventory risk, reorder optimization, and supplier strategy using RAG-grounded personalized logistics"
+        ],
+        link: "https://devpost.com/software/wdym86",
+        blockType: "gold"
+    },
+    {
         id: 7,
         name: "Paulk Clinic Website",
         date: "",
@@ -23,7 +36,7 @@ export const projects = [
         date: "11/2025",
         tech: "Typescript/React, BILP, ML, Python, Monte Carlo",
         description: "Developed full-stack DFS optimization platform using TypeScript/React frontend with Node API integration, implementing BILP and genetic algorithms with Monte Carlo simulations. Engineered mathematically constrained strategies that ranked lineups in the top 0.01% and increased tournament cash rates.",
-        link: "https://github.com/shawtes/mlb-draftkings-system",
+        link: "https://www.quantdfs.com/",
         blockType: "diamond" // Diamond = valuable/startup
     },
     {
