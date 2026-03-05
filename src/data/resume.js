@@ -125,25 +125,27 @@ export const resumeData = {
             company: "Alpha Web Advisors",
             date: "Oct 2024 - Aug 2025",
             points: [
-                "Built full-stack platforms enabling HOA management, rent payments, maintenance tracking, and resident feedback using TypeScript, React, Node.js, Express, and PostgreSQL to provide resident portals to 1300+ users",
-                "Deployed web-apps using Vercel, Render, and Supabase for secure auth, data storage, and reliable uptime",
-                "Visualized property data using Power BI within Agile sprints, replacing Excel workflows with automation"
+                "Migrated 20K+ real-estate records using Apache Spark and AWS S3/Glue to PostgreSQL, achieving zero data loss and optimizing SQL queries to boost data accuracy to 99.8% and reduce query time 18x (3.2s → 180ms)",
+                "Architected full-stack platforms enabling HOA management, rent payments, maintenance tracking, and resident feedback using TypeScript, React, Node.js, Express, and PostgreSQL to provide secure access to 1,300+ users",
+                "Deployed applications via AWS Amplify and RDS, managing production deployment pipelines, environment variables, and API routing for 12 HOA communities in Atlanta with 99.9% uptime",
+                "Implemented RESTful APIs, authentication flows, and database models to support multi-role users and transaction-based workflows",
+                "Visualized property data for HOAs using Power BI within Agile sprints, replacing Excel workflows with automated dashboards"
             ],
             skills: [
-                "Agile Methodologies",
-                "Python",
+                "Apache Spark",
+                "AWS S3/Glue",
+                "AWS Amplify",
+                "AWS RDS",
                 "TypeScript",
+                "React.js",
+                "NodeJS",
+                "Express",
                 "PostgreSQL",
                 "SQL",
-                "Database Management System (DBMS)",
-                "React.js",
-                "JavaScript",
-                "Data Visualization",
+                "REST APIs",
                 "Microsoft Power BI",
-                "Software Development Life Cycle (SDLC)",
-                "NodeJS",
-                "Git/Github",
-                "Vercel"
+                "Agile Methodologies",
+                "Git/Github"
             ]
         },
         {
