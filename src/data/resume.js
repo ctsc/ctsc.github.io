@@ -103,6 +103,19 @@ export const resumeData = {
             ]
         },
         {
+            role: "President, Barbell Club",
+            company: "Georgia State University",
+            date: "Aug 2025 - Present",
+            points: [
+                "Building community in GSU's weightlifting culture"
+            ],
+            skills: [
+                "Leadership",
+                "Community Building",
+                "Event Planning"
+            ]
+        },
+        {
             role: "Freelance Software Developer",
             company: "Paulk Clinic",
             date: "Aug 2025 - Dec 2025",
@@ -125,15 +138,15 @@ export const resumeData = {
             company: "Alpha Web Advisors",
             date: "Oct 2024 - Aug 2025",
             points: [
-                "Migrated 20K+ real-estate records using Apache Spark and AWS S3/Glue to PostgreSQL, achieving zero data loss and optimizing SQL queries to boost data accuracy to 99.8% and reduce query time 18x (3.2s → 180ms)",
-                "Architected full-stack platforms enabling HOA management, rent payments, maintenance tracking, and resident feedback using TypeScript, React, Node.js, Express, and PostgreSQL to provide secure access to 1,300+ users",
-                "Deployed applications via AWS Amplify and RDS, managing production deployment pipelines, environment variables, and API routing for 12 HOA communities in Atlanta with 99.9% uptime",
+                "Architected full-stack platforms enabling HOA management, rent payments, maintenance tracking, and resident feedback using TypeScript, React, Node.js, Express, and PostgreSQL to provide secure access to 1,300+ users across 12 HOA communities",
+                "Migrated 20K+ real-estate records by building a PySpark ETL pipeline processing data in AWS S3 and loading into PostgreSQL, implementing validation and transformation logic to enforce a consistent schema and remove duplicate records",
+                "Deployed applications via AWS Amplify and RDS, managing production deployment pipelines, environment variables, and API routing for 12 HOA communities in Atlanta",
                 "Implemented RESTful APIs, authentication flows, and database models to support multi-role users and transaction-based workflows",
                 "Visualized property data for HOAs using Power BI within Agile sprints, replacing Excel workflows with automated dashboards"
             ],
             skills: [
-                "Apache Spark",
-                "AWS S3/Glue",
+                "PySpark",
+                "AWS S3",
                 "AWS Amplify",
                 "AWS RDS",
                 "TypeScript",
