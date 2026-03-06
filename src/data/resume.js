@@ -55,54 +55,6 @@ export const resumeData = {
             ]
         },
         {
-            role: "HealthCare Track 1st Place",
-            company: "Emory Hacks: VoiceVitals",
-            date: "Nov 2025",
-            points: [
-                "Won Emory Hacks 2025, was the first hackathon I competed in. Planning to attend more in 2026",
-                "Built FastAPI + PyTorch ML pipelines to analyze voice audio features, classifying audio clips for early dementia detection",
-                "Optimized feature extraction and model pipeline using an ensemble model to raise predictive performance and robustness",
-                "Deployed a scalable doctor/patient dashboard with secure audio storage for clinical trial data collection",
-                "Engineered 153 features using spectral, prosodic, and voice quality analysis to improve model sensitivity and precision"
-            ],
-            skills: [
-                "React.js",
-                "NodeJS",
-                "Firebase",
-                "Machine Learning",
-                "Deep Learning",
-                "Research Skills",
-                "TypeScript",
-                "JavaScript",
-                "Google Cloud Platform (GCP)",
-                "PyTorch",
-                "FastAPI",
-                "Git/Github"
-            ]
-        },
-        {
-            role: "NCR Voyix Track 2nd Place",
-            company: "UGAHacks XI: wdym86",
-            date: "Feb 2026",
-            points: [
-                "Won 2nd place in the NCR Voyix track at UGAHacks XI",
-                "Innovated restaurant operations combining admin overhead, inventory management, and POS across 25+ pages and 130+ API endpoints",
-                "Constructed a ground-up forecasting model in NumPy for inventory optimization and sales projections, automating reorder timing",
-                "Implemented Gemini API for inventory risk, reorder optimization, and supplier strategy using RAG-grounded personalized logistics"
-            ],
-            skills: [
-                "React",
-                "NodeJS",
-                "FastAPI",
-                "Gemini API",
-                "AWS",
-                "Docker",
-                "NumPy",
-                "RAG",
-                "Git/Github"
-            ]
-        },
-        {
             role: "President, Barbell Club",
             company: "Georgia State University",
             date: "Aug 2025 - Present",

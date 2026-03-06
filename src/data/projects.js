@@ -10,14 +10,10 @@ export const projects = [
     },
     {
         id: 8,
-        name: "wdym86 - 2nd Place UGAHacks XI",
+        name: "wdym86 - 2nd Place UGAHacks XI NCR Voyix Track",
         date: "02/2026",
         tech: "React, NodeJS, FastAPI, Gemini, AWS, Docker",
-        description: [
-            "Innovated restaurant operations combining admin overhead, inventory management, and POS across 25+ pages and 130+ API endpoints",
-            "Constructed a ground-up forecasting model in NumPy for inventory optimization and sales projections, automating reorder timing",
-            "Implemented Gemini API for inventory risk, reorder optimization, and supplier strategy using RAG-grounded personalized logistics"
-        ],
+        description: "Innovated restaurant operations combining admin overhead, inventory management, and POS across 25+ pages and 130+ API endpoints. Constructed a ground-up forecasting model in NumPy for inventory optimization and sales projections, automating reorder timing. Implemented Gemini API for inventory risk, reorder optimization, and supplier strategy using RAG-grounded personalized logistics.",
         link: "https://devpost.com/software/wdym86",
         blockType: "gold"
     },

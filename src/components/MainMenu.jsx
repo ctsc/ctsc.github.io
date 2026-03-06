@@ -426,7 +426,7 @@ const MainMenu = () => {
                                                 flexShrink: 0,
                                             }}
                                         >
-                                            {isPlaying ? 'Stop' : 'Click Here'}
+                                            {isPlaying ? 'Stop' : <>Click Here <span style={{ marginLeft: '4px', fontSize: isMobile ? '13px' : '15px' }}>🔊</span></>}
                                         </button>
                                     </li>
                                     <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
