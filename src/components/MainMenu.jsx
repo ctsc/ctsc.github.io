@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import emailjs from '@emailjs/browser';
 import '../styles/theme.css';
 import { resumeData } from '../data/resume';
 import { projects } from '../data/projects';
@@ -19,13 +18,6 @@ const MainMenu = () => {
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [slideDirection, setSlideDirection] = useState('enter');
     const intervalRef = useRef(null);
-    
-    // Contact form state
-    const [firstName, setFirstName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState({ text: '', type: '' });
     
     // Projects state
     const [selectedProjectId, setSelectedProjectId] = useState(null);
@@ -242,64 +234,6 @@ const MainMenu = () => {
         }
     };
 
-    const handleContactSubmit = async (e) => {
-        e.preventDefault();
-        
-        // Validation
-        if (!firstName.trim() || !email.trim() || !message.trim()) {
-            setSubmitStatus({ text: 'Please fill in all fields', type: 'error' });
-            return;
-        }
-
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            setSubmitStatus({ text: 'Please enter a valid email address', type: 'error' });
-            return;
-        }
-
-        setIsSubmitting(true);
-        setSubmitStatus({ text: '', type: '' });
-
-        try {
-            // EmailJS configuration
-            const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_portfolio';
-            const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_contact';
-            const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'your_public_key';
-
-            // Template parameters
-            const templateParams = {
-                from_name: firstName,
-                from_email: email,
-                subject: 'Header Contact Form',
-                message: message,
-                to_email: 'cartertierney0@gmail.com'
-            };
-
-            // Send email using EmailJS
-            await emailjs.send(serviceId, templateId, templateParams, publicKey);
-
-            setSubmitStatus({ text: 'Message sent successfully! I\'ll get back to you soon.', type: 'success' });
-            
-            // Clear form
-            setFirstName('');
-            setEmail('');
-            setMessage('');
-            
-            // Clear status message after 5 seconds
-            setTimeout(() => {
-                setSubmitStatus({ text: '', type: '' });
-            }, 5000);
-
-        } catch (error) {
-            console.error('EmailJS Error:', error);
-            setSubmitStatus({ 
-                text: 'Failed to send message. Please try again or email directly at cartertierney0@gmail.com', 
-                type: 'error' 
-            });
-        } finally {
-            setIsSubmitting(false);
-        }
     };
 
     return (
@@ -1019,27 +953,6 @@ const MainMenu = () => {
                     {/* Spacer */}
                     <div style={{ flex: 1 }} />
 
-                    {/* Let's Connect - compact inline (hidden on mobile/tablet) */}
-                    {!isMobile && !isTablet && (
-                        <>
-                            <form onSubmit={handleContactSubmit} style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '6px',
-                                flexShrink: 1,
-                                minWidth: 0,
-                            }}>
-                                <input type="text" placeholder="Name" value={firstName} onChange={(e) => setFirstName(e.target.value)} disabled={isSubmitting} required className="contact-form-input" style={{ opacity: isSubmitting ? 0.6 : 1, fontSize: '12px', padding: '8px 10px', width: '90px', height: '34px', boxSizing: 'border-box' }} />
-                                <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} disabled={isSubmitting} required className="contact-form-input" style={{ opacity: isSubmitting ? 0.6 : 1, fontSize: '12px', padding: '8px 10px', width: '130px', height: '34px', boxSizing: 'border-box' }} />
-                                <input type="text" placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)} disabled={isSubmitting} required className="contact-form-input" style={{ opacity: isSubmitting ? 0.6 : 1, fontSize: '12px', padding: '8px 10px', width: '130px', height: '34px', boxSizing: 'border-box' }} />
-                                <button type="submit" className="mc-button" disabled={isSubmitting} style={{ fontSize: '12px', padding: '6px 14px', height: '34px', marginBottom: 0, width: 'auto', whiteSpace: 'nowrap', flexShrink: 0 }}>
-                                    {isSubmitting ? '...' : 'Send'}
-                                </button>
-                            </form>
-                            <div style={{ width: '1px', height: '22px', background: '#505050', flexShrink: 0 }} />
-                        </>
-                    )}
-
                     {/* Calendly */}
                     <a
                         href="https://calendly.com/cartertierney0/coffee-chat-with-carter"
@@ -1064,21 +977,6 @@ const MainMenu = () => {
                         ☕ Book a Chat
                     </a>
                 </div>
-                {submitStatus.text && (
-                    <div style={{
-                        textAlign: 'center',
-                        padding: '3px 8px',
-                        marginTop: '4px',
-                        backgroundColor: submitStatus.type === 'success' ? 'rgba(0, 255, 0, 0.1)' : 'rgba(255, 0, 0, 0.1)',
-                        border: `1px solid ${submitStatus.type === 'success' ? '#00ff00' : '#ff0000'}`,
-                        color: submitStatus.type === 'success' ? '#00ff00' : '#ff0000',
-                        fontSize: '11px',
-                        fontFamily: 'var(--font-mojangles), monospace',
-                        textShadow: '1px 1px 0 #000'
-                    }}>
-                        {submitStatus.text}
-                    </div>
-                )}
             </header>
 
             <HotbarNav sectionRefs={sectionRefs} />
