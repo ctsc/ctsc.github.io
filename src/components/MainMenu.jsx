@@ -234,8 +234,6 @@ const MainMenu = () => {
         }
     };
 
-    };
-
     return (
         <div className="app-container mc-bg-scrolling main-menu-scrollable">
             <div className="menu-container" style={{
