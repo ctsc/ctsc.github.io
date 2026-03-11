@@ -91,13 +91,13 @@ export const resumeData = {
             date: "Oct 2024 - Aug 2025",
             points: [
                 "Architected full-stack platforms enabling HOA management, rent payments, maintenance tracking, and resident feedback using TypeScript, React, Node.js, Express, and PostgreSQL to provide secure access to 1,300+ users across 12 HOA communities",
-                "Migrated 20K+ property records from Excel into PostgreSQL using pandas, standardizing date formats, address fields, and data types to ensure consistency across datasets",
+                "Standardized and loaded 20K+ client property records from Excel into PostgreSQL using PySpark, normalizing date formats, address fields, and data types to ensure consistency across datasets",
                 "Deployed applications via AWS Amplify, configuring environment variables and API routing for 12 HOA communities in Atlanta",
                 "Implemented RESTful APIs, authentication flows, and database models to support multi-role users and transaction-based workflows",
                 "Visualized property data for HOAs using Power BI within Agile sprints, replacing Excel workflows with automated dashboards"
             ],
             skills: [
-                "Pandas",
+                "PySpark",
                 "AWS Amplify",
                 "TypeScript",
                 "React.js",
