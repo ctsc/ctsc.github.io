@@ -21,18 +21,18 @@ export const resumeData = {
     experience: [
         {
             role: "VP Outreach progsu / President IEEE",
-            company: "Georgia State University",
+            company: "Georgia State University Programming Club // IEEE",
             date: "Jan 2026 - Present",
             points: [
-                "Leading outreach initiatives to alumni/students for largest CS community on campus (500+ members)",
-                "Managing student board for GSU IEEE chapter to plan for GSU's largest hackathon in decades"
+                "Leading outreach initiatives to alumni/students for largest CS community on campus (1200+ members)",
+                "Managing student board for GSU IEEE chapter, hosting technical workshops on campus"
             ],
             skills: [
                 "Leadership",
                 "Event Planning",
                 "Community Building",
                 "Public Speaking",
-                "IEEE"
+                "Technical Workshops"
             ]
         },
         {
@@ -40,17 +40,13 @@ export const resumeData = {
             company: "Georgia State University",
             date: "Jan 2026 - Present",
             points: [
-                "Teaching lab instructions and technical support in assembly language, Linux/Unix systems, memory hierarchy, and processor architecture for a cohort of 90+ students",
-                "Support lectures, break down difficult concepts, and work directly with students lacking in exposure to topics",
-                "Assist teacher with course planning, grading, and office hours"
+                "Teaching lab instructions and providing technical support in assembly language, Linux/Unix systems, memory hierarchy, and computer hardware architecture for a cohort of 90+ students"
             ],
             skills: [
                 "Assembly Language",
-                "C",
                 "Linux/Unix",
                 "Computer Architecture",
                 "Memory Hierarchy",
-                "University Teaching",
                 "Technical Communication"
             ]
         },
@@ -68,20 +64,18 @@ export const resumeData = {
             ]
         },
         {
-            role: "Freelance Software Developer",
-            company: "Paulk Clinic",
+            role: "Freelance Developer",
+            company: "Paulk Clinic Website",
             date: "Aug 2025 - Dec 2025",
             points: [
-                "Architected the owner's requirements in agile sprints by following the SDLC to redesign a legacy clinic website",
-                "Optimized UI/UX design and page layouts using PHP/CSS to modernize styles, resulting in a 6x increase in user engagement and 15x increase in contact form conversions"
+                "Architected the owner's requirements in agile sprints to redesign a legacy clinic website",
+                "Optimized UI/UX design and page layouts using PHP/CSS to modernize styles, resulting in a 6x increase in homepage views"
             ],
             skills: [
                 "PHP",
-                "JavaScript",
                 "CSS/HTML",
+                "UI/UX Design",
                 "Agile/SDLC",
-                "Time Management",
-                "WordPress",
                 "Client Communication"
             ]
         },
@@ -90,25 +84,20 @@ export const resumeData = {
             company: "Alpha Web Advisors",
             date: "Oct 2024 - Aug 2025",
             points: [
-                "Architected full-stack platforms enabling HOA management, rent payments, maintenance tracking, and resident feedback using TypeScript, React, Node.js, Express, and PostgreSQL to provide secure access to 1,300+ users across 12 HOA communities",
-                "Standardized and loaded 20K+ client property records from Excel into PostgreSQL using PySpark, normalizing date formats, address fields, and data types to ensure consistency across datasets",
-                "Deployed applications via AWS Amplify, configuring environment variables and API routing for 12 HOA communities in Atlanta",
-                "Implemented RESTful APIs, authentication flows, and database models to support multi-role users and transaction-based workflows",
-                "Visualized property data for HOAs using Power BI within Agile sprints, replacing Excel workflows with automated dashboards"
+                "Standardized and migrated 20K+ client property records from Excel into PostgreSQL using PySpark, normalizing date formats, address fields, and data types to ensure consistency across 500 HOA communities",
+                "Contributed to a full-stack web application (React, TypeScript, Node.js, Express, PostgreSQL) deployed via AWS Amplify/RDS, replacing Excel-based workflows with a centralized platform for non-technical HOA staff",
+                "Built RESTful API endpoints and database models supporting multi-role user access and transaction workflows, serving as the data layer between PostgreSQL and the frontend"
             ],
             skills: [
                 "PySpark",
-                "AWS Amplify",
+                "AWS Amplify/RDS",
                 "TypeScript",
                 "React.js",
-                "NodeJS",
+                "Node.js",
                 "Express",
                 "PostgreSQL",
-                "SQL",
                 "REST APIs",
-                "Microsoft Power BI",
-                "Agile Methodologies",
-                "Git/Github"
+                "Data Migration"
             ]
         },
         {
@@ -116,15 +105,13 @@ export const resumeData = {
             company: "Ardent Residential",
             date: "May 2023 - Aug 2023",
             points: [
-                "Migrated management platforms using Python scripts, ensuring data accuracy and operations for 300+ HOA's",
-                "Standardized property records across new systems using SQL, improving data consistency and platform usability"
+                "Migrated and standardized data for 300+ HOA communities between management platforms, verifying end-to-end integrity to ensure zero disruption for managers and board members"
             ],
             skills: [
                 "Python",
                 "SQL",
-                "Security and Data Integrity",
-                "Data Validation",
                 "Data Migration",
+                "Data Integrity",
                 "Cross-Team Communication"
             ]
         },
@@ -149,10 +136,10 @@ export const resumeData = {
         }
     ],
     skills: {
-        languages: "Python, TypeScript/JavaScript, SQL, PHP/HTML/CSS",
+        languages: "Python, TypeScript/JavaScript, SQL, Assembly, PHP/HTML/CSS",
         frameworks: "ReactJS, NodeJS, Express, FastAPI, Numpy, Pandas, PyTorch, Scikit-Learn, XGBoost",
-        toolsCloud: "Git, Docker, CI/CD, PostgreSQL, REST APIs, GCS, Firebase, Vercel, Agile/Scrum, SDLC, Power BI",
-        dataScienceML: "PyTorch, Scikit-Learn, Pandas, NumPy, Power BI, XGBoost, MatPlotLib, Seaborn, Plotly, GenAI/LLMs",
-        dataEngineering: "Apache Kafka, Apache Spark, ETL/EDA Pipelines, PostgreSQL, MySQL, NoSQL"
+        toolsCloud: "Git, Docker, CI/CD, PostgreSQL, REST APIs, AWS Amplify/RDS, GCS, Firebase, Vercel, Agile/Scrum, SDLC",
+        dataScienceML: "PyTorch, Scikit-Learn, Pandas, NumPy, XGBoost, MatPlotLib, Seaborn, Plotly, GenAI/LLMs",
+        dataEngineering: "Apache Kafka, Apache Spark/PySpark, ETL/EDA Pipelines, PostgreSQL, MySQL, NoSQL"
     }
 };
