@@ -14,7 +14,7 @@ export const resumeData = {
             school: "Georgia State University",
             degree: "M.S. Computer Science (Current) | B.S. Computer Science",
             date: "GPA 3.76 | Expected Spring 2027",
-            honors: "President IEEE GSU chapter, VP Outreach progsu, President Barbell Club, Hackathon Winner",
+            honors: "Hackathon Winner",
             courses: "Cloud Computing, Machine Learning, Algorithms/Data Structures, Data Science, Network Security"
         }
     ],
@@ -24,7 +24,7 @@ export const resumeData = {
             company: "Georgia State University Programming Club // IEEE",
             date: "Jan 2026 - Present",
             points: [
-                "Leading outreach initiatives to alumni/students for largest CS community on campus (1200+ members)",
+                "Building culture in CS/DS/CIS/Business community @ GSU — 1200+ members, ask me about our upcoming hackathon ;)",
                 "Managing student board for GSU IEEE chapter, hosting technical workshops on campus"
             ],
             skills: [
@@ -40,7 +40,7 @@ export const resumeData = {
             company: "Georgia State University",
             date: "Jan 2026 - Present",
             points: [
-                "Teaching lab instructions and providing technical support in assembly language, Linux/Unix systems, memory hierarchy, and computer hardware architecture for a cohort of 90+ students"
+                "Lab teaching and grading for Computer Architecture, providing tech support for a cohort of 90+ undergraduate students"
             ],
             skills: [
                 "Assembly Language",
@@ -68,8 +68,7 @@ export const resumeData = {
             company: "Paulk Clinic Website",
             date: "Aug 2025 - Dec 2025",
             points: [
-                "Architected the owner's requirements in agile sprints to redesign a legacy clinic website",
-                "Optimized UI/UX design and page layouts using PHP/CSS to modernize styles, resulting in a 6x increase in homepage views"
+                "Redesigned a legacy clinic website, 265% more conversions over 3 months"
             ],
             skills: [
                 "PHP",
@@ -84,9 +83,9 @@ export const resumeData = {
             company: "Alpha Web Advisors",
             date: "Oct 2024 - Aug 2025",
             points: [
-                "Standardized and migrated 20K+ client property records from Excel into PostgreSQL using PySpark, normalizing date formats, address fields, and data types to ensure consistency across 500 HOA communities",
-                "Contributed to a full-stack web application (React, TypeScript, Node.js, Express, PostgreSQL) deployed via AWS Amplify/RDS, replacing Excel-based workflows with a centralized platform for non-technical HOA staff",
-                "Built RESTful API endpoints and database models supporting multi-role user access and transaction workflows, serving as the data layer between PostgreSQL and the frontend"
+                "Built PySpark data pipeline to migrate and clean records to PostgreSQL",
+                "Developed backend APIs and built Recharts dashboards within a React web platform for non-technical HOA users (1000+ users)",
+                "Worked through agile sprints and approval cycles, delivered an internally facing SaaS"
             ],
             skills: [
                 "PySpark",
@@ -105,7 +104,7 @@ export const resumeData = {
             company: "Ardent Residential",
             date: "May 2023 - Aug 2023",
             points: [
-                "Migrated and standardized data for 300+ HOA communities between management platforms, verifying end-to-end integrity to ensure zero disruption for managers and board members"
+                "Migrated data for 300+ HOA communities between management platforms"
             ],
             skills: [
                 "Python",
@@ -120,10 +119,10 @@ export const resumeData = {
             company: "YMCA, Freddy's, Little Caesars, Tin Lizzys, Flight Club, Bartaco/Jon Taffer's Tavern",
             date: "2018 - Present",
             points: [
-                "Officiated youth and adult soccer matches, ensuring fair play.",
-                "Served 100,000+ customers across different restaurants",
-                "Managed daily operations of a restaurant at 17, oversaw staff scheduling and inventory control",
-                "2025 Bartaco: Ranked #1 bartender across 30+ locations (350 employees) through targeted sales promotions/competitions"
+                "2025 Bartaco: Winner of top sales performance among 350+ competitors across 30+ locations with 10k prizes",
+                "Youngest manager ever at Little Caesars (age 17) — trained 10+ staff, made 10,000+ pizzas",
+                "Demonstrated leadership ages 14-17 through self-employment as YMCA soccer referee",
+                "Prioritized customers across 6+ restaurants, enhancing value by 300%"
             ],
             skills: [
                 "Communication",

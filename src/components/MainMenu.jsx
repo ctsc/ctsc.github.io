@@ -389,7 +389,7 @@ const MainMenu = () => {
                                     fontWeight: 'bold',
                                     textShadow: '1px 1px 0 #3f3f3f'
                                 }}>
-                                    Education/Leadership
+                                    Education
                                 </div>
                                 <ul style={{
                                     listStyle: 'none',
@@ -403,18 +403,6 @@ const MainMenu = () => {
                                     <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
                                         <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
                                         Completed undergrad in 3 years, dual enrolled at KSU at ages 16/17 (3.8 GPA)
-                                    </li>
-                                    <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                        <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
-                                        President IEEE GSU chapter -- brought the chapter back to GSU after 2 years of inactivity
-                                    </li>
-                                    <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                        <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
-                                        VP Outreach progsu -- planning GSU's largest hackathon in decades and building the largest CS community on campus (500+ members)
-                                    </li>
-                                    <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                                        <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
-                                        Barbell Club president -- weightlifting club on campus
                                     </li>
                                     <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
                                         <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
