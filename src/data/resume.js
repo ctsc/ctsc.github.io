@@ -81,7 +81,7 @@ export const resumeData = {
         {
             role: "Software Engineering Intern",
             company: "Alpha Web Advisors",
-            date: "Oct 2024 - May 2025",
+            date: "Oct 2024 - Aug 2025",
             points: [
                 "Built PySpark data pipeline to migrate and clean records to PostgreSQL",
                 "Worked through agile sprints and approval cycles, delivered an internally facing SaaS"
