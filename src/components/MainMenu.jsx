@@ -240,7 +240,7 @@ const MainMenu = () => {
                 width: isMobile ? '100%' : isTablet ? '92%' : '1000px',
                 maxWidth: '1000px',
                 padding: isMobile ? '20px 16px' : isTablet ? '24px 20px' : '30px 20px',
-                paddingTop: isMobile ? '72px' : isTablet ? '76px' : '88px',
+                paddingTop: isMobile ? '100px' : isTablet ? '76px' : '88px',
                 paddingBottom: isMobile ? 'calc(120px + env(safe-area-inset-bottom, 0px))' : '140px',
                 paddingRight: isMobile ? '24px' : '20px',
                 boxSizing: 'border-box',
