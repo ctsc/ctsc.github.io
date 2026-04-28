@@ -398,7 +398,7 @@ const MainMenu = () => {
                                 }}>
                                     <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
                                         <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>
-                                        M.S. Computer Science (Current GPA: 3.76) | B.S. Computer Science — Georgia State University, Expected Spring 2027
+                                        M.S. Computer Science (Current GPA: 3.76) | B.S. Computer Science | Georgia State University, Expected Spring 2027
                                     </li>
                                     <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
                                         <span style={{ position: 'absolute', left: '0', color: '#4682B4' }}>•</span>

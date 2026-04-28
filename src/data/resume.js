@@ -20,12 +20,13 @@ export const resumeData = {
     ],
     experience: [
         {
-            role: "VP Outreach progsu / President IEEE",
-            company: "Georgia State University Programming Club // IEEE",
+            role: "VP Outreach progsu",
+            company: "Georgia State University Programming Club",
             date: "Jan 2026 - Present",
             points: [
-                "Building culture in CS/DS/CIS/Business community @ GSU — 1200+ members, ask me about our upcoming hackathon ;)",
-                "Managing student board for GSU IEEE chapter, hosting technical workshops on campus"
+                "Managing outreach initiatives to alumni and sponsors for progsu, an innovative new community for students and builders across Atlanta",
+                "Hosted events and workshops with Fanduel, Mercedes Benz R&D, Cox, Anthropic Claude, AWS, and Microsoft",
+                "Hosted GSU's largest hackathon in a decade and planning Georgia's largest hackathon ever (1200+ attendees)"
             ],
             skills: [
                 "Leadership",
@@ -83,7 +84,8 @@ export const resumeData = {
             company: "Alpha Web Advisors",
             date: "Oct 2024 - Aug 2025",
             points: [
-                "Built PySpark data pipeline to migrate and clean records to PostgreSQL",
+                "Built full stack internal platform with an ETL pipeline to replace excel workflows for non-technical users",
+                "Enabled uploads, validation, and ingestion of complex records into normalized PostgreSQL on AWS RDS",
                 "Worked through agile sprints and approval cycles, delivered an internally facing SaaS"
             ],
             skills: [
