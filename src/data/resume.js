@@ -20,8 +20,33 @@ export const resumeData = {
     ],
     experience: [
         {
+            role: "Software Engineering Intern",
+            company: "FanDuel",
+            date: "June 2026 - August 2026",
+            points: [
+                "In progress / under construction"
+            ],
+            skills: []
+        },
+        {
+            role: "Contract SWE",
+            company: "Handshake",
+            date: "April 2026 - Present",
+            points: [
+                "Complete coding tasks to help improve AI models",
+                "Review AI generated content and improve upon that content"
+            ],
+            skills: [
+                "Software Engineering",
+                "AI/ML",
+                "Code Review",
+                "Technical Writing"
+            ]
+        },
+        {
             role: "VP Outreach progsu",
             company: "Georgia State University Programming Club",
+            companyUrl: "https://progsu.com",
             date: "Jan 2026 - Present",
             points: [
                 "Managing outreach initiatives to alumni and sponsors for progsu, an innovative new community for students and builders across Atlanta",
@@ -67,6 +92,7 @@ export const resumeData = {
         {
             role: "Freelance Developer",
             company: "Paulk Clinic Website",
+            companyUrl: "https://thepaulkclinic.com",
             date: "Aug 2025 - Dec 2025",
             points: [
                 "Redesigned a legacy clinic website, 265% more conversions over 3 months"
@@ -80,24 +106,19 @@ export const resumeData = {
             ]
         },
         {
-            role: "Software Engineering Intern",
-            company: "Alpha Web Advisors",
-            date: "Oct 2024 - Aug 2025",
+            role: "Cofounder",
+            company: "QuantDFS.com",
+            companyUrl: "https://www.quantdfs.com/",
+            date: "Sep 2025 - March 2026",
             points: [
-                "Built full stack internal platform with an ETL pipeline to replace excel workflows for non-technical users",
-                "Enabled uploads, validation, and ingestion of complex records into normalized PostgreSQL on AWS RDS",
-                "Worked through agile sprints and approval cycles, delivered an internally facing SaaS"
+                "Startup allowing sports betters to have access to quant financial optimization techniques on DFS sports lineups: maximize ROI and minimize risk for sports betting contests (DraftKings, FanDuel)"
             ],
             skills: [
-                "PySpark",
-                "AWS Amplify/RDS",
-                "TypeScript",
-                "React.js",
-                "Node.js",
-                "Express",
-                "PostgreSQL",
-                "REST APIs",
-                "Data Migration"
+                "Quantitative Finance",
+                "Python",
+                "Optimization",
+                "Product Development",
+                "Entrepreneurship"
             ]
         },
         {
@@ -116,8 +137,8 @@ export const resumeData = {
             ]
         },
         {
-            role: "Soccer Referee//Chef Trainer//Manager//Server//Bartending Lead",
-            company: "YMCA, Freddy's, Little Caesars, Tin Lizzys, Flight Club, Bartaco/Jon Taffer's Tavern",
+            role: "Soccer Referee/Chef Trainer/Manager/Server/Bartending Lead",
+            company: "YMCA, Freddy's, Little Caesars, Tin Lizzys, Flight Club, Bartaco",
             date: "2018 - Present",
             points: [
                 "2025 Bartaco: Winner of top sales performance among 350+ competitors across 30+ locations with 10k prizes",
@@ -136,10 +157,9 @@ export const resumeData = {
         }
     ],
     skills: {
-        languages: "Python, TypeScript/JavaScript, SQL, Assembly, PHP/HTML/CSS",
-        frameworks: "ReactJS, NodeJS, Express, FastAPI, Numpy, Pandas, PyTorch, Scikit-Learn, XGBoost",
-        toolsCloud: "Git, Docker, CI/CD, PostgreSQL, REST APIs, AWS Amplify/RDS, GCS, Firebase, Vercel, Agile/Scrum, SDLC",
-        dataScienceML: "PyTorch, Scikit-Learn, Pandas, NumPy, XGBoost, MatPlotLib, Seaborn, Plotly, GenAI/LLMs",
-        dataEngineering: "Apache Kafka, Apache Spark/PySpark, ETL/EDA Pipelines, PostgreSQL, MySQL, NoSQL"
+        languages: "Python, TypeScript/JavaScript, SQL, HTML/CSS",
+        frameworks: "React, React Native, NodeJS, FastAPI, Vue, Kafka, PySpark",
+        toolsCloud: "Git, AWS, CI/CD, Docker, PostgreSQL, GCS, Firebase, Supabase",
+        dataScienceML: "PyTorch, Scikit-Learn, Pandas, NumPy, XGBoost, MatPlotLib, MediaPipe",
     }
 };

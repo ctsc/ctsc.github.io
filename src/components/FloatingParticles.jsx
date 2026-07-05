@@ -3,19 +3,19 @@ import React, { useMemo } from 'react';
 const FloatingParticles = () => {
     const particles = useMemo(() => {
         const colors = [
-            'rgba(255, 255, 255, 0.4)',
-            'rgba(255, 215, 0, 0.35)',
-            'rgba(0, 255, 255, 0.3)',
-            'rgba(255, 255, 255, 0.25)',
-            'rgba(255, 215, 0, 0.25)',
+            'rgba(255, 255, 255, 0.65)',
+            'rgba(255, 215, 0, 0.55)',
+            'rgba(0, 255, 255, 0.5)',
+            'rgba(255, 255, 255, 0.5)',
+            'rgba(255, 215, 0, 0.45)',
         ];
-        return Array.from({ length: 25 }, (_, i) => ({
+        return Array.from({ length: 50 }, (_, i) => ({
             id: i,
             left: `${Math.random() * 100}%`,
             size: 2 + Math.random() * 4,
             color: colors[Math.floor(Math.random() * colors.length)],
-            duration: 12 + Math.random() * 18,
-            delay: -(Math.random() * 20),
+            duration: 7 + Math.random() * 10,
+            delay: -(Math.random() * 17),
             drift: -20 + Math.random() * 40,
         }));
     }, []);

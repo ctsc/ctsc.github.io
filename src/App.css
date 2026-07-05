@@ -20,6 +20,14 @@
     -ms-overflow-style: none; /* IE and Edge */
 }
 
+.app-container.main-menu-scrollable {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+    max-height: none;
+}
+
 .app-container::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
 }
