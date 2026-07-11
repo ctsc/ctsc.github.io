@@ -93,7 +93,7 @@ export const resumeData = {
             role: "Freelance Developer",
             company: "Paulk Clinic Website",
             companyUrl: "https://thepaulkclinic.com",
-            date: "Aug 2025 - Dec 2025",
+            date: "June 2025 - July 2025",
             points: [
                 "Redesigned a legacy clinic website, 265% more conversions over 3 months"
             ],
