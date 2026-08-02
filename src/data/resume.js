@@ -29,36 +29,36 @@ export const resumeData = {
             skills: []
         },
         {
-            role: "Contract SWE",
-            company: "Handshake",
+            role: "AI Software Engineer",
+            company: "Handshake AI Projects (Contract)",
             date: "April 2026 - Present",
             points: [
-                "Complete coding tasks to help improve AI models",
-                "Review AI generated content and improve upon that content"
+                "Refactored AI-generated code weekly across 50+ open-source projects in Python and Java to exceed standards",
+                "Identified and resolved defects in LLM-generated solutions before deployment, optimizing AI model reliability"
             ],
             skills: [
                 "Software Engineering",
                 "AI/ML",
-                "Code Review",
-                "Technical Writing"
+                "Python",
+                "Java",
+                "Code Review"
             ]
         },
         {
-            role: "VP Outreach progsu",
-            company: "Georgia State University Programming Club",
+            role: "Outreach Chair",
+            company: "PROGSU - Programming Club @ GSU",
             companyUrl: "https://progsu.com",
-            date: "Jan 2026 - Present",
+            date: "Dec 2025 - Present",
             points: [
-                "Managing outreach initiatives to alumni and sponsors for progsu, an innovative new community for students and builders across Atlanta",
-                "Hosted events and workshops with Fanduel, Mercedes Benz R&D, Cox, Anthropic Claude, AWS, and Microsoft",
-                "Hosted GSU's largest hackathon in a decade and planning Georgia's largest hackathon ever (1200+ attendees)"
+                "Coordinated 60+ judges for Hacklanta at PROGSU, Atlanta's largest student CS org",
+                "Created end to end outreach process and CRM tracking for 10+ tech company relationships across all initiatives"
             ],
             skills: [
                 "Leadership",
                 "Event Planning",
                 "Community Building",
-                "Public Speaking",
-                "Technical Workshops"
+                "CRM",
+                "Outreach"
             ]
         },
         {
@@ -90,35 +90,37 @@ export const resumeData = {
             ]
         },
         {
-            role: "Freelance Developer",
-            company: "Paulk Clinic Website",
-            companyUrl: "https://thepaulkclinic.com",
-            date: "June 2025 - July 2025",
-            points: [
-                "Redesigned a legacy clinic website, 265% more conversions over 3 months"
-            ],
-            skills: [
-                "PHP",
-                "CSS/HTML",
-                "UI/UX Design",
-                "Agile/SDLC",
-                "Client Communication"
-            ]
-        },
-        {
-            role: "Cofounder",
-            company: "QuantDFS.com",
+            role: "Co-Founder",
+            company: "QuantDFS - Sports Analytics Platform",
             companyUrl: "https://www.quantdfs.com/",
             date: "Sep 2025 - March 2026",
             points: [
-                "Startup allowing sports betters to have access to quant financial optimization techniques on DFS sports lineups: maximize ROI and minimize risk for sports betting contests (DraftKings, FanDuel)"
+                "Trained ML models on 25+ years of NBA data for statistical predictions and fantasy lineup optimization",
+                "Built frontend in React and TypeScript with AWS deployments, reaching 30 active users in one month"
             ],
             skills: [
-                "Quantitative Finance",
+                "Machine Learning",
                 "Python",
-                "Optimization",
-                "Product Development",
-                "Entrepreneurship"
+                "React",
+                "TypeScript",
+                "AWS"
+            ]
+        },
+        {
+            role: "Software Developer",
+            company: "The Paulk Clinic",
+            companyUrl: "https://thepaulkclinic.com",
+            date: "June 2025 - July 2025",
+            points: [
+                "Modernized WordPress clinic site, driving 2.5x impressions and 2.75x conversions in 3 months via Google Analytics",
+                "Partnered directly with clinic stakeholders to translate business objectives into technical requirements"
+            ],
+            skills: [
+                "WordPress",
+                "CSS/HTML",
+                "Google Analytics",
+                "UI/UX Design",
+                "Client Communication"
             ]
         },
         {

@@ -12,8 +12,6 @@ const ALL_PHOTOS = [
     'IMG_0148.PNG',
     'IMG_3788.JPG',
     'IMG_1896.jpg',
-    'IMG_0180.PNG',
-    'IMG_0595.jpg',
     'IMG_2854.jpg',
 ];
 
@@ -203,7 +201,7 @@ const MainMenu = () => {
                 overflow: 'visible'
             }}>
                 {/* Scrollable Content Container */}
-                <div style={{
+                <div className="menu-scroll-content" style={{
                     display: 'flex',
                     flexDirection: 'column',
                     gap: isMobile ? '24px' : '32px',
@@ -246,6 +244,27 @@ const MainMenu = () => {
                                     lineHeight: '1.8',
                                     fontFamily: 'var(--font-mojangles), monospace',
                                 }}>
+                            {/* Journey Section */}
+                            <div className="about-section-block" style={{ marginBottom: '20px' }}>
+                                <div className="about-section-heading">
+                                    Journey
+                                </div>
+                                <p>
+                                    I was led to Computer Science through passion for math, software, video games, and curiosity for what drives the world around me.
+        
+                                    On campus, I'm the head of outreach for the Programming club ({' '}
+                                    <a href="https://progsu.com" target="_blank" rel="noopener noreferrer" className="about-section-link">progsu.com</a>
+                                    ) where I've bridged tech industry relationships and brought hackathons back to GSU ({' '}
+                                    <a href="https://hacklanta.dev" target="_blank" rel="noopener noreferrer" className="about-section-link">hacklanta.dev</a>
+                                    ). I'm also a competitive powerlifter and President of the Barbell Club.
+                                </p>
+                                <p>
+                                    Outside of school, I've always kept myself busy. Throughout highschool and college, I've worked across the restaraunt industry.
+                                    After coming to GSU in Atlanta, I did an internship with a local property management company, and through my Junior year I worked on a freelance contract, helped build a startup, and was able to secure an Internship at FanDuel.
+                                    I am now completing my senior year, while earning my Masters Degree and working on SWE contracts.
+                                </p>
+                            </div>
+
                             {/* Personal Section */}
                             <div className="about-section-block" style={{ marginBottom: '20px' }}>
                                 <div className="about-section-heading">
@@ -254,23 +273,19 @@ const MainMenu = () => {
                                 <ul>
                                     <li>
                                         <span className="about-bullet">•</span>
-                                        Student Graduating Spring 2027 M.S. B.S Georgia State University
+                                        Hobbies: Powerlifting, video games, eating good food, anime and movies, chess
+                                    </li>
+                                    <li>
+                                        <span className="about-bullet">•</span>
+                                        Favorite foods: BBQ, sushi, cookies, chocolate milk, coffee, pizza
+                                    </li>
+                                    <li>
+                                        <span className="about-bullet">•</span>
+                                        6'4 + 2024 USAPL Georgia State Champion Ages 18-19: S 565 B 365 D 6:55
                                     </li>
                                     <li>
                                         <span className="about-bullet">•</span>
                                         Brother to 5 siblings
-                                    </li>
-                                    <li>
-                                        <span className="about-bullet">•</span>
-                                        Hobbies: Powerlifting, touching grass, eating food, watching anime and movies
-                                    </li>
-                                    <li>
-                                        <span className="about-bullet">•</span>
-                                        6'4 + 2024 USAPL Georgia State Champion Ages 18-19
-                                    </li>
-                                    <li>
-                                        <span className="about-bullet">•</span>
-                                        Favorite foods: BBQ, sushi, ground beef, fresh cookies, chocolate milk
                                     </li>
                                 </ul>
                             </div>
@@ -294,27 +309,6 @@ const MainMenu = () => {
                                         Dual Enrolled KSU at ages 16/17 (3.9 GPA)
                                     </li>
                                 </ul>
-                            </div>
-
-                            {/* Journey Section */}
-                            <div className="about-section-block" style={{ marginBottom: '20px' }}>
-                                <div className="about-section-heading">
-                                    Journey
-                                </div>
-                                <p>
-                                    I was led to Computer Science through passion for math, software, video games, and curiosity for what drives the world around me.
-        
-                                    On campus, I'm the head of outreach for the Programming club ({' '}
-                                    <a href="https://progsu.com" target="_blank" rel="noopener noreferrer" className="about-section-link">progsu.com</a>
-                                    ) where I've bridged tech industry relationships and brought hackathons back to GSU ({' '}
-                                    <a href="https://hacklanta.dev" target="_blank" rel="noopener noreferrer" className="about-section-link">hacklanta.dev</a>
-                                    ). I'm also a competitive powerlifter and President of the Barbell Club.
-                                </p>
-                                <p>
-                                    Outside of school, I've always kept myself busy. Throughout highschool and college, I've worked across the restaraunt industry.
-                                    After coming to GSU in Atlanta, I did an internship with a local property management company, and through my Junior year I worked on a freelance contract, helped build a startup, and was able to secure an Internship at FanDuel.
-                                    I am now completing my senior year, while earning my Masters Degree and working on SWE contracts.
-                                </p>
                             </div>
 
                             {/* Contact Links */}
@@ -381,6 +375,35 @@ const MainMenu = () => {
                                         </div>
                                     );
                                 })}
+
+                                <div className="sidebar-links" id="links">
+                                    <h2 className="sidebar-links-title">Links</h2>
+                                    <div className="world-list links-world-list">
+                                        {servers.map((server) => (
+                                            <div
+                                                key={server.id}
+                                                className="world-item sidebar-link-item"
+                                                onClick={() => handleJoin(server)}
+                                                style={{
+                                                    cursor: 'pointer',
+                                                    touchAction: 'manipulation'
+                                                }}
+                                            >
+                                                <div className="world-icon sidebar-link-icon">
+                                                    <div className="sidebar-link-icon-inner">
+                                                        {server.name[0]}
+                                                    </div>
+                                                </div>
+                                                <div className="world-info" style={{ flex: 1, minWidth: 0 }}>
+                                                    <div className="world-name sidebar-link-name">{server.name}</div>
+                                                    <div className="world-details sidebar-link-motd">
+                                                        {server.motd}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -640,71 +663,6 @@ const MainMenu = () => {
                             >
                                 Download Resume
                             </button>
-                        </div>
-                    </motion.div>
-
-                    {/* Links Section */}
-                    <motion.div
-                        variants={sectionReveal}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.15 }}
-                        style={{
-                        background: 'rgba(0,0,0,0.5)',
-                        border: '2px solid #a0a0a0',
-                        borderTopColor: '#505050',
-                        borderLeftColor: '#505050',
-                        borderBottomColor: '#fff',
-                        borderRightColor: '#fff',
-                        padding: isMobile ? '16px' : '20px',
-                        margin: '0',
-                        boxSizing: 'border-box',
-                        width: '100%'
-                    }}>
-                        <h2 style={{ 
-                            color: 'white', 
-                            marginBottom: isMobile ? '12px' : '16px', 
-                            marginTop: '0', 
-                            textShadow: '2px 2px 0 #3f3f3f', 
-                            fontSize: isMobile ? '24px' : '32px',
-                            textAlign: 'center',
-                            fontFamily: 'var(--font-mojangles), monospace'
-                        }}>Links</h2>
-
-                        <div className="world-list links-world-list">
-                            {servers.map((server) => (
-                                <div
-                                    key={server.id}
-                                    className="world-item"
-                                    onClick={() => handleJoin(server)}
-                                    style={{
-                                        cursor: 'pointer',
-                                        touchAction: 'manipulation'
-                                    }}
-                                >
-                                    <div className="world-icon">
-                                        <div style={{ width: '100%', height: '100%', background: '#333', border: '2px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '24px' }}>
-                                            {server.name[0]}
-                                        </div>
-                                    </div>
-                                    <div className="world-info" style={{ flex: 1 }}>
-                                        <div className="world-name">{server.name}</div>
-                                        <div className="world-details" style={{ color: '#aaa' }}>
-                                            {server.motd}
-                                        </div>
-                                    </div>
-                                    <div className="server-status" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'center', marginRight: isMobile ? '5px' : '10px', flexShrink: 0 }}>
-                                        <div style={{ color: '#aaa', fontSize: isMobile ? '12px' : '14px' }}>{server.players}</div>
-                                        <div style={{ display: 'flex', gap: '2px', marginTop: '4px' }}>
-                                            <div style={{ width: '4px', height: '6px', background: '#0f0' }}></div>
-                                            <div style={{ width: '4px', height: '8px', background: '#0f0' }}></div>
-                                            <div style={{ width: '4px', height: '10px', background: '#0f0' }}></div>
-                                            <div style={{ width: '4px', height: '12px', background: (server.id === 1 || server.id === 2) ? '#0f0' : (server.ping < 10 ? '#0f0' : '#aaa') }}></div>
-                                            <div style={{ width: '4px', height: '14px', background: (server.id === 1 || server.id === 2) ? '#0f0' : (server.ping < 5 ? '#0f0' : '#aaa') }}></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
                         </div>
                     </motion.div>
 

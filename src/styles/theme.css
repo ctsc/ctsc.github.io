@@ -406,14 +406,14 @@
 }
 
 .about-body-content {
-    text-align: center;
+    text-align: left;
     overflow-wrap: break-word;
     word-break: break-word;
     font-size: 18px;
 }
 
 .about-section-block {
-    text-align: center;
+    text-align: left;
 }
 
 .about-section-heading {
@@ -422,14 +422,15 @@
     margin-bottom: 10px;
     font-weight: bold;
     text-shadow: 1px 1px 0 #3f3f3f;
+    text-align: center;
 }
 
 .about-section-block ul {
     list-style: none;
     padding: 0;
-    margin: 0 auto;
-    display: inline-block;
-    text-align: center;
+    margin: 0;
+    display: block;
+    text-align: left;
     max-width: 100%;
 }
 
@@ -572,8 +573,71 @@
     height: auto;
     max-height: none;
     margin-bottom: 0;
-    padding: 10px 14px;
+    padding: 0;
     overflow-y: visible;
+    border: none;
+    background: transparent;
+}
+
+.sidebar-links {
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.55);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 10px;
+}
+
+.sidebar-links-title {
+    color: #fff;
+    margin: 0 0 8px;
+    text-align: center;
+    text-shadow: 2px 2px 0 #3f3f3f;
+    font-size: 20px;
+    font-family: var(--font-mojangles), monospace;
+}
+
+.sidebar-link-item {
+    padding: 6px;
+    margin-bottom: 4px;
+    min-height: 0;
+    align-items: center;
+}
+
+.sidebar-link-item:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-link-icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
+}
+
+.sidebar-link-icon-inner {
+    width: 100%;
+    height: 100%;
+    background: #333;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    font-family: var(--font-mojangles), monospace;
+}
+
+.sidebar-link-name {
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+.sidebar-link-motd {
+    font-size: 11px;
+    line-height: 1.3;
+    color: #aaa;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .world-item {
@@ -2143,11 +2207,17 @@
 }
 
 @media (max-width: 1450px) {
+    .about-gallery-wrap {
+        display: contents;
+    }
+
     .about-section-gallery-external {
         position: static;
         width: 100%;
         max-width: 440px;
         margin: 16px auto 0;
+        order: 99;
+        padding-bottom: 0;
     }
 }
 
