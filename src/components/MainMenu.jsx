@@ -281,7 +281,7 @@ const MainMenu = () => {
                                     </li>
                                     <li>
                                         <span className="about-bullet">•</span>
-                                        6'4 + 2024 USAPL Georgia State Champion Ages 18-19: S 565 B 365 D 6:55
+                                        6'4 + 2024 USAPL Georgia State Champion Ages 18-19: S 565 B 365 D 655
                                     </li>
                                     <li>
                                         <span className="about-bullet">•</span>
