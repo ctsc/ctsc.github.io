@@ -38,10 +38,12 @@ export const resumeData = {
             ],
             skills: [
                 "Software Engineering",
-                "AI/ML",
+                "AI Debugging",
                 "Python",
                 "Java",
-                "Code Review"
+                "Code Review",
+                "CI/CD",
+                "GitHub Actions"
             ]
         },
         {
@@ -54,7 +56,7 @@ export const resumeData = {
                 "Created end to end outreach process and CRM tracking for 10+ tech company relationships across all initiatives"
             ],
             skills: [
-                "Leadership",
+                "Strategic Thinking",
                 "Event Planning",
                 "Community Building",
                 "CRM",
@@ -69,8 +71,7 @@ export const resumeData = {
                 "Lab teaching and grading for Computer Architecture, providing tech support for a cohort of 90+ undergraduate students"
             ],
             skills: [
-                "Assembly Language",
-                "Linux/Unix",
+                "Vibe-checking",
                 "Computer Architecture",
                 "Memory Hierarchy",
                 "Technical Communication"
@@ -84,7 +85,6 @@ export const resumeData = {
                 "Building community in GSU's weightlifting culture"
             ],
             skills: [
-                "Leadership",
                 "Community Building",
                 "Event Planning"
             ]
@@ -131,8 +131,8 @@ export const resumeData = {
                 "Migrated data for 300+ HOA communities between management platforms"
             ],
             skills: [
-                "Python",
-                "SQL",
+                "Problem Solving",
+                "Attention to Detail",
                 "Data Migration",
                 "Data Integrity",
                 "Cross-Team Communication"
@@ -153,8 +153,7 @@ export const resumeData = {
                 "Teamwork",
                 "Client-Oriented Mindset",
                 "Customer Service Management",
-                "Customer Service",
-                "Leadership"
+                "Customer Service"
             ]
         }
     ],

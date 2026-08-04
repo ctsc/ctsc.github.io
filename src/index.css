@@ -9,7 +9,7 @@
 
 :root {
   --font-minecraft: 'Mojangles', monospace;
-  --font-mojangles: 'Mojangles', monospace;
+  --font-mojangles: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, "Segoe UI", sans-serif;
   
   /* Safe area insets for iPhone Safari */
   --safe-area-inset-top: env(safe-area-inset-top, 0px);
