@@ -25,6 +25,7 @@ const MainMenu = () => {
     // Projects state
     const [selectedProjectId, setSelectedProjectId] = useState(null);
     const [isBookOpen, setIsBookOpen] = useState(false);
+    const [emailCopied, setEmailCopied] = useState(false);
 
     // Audio state
     const [isPlaying, setIsPlaying] = useState(false);
@@ -86,7 +87,8 @@ const MainMenu = () => {
         const email = "cartertierney0@gmail.com";
         if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(email).then(() => {
-                alert("Email copied to clipboard: " + email);
+                setEmailCopied(true);
+                setTimeout(() => setEmailCopied(false), 2000);
             }).catch(() => {
                 window.prompt("Copy this email address:", email);
             });
@@ -476,7 +478,7 @@ const MainMenu = () => {
                                                     </div>
                                                     <div className="quest-meta">
                                                         {job.companyUrl ? (
-                                                            <a href={job.companyUrl} target="_blank" rel="noopener noreferrer" className="quest-location quest-company-link">{job.company}</a>
+                                                            <a href={job.companyUrl} target="_blank" rel="noopener noreferrer" className="quest-location quest-company-link" onClick={(e) => e.stopPropagation()}>{job.company}</a>
                                                         ) : (
                                                             <span className="quest-location">{job.company}</span>
                                                         )}
@@ -561,8 +563,8 @@ const MainMenu = () => {
                         }}>Select World</h2>
 
                         <div className="world-list" style={{
-                            maxHeight: isMobile ? '60vh' : isTablet ? '55vh' : 'none',
-                            overflowY: (isMobile || isTablet) ? 'auto' : 'visible',
+                            maxHeight: isTablet ? '55vh' : 'none',
+                            overflowY: isTablet ? 'auto' : 'visible',
                             overflowX: 'hidden'
                         }}>
                             {projects.map((project) => (
@@ -670,6 +672,12 @@ const MainMenu = () => {
             </div>
 
             <div className="page-bottom-spacer" aria-hidden="true" />
+
+            {emailCopied && (
+                <div className="copy-toast" role="status" aria-live="polite">
+                    Email copied to clipboard
+                </div>
+            )}
 
             <ProjectDetailsModal isOpen={isBookOpen} onClose={() => setIsBookOpen(false)} />
         </div>

@@ -31,7 +31,6 @@
   padding: 0;
   user-select: none;
   font-family: var(--font-mojangles);
-  cursor: none !important;
 }
 
 html {
@@ -40,13 +39,12 @@ html {
   margin: 0;
   padding: 0;
   -webkit-overflow-scrolling: touch;
-  cursor: none !important;
 }
 
 @media (max-width: 640px) {
   html {
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden;
+    height: 100%;
   }
 }
 
@@ -56,52 +54,41 @@ body {
   color: white;
   margin: 0;
   padding: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   -webkit-overflow-scrolling: touch;
   touch-action: pan-y pinch-zoom;
-  cursor: none;
 }
 
 @media (max-width: 640px) {
   body {
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: relative;
-    height: auto;
-    min-height: 100vh;
+    overflow: hidden;
+    height: 100%;
     padding-top: var(--safe-area-inset-top);
     padding-left: var(--safe-area-inset-left);
     padding-right: var(--safe-area-inset-right);
-    padding-bottom: var(--safe-area-inset-bottom);
+    padding-bottom: 0;
   }
 }
 
 #root {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: relative;
   margin: 0;
   padding: 0;
-  cursor: none !important;
 }
 
 @media (max-width: 640px) {
   #root {
-    overflow-x: hidden;
-    overflow-y: auto;
-    height: auto;
-    min-height: 100vh;
-    padding-top: var(--safe-area-inset-top);
-    padding-left: var(--safe-area-inset-left);
-    padding-right: var(--safe-area-inset-right);
-    padding-bottom: var(--safe-area-inset-bottom);
+    overflow: hidden;
+    height: 100%;
+    min-height: unset;
   }
 }
 
 button {
   font-family: var(--font-mojangles);
-  cursor: none;
 }
 
 /* Apply Mojangles to all text elements */
@@ -123,5 +110,28 @@ textarea,
 select,
 label {
   font-family: var(--font-mojangles);
-  cursor: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html,
+  *,
+  button,
+  a,
+  input,
+  textarea,
+  select,
+  label {
+    cursor: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-body-content,
+  .about-body-content *,
+  .world-desc,
+  .quest-point-text,
+  .quest-content-expanded,
+  .quest-content-expanded * {
+    user-select: text;
+  }
 }
