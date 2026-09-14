@@ -24,7 +24,7 @@ export const resumeData = {
             company: "FanDuel",
             date: "June 2026 - August 2026",
             points: [
-                "In progress / under construction"
+                "SWE Intern for the largest sportsbook in America"
             ],
             skills: []
         },
@@ -33,8 +33,7 @@ export const resumeData = {
             company: "Handshake AI Projects (Contract)",
             date: "April 2026 - Present",
             points: [
-                "Refactored AI-generated code weekly across 50+ open-source projects in Python and Java to exceed standards",
-                "Identified and resolved defects in LLM-generated solutions before deployment, optimizing AI model reliability"
+                "Refactored AI-generated code across 50+ open-source projects in Python and Java, catching LLM defects before deployment"
             ],
             skills: [
                 "Software Engineering",
@@ -47,13 +46,12 @@ export const resumeData = {
             ]
         },
         {
-            role: "Outreach Chair",
+            role: "CRO",
             company: "PROGSU - Programming Club @ GSU",
             companyUrl: "https://progsu.com",
             date: "Dec 2025 - Present",
             points: [
-                "Coordinated 60+ judges for Hacklanta at PROGSU, Atlanta's largest student CS org",
-                "Created end to end outreach process and CRM tracking for 10+ tech company relationships across all initiatives"
+                "Coordinate all company outreach and events, and plan Hacklanta, GSU's largest hackathon in history"
             ],
             skills: [
                 "Strategic Thinking",
@@ -95,8 +93,7 @@ export const resumeData = {
             companyUrl: "https://www.quantdfs.com/",
             date: "Sep 2025 - March 2026",
             points: [
-                "Trained ML models on 25+ years of NBA data for statistical predictions and fantasy lineup optimization",
-                "Built frontend in React and TypeScript with AWS deployments, reaching 30 active users in one month"
+                "Trained NBA ML models on 25+ years of data and shipped a React/TypeScript AWS app to 30 users in one month"
             ],
             skills: [
                 "Machine Learning",
@@ -112,8 +109,7 @@ export const resumeData = {
             companyUrl: "https://thepaulkclinic.com",
             date: "June 2025 - July 2025",
             points: [
-                "Modernized WordPress clinic site, driving 2.5x impressions and 2.75x conversions in 3 months via Google Analytics",
-                "Partnered directly with clinic stakeholders to translate business objectives into technical requirements"
+                "Modernized the WordPress clinic site (2.5x impressions, 2.75x conversions) while translating stakeholder goals into requirements"
             ],
             skills: [
                 "WordPress",

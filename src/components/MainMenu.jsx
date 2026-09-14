@@ -187,7 +187,7 @@ const MainMenu = () => {
                 >
                     Carter Tierney
                     <div className={`mc-splash ${isPlaying ? 'mc-splash-playing' : ''}`}>
-                        {isPlaying ? 'Stop' : <>Click me <span aria-hidden="true">🔊</span></>}
+                        {isPlaying ? 'Stop' : null}
                     </div>
                 </div>
             </div>
@@ -253,17 +253,18 @@ const MainMenu = () => {
                                 </div>
                                 <p>
                                     I was led to Computer Science through passion for math, software, video games, and curiosity for what drives the world around me.
-        
-                                    On campus, I'm the head of outreach for the Programming club ({' '}
+                                </p>
+                                <p>
+                                    Outside of Computer Science and School, I've worked across the restaurant industry as a bartender, server, and chef.
+                                    Through my Junior year I worked on a freelance contract, helped build a startup, and was able to secure an Internship at FanDuel.
+                                    I am now completing my senior year, while earning my Masters Degree, working on SWE contracts, and working on another startup.
+                                </p>
+                                <p>
+                                    At GSU, I'm currently the CRO for the Programming club ({' '}
                                     <a href="https://progsu.com" target="_blank" rel="noopener noreferrer" className="about-section-link">progsu.com</a>
                                     ) where I've bridged tech industry relationships and brought hackathons back to GSU ({' '}
                                     <a href="https://hacklanta.dev" target="_blank" rel="noopener noreferrer" className="about-section-link">hacklanta.dev</a>
-                                    ). I'm also a competitive powerlifter and President of the Barbell Club.
-                                </p>
-                                <p>
-                                    Outside of school, I've always kept myself busy. Throughout highschool and college, I've worked across the restaraunt industry.
-                                    After coming to GSU in Atlanta, I did an internship with a local property management company, and through my Junior year I worked on a freelance contract, helped build a startup, and was able to secure an Internship at FanDuel.
-                                    I am now completing my senior year, while earning my Masters Degree and working on SWE contracts.
+                                    ). I'm also a competitive powerlifter and President of the Barbell Weightlifting Club.
                                 </p>
                             </div>
 
@@ -418,7 +419,7 @@ const MainMenu = () => {
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.15 }}
                         style={{
-                        background: 'rgba(0,0,0,0.5)',
+                        background: 'rgba(0,0,0,0.85)',
                         border: '2px solid #a0a0a0',
                         borderTopColor: '#505050',
                         borderLeftColor: '#505050',
@@ -507,14 +508,13 @@ const MainMenu = () => {
                                                 <div className="quest-details">
                                                     {job.points.map((point, i) => (
                                                         <div key={i} className="quest-point">
-                                                            <span className="quest-point-icon" style={{ color: '#4682B4' }}>*</span>
                                                             <span className="quest-point-text">{point}</span>
                                                         </div>
                                                     ))}
                                                 </div>
                                                 
-                                                {/* Skills Learned Section */}
-                                                {job.skills && job.skills.length > 0 && (
+                                                {/* Skills Learned Section - deimplemented (kept for future use) */}
+                                                {false && job.skills && job.skills.length > 0 && (
                                                     <div className="quest-skills-section">
                                                         <div className="quest-skills-header">Skills Learned</div>
                                                         <div className="quest-skills-container">
@@ -541,7 +541,7 @@ const MainMenu = () => {
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.15 }}
                         style={{
-                        background: 'rgba(0,0,0,0.5)',
+                        background: 'rgba(0,0,0,0.85)',
                         border: '2px solid #a0a0a0',
                         borderTopColor: '#505050',
                         borderLeftColor: '#505050',
@@ -563,7 +563,7 @@ const MainMenu = () => {
                         }}>Select World</h2>
 
                         <div className="world-list" style={{
-                            maxHeight: isTablet ? '55vh' : 'none',
+                            maxHeight: isTablet ? '71.5vh' : 'none',
                             overflowY: isTablet ? 'auto' : 'visible',
                             overflowX: 'hidden'
                         }}>
