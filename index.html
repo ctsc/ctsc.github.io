@@ -2,30 +2,102 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <title>Carter Tierney | Minecraft Edition</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
-      var pathSegmentsToKeep = 0;
-      var l = window.location;
-      if (l.search[1] === '/' ) {
-        var decoded = l.search.slice(1).split('&').map(function(s) { 
-          return s.replace(/~and~/g, '&')
-        }).join('?');
-        window.history.replaceState(null, null,
-            l.pathname.slice(0, -1) + decoded + l.hash
-        );
-      }
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Carter Tierney</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/experimental/experimental.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <header class="topbar">
+      <nav aria-label="Site">
+        <button type="button" data-nav="home">Home</button>
+        <button type="button" data-nav="content">Content</button>
+        <button type="button" data-nav="contact">Contact</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="view view-home is-on" data-view="home">
+        <div class="name-stage" id="name-stage">
+          <canvas id="binary" width="800" height="160" aria-hidden="true"></canvas>
+          <h1>Carter Tierney</h1>
+        </div>
+        <div class="roles">
+          <p>MS CS @ GSU</p>
+          <p>SWE Intern at FanDuel</p>
+          <p>Co-founder <a href="https://progsu.com" target="_blank" rel="noopener noreferrer">progsu</a> &amp; <a href="https://hacklanta.dev" target="_blank" rel="noopener noreferrer">Hacklanta</a></p>
+          <p>Research Under <a href="https://cas.gsu.edu/profile/parag-tamhankar/#profile-publications-tab" target="_blank" rel="noopener noreferrer">Dr. Parag Tamhankar</a></p>
+          <p>Former Tech Ops Intern @ Ardent Residential</p>
+          <p>President Barbell Club x <a href="https://www.openpowerlifting.org/u/cartertierney" target="_blank" rel="noopener noreferrer">GA State Champ</a> @ 19</p>
+        </div>
+      </section>
+
+      <section class="view view-sheet" data-view="content" hidden>
+        <ul class="index">
+          <li><button type="button" data-nav="about">Hello World</button></li>
+          <li><button type="button" data-nav="gallery">Photo Gallery</button></li>
+        </ul>
+      </section>
+
+      <section class="view view-sheet view-gallery" data-view="gallery" hidden>
+        <h2 class="sheet-title">Photo Gallery</h2>
+        <div class="gallery" data-gallery></div>
+      </section>
+
+      <section class="view view-sheet about" data-view="about" hidden>
+        <h2>Hello, World!</h2>
+
+        <div class="block">
+          <h3>Journey</h3>
+          <p>I was led to Computer Science through passion for math, software, video games, and curiosity for what drives the world around me.
+             Software and Data is the backbone of everything we do as humans, and I'm passionate about creating tools that actually help people.
+             Currently I am doing my Masters research project on using AI agents and LLMs to optimize quantitative trading strategies for portfolio 
+             management. Over the last year I have helped changed the CS culture at GSU by hosting 2x hackathons (largest in GSU history) and 
+             helping grow our community of students to 2400 members. I am also a competitive powerlifter and President of the Barbell Weightlifting Club.
+             If you want to learn more about my professional journey, check out my linkedin: <a href="https://www.linkedin.com/in/carter-tierney-6b6001261/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </p>
+        </div>
+
+        <div class="block">
+          <h3>Personal</h3>
+          <ul>
+            <li>Currently living in West Midtown in Atlanta, GA, and I was born and raised in Kennesaw, GA</li>
+            <li>Hobbies: Powerlifting, video games, chess, reading, going out to eat, watching anime and movies</li>
+            <li>Favorite foods/drinks: BBQ, sushi, freshly baked cookies, chocolate milk, coffee</li>
+            <li>6'4 + Current Best lifts: Squat 565, Bench 365, Deadlift 675</li>
+            <li>Brother to 3 older sisters, 1 younger sister, and 1 younger brother</li>
+            <li>My Roomate and I have a cat named Albert (After Albert Einstein), but hes a bit slow so we call him Bert</li>
+            <li>I have been a Soccer Referee, Server, Bartender, Chef, Kitchen Manager, Restaraunt Manager, volunteer camp counselor, and powerlifitng coach!</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <h3>Education</h3>
+          <ul>
+            <li>Fall 2026: Studying my Masters in Computer Science at Georgia State University. </li>
+            <li>Fall 2026:Python teacher @ GSU: Hosting a weekly lab to 40+ studentson Fundamentals for Intro to Programming </li>
+            <li>Fall 2026: Research under Dr. Parag Tamhankar @ GSU: Using AI agents and LLMs to optimize quantitative trading strategies for portfolio management(Black-Litterman, Mean Variance Optimization)</li>
+            <li>Spring 2025: Completed my Bachelors in Computer Science at Georgia State University in December 2025. </li>
+            <li>2x Hackathon Winner | 1st Emory Hacks Healthcare Track (Fall 2025) | 2nd UGAHacks XI NCR Track (Spring 2026)</li>
+            <li>2x Hackathon Hoster | Hacklanta 1 350 hackers (largest in GSU history) | Hacklanta 2 900 hackers</li>
+            <li>Dual enrolled at KSU at ages 16/17 (3.9 GPA) Graduated High School Class of 2022 (3.9 GPA)</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="view view-sheet" data-view="contact" hidden>
+        <ul class="links">
+          <li><a href="https://www.linkedin.com/in/carter-tierney-6b6001261/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/ctsc" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="mailto:cartertierney0@gmail.com">cartertierney0@gmail.com</a></li>
+          <li><a href="https://calendly.com/cartertierney0/coffee-chat-with-carter" target="_blank" rel="noopener noreferrer">Book a Chat</a></li>
+          <li><a href="/assets/docs/_CarterTierney.pdf" download>Resume</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="/experimental/experimental.js" defer></script>
   </body>
 </html>

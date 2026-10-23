@@ -21,9 +21,12 @@ This is a **Minecraft-themed personal portfolio** built with React 18 + Vite. It
 
 ### Key Directories
 
-- `src/components/` — All UI components (MainMenu is the main hub page)
+- `src/app/` — App entry (`main.jsx`) and root component (`App.jsx`)
+- `src/pages/` — Full screens (MainMenu is the main hub page)
+- `src/components/` — Shared UI pieces (modals, 3D icons, effects, loading)
 - `src/data/` — Static data for projects (`projects.js`) and resume (`resume.js`)
-- `src/styles/theme.css` — Minecraft-themed UI styles (beveled buttons, custom scrollbars)
+- `src/styles/` — Global CSS (`index.css`, `app.css`, `theme.css`)
+- `public/assets/` — Images, gallery photos, audio, and the resume PDF
 
 ### 3D & Visual Effects
 
@@ -44,6 +47,6 @@ Uses **EmailJS** (`@emailjs/browser`) for sending emails. Credentials are in env
 
 ### Fonts & Theming
 
-- Mojangles font (Minecraft official) loaded in `index.css`
+- Mojangles font (Minecraft official) loaded in `src/styles/index.css`
 - VT323 Google Font as fallback
 - Responsive breakpoint at 640px for mobile; safe area insets for notched devices

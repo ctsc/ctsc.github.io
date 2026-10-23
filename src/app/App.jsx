@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './App.css';
-import MainMenu from './components/MainMenu';
-import LoadingScreen from './components/LoadingScreen';
-import CursorTrail from './components/CursorTrail';
-import FloatingParticles from './components/FloatingParticles';
+import '../styles/app.css';
+import MainMenu from '../pages/MainMenu';
+import LoadingScreen from '../components/LoadingScreen';
+import CursorTrail from '../components/CursorTrail';
+import FloatingParticles from '../components/FloatingParticles';
 
 function App() {
     const [screen, setScreen] = useState('menu'); // menu, projects, contact, options, education

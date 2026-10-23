@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { projects } from '../data/projects';
-import ProjectDetailsModal from './ProjectDetailsModal';
-import ProjectBlockIcon from './ProjectBlockIcon';
+import ProjectDetailsModal from '../components/ProjectDetailsModal';
+import ProjectBlockIcon from '../components/ProjectBlockIcon';
 import '../styles/theme.css';
 
 const ProjectsPage = ({ onBack }) => {
@@ -26,7 +26,7 @@ const ProjectsPage = ({ onBack }) => {
 
     const handleDownloadPDF = () => {
         const link = document.createElement('a');
-        link.href = '/_CarterTierney.pdf';
+        link.href = '/assets/docs/_CarterTierney.pdf';
         link.download = '_CarterTierney.pdf';
         document.body.appendChild(link);
         link.click();

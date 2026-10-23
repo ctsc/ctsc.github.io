@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import '../styles/theme.css';
 import { resumeData } from '../data/resume';
 import { projects } from '../data/projects';
-import ProjectBlockIcon from './ProjectBlockIcon';
-import ProjectDetailsModal from './ProjectDetailsModal';
+import ProjectBlockIcon from '../components/ProjectBlockIcon';
+import ProjectDetailsModal from '../components/ProjectDetailsModal';
 
 const ALL_PHOTOS = [
     '1741323783582618267.JPG',
@@ -144,7 +144,7 @@ const MainMenu = () => {
 
     const handleDownloadPDF = () => {
         const link = document.createElement('a');
-        link.href = '/_CarterTierney.pdf';
+        link.href = '/assets/docs/_CarterTierney.pdf';
         link.download = '_CarterTierney.pdf';
         document.body.appendChild(link);
         link.click();
@@ -153,7 +153,7 @@ const MainMenu = () => {
 
     const toggleAudio = () => {
         if (!audioRef.current) {
-            audioRef.current = new Audio('/naruto-battle.mp3');
+            audioRef.current = new Audio('/assets/audio/naruto-battle.mp3');
             audioRef.current.loop = true;
             audioRef.current.volume = 1.0;
         }
@@ -353,7 +353,7 @@ const MainMenu = () => {
                                             className={`photo-gallery-item ${isTwinFrPhoto ? 'photo-gallery-twin-fr' : ''}`}
                                         >
                                             <img
-                                                src={`/photogallery/${photoName}`}
+                                                src={`/assets/images/gallery/${photoName}`}
                                                 alt={`Photo ${i + 1}`}
                                                 className="photo-gallery-image"
                                                 style={{
