@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://www.minecraft.net" crossorigin />
     <link rel="stylesheet" href="/experimental/experimental.css" />
   </head>
   <body>
@@ -20,6 +21,7 @@
 
     <main>
       <section class="view view-home is-on" data-view="home">
+        <div class="drift" data-drift aria-hidden="true"></div>
         <div class="name-stage" id="name-stage">
           <canvas id="binary" width="800" height="160" aria-hidden="true"></canvas>
           <h1>Carter Tierney</h1>
@@ -42,8 +44,12 @@
       </section>
 
       <section class="view view-sheet view-gallery" data-view="gallery" hidden>
-        <h2 class="sheet-title">Photo Gallery</h2>
-        <div class="gallery" data-gallery></div>
+        <div class="gallery-head">
+          <button type="button" class="gallery-back" data-nav="gallery" data-gallery-back hidden>Gallery</button>
+          <h2 class="sheet-title" data-gallery-title>Photo Gallery</h2>
+        </div>
+        <div class="gallery-ring" data-gallery-index></div>
+        <div class="gallery" data-gallery hidden></div>
       </section>
 
       <section class="view view-sheet about" data-view="about" hidden>
@@ -60,17 +66,29 @@
           </p>
         </div>
 
-        <div class="block">
-          <h3>Personal</h3>
-          <ul>
-            <li>Currently living in West Midtown in Atlanta, GA, and I was born and raised in Kennesaw, GA</li>
-            <li>Hobbies: Powerlifting, video games, chess, reading, going out to eat, watching anime and movies</li>
-            <li>Favorite foods/drinks: BBQ, sushi, freshly baked cookies, chocolate milk, coffee</li>
-            <li>6'4 + Current Best lifts: Squat 565, Bench 365, Deadlift 675</li>
-            <li>Brother to 3 older sisters, 1 younger sister, and 1 younger brother</li>
-            <li>My Roomate and I have a cat named Albert (After Albert Einstein), but hes a bit slow so we call him Bert</li>
-            <li>I have been a Soccer Referee, Server, Bartender, Chef, Kitchen Manager, Restaraunt Manager, volunteer camp counselor, and powerlifitng coach!</li>
-          </ul>
+        <div class="block personal-block">
+          <div class="about-side-photos">
+            <figure class="about-bert">
+              <img src="/assets/images/gallery/xyz-03.jpg" alt="Bert, our cat">
+              <figcaption>Bert</figcaption>
+            </figure>
+            <figure class="about-bert">
+              <img src="/assets/images/gallery/rocky.jpg" alt="Rocky">
+            </figure>
+          </div>
+          <div class="personal-copy">
+            <h3>Personal</h3>
+            <ul>
+              <li>Currently living in West Midtown in Atlanta, GA, and I was born and raised in Kennesaw, GA</li>
+              <li>Hobbies: Powerlifting, video games, chess, reading, going out to eat, watching anime and movies</li>
+              <li>Favorite foods/drinks: BBQ, sushi, freshly baked cookies, chocolate milk, coffee</li>
+              <li>6'4 + Current Best lifts: Squat 565, Bench 365, Deadlift 675</li>
+              <li>Brother to 3 older sisters, 1 younger sister, and 1 younger brother</li>
+              <li>My Roomate and I have a cat named Albert (After Albert Einstein), but hes a bit slow so we call him Bert</li>
+              <li>I have been a Soccer Referee, Server, Bartender, Chef, Kitchen Manager, Restaraunt Manager, volunteer camp counselor, and powerlifitng coach!</li>
+              <li>Favorite movies/shows: Rocky, Hajime no Ippo, Star Wars, Harry Potter, The Godfather, Code Geass, Attack on Titan, Breaking Bad/Better Call Saul, Death Note, Good Will Hunting, Whiplash, The Big Short, The Imitation Game, The Martian, Sword Art Online, Vinland Saga, Kingdom, The Social Network, Jobs, The Matrix, BlackBerry, Inception, Naruto, The Internship, any Charlie Brown movie, Silicon Valley, Forrest Gump, Fight Club, Transformers, The Hunger Games, Dead Poets Society, Back to the Future, The Conjuring, Paranormal Activity, Monsters University, Les Misérables, The Office, Avatar (both the movie and the Nickelodeon show), Severance, Tokyo Ghoul, and Demon Slayer</li>
+            </ul>
+          </div>
         </div>
 
         <div class="block">
@@ -80,20 +98,26 @@
             <li>Fall 2026:Python teacher @ GSU: Hosting a weekly lab to 40+ studentson Fundamentals for Intro to Programming </li>
             <li>Fall 2026: Research under Dr. Parag Tamhankar @ GSU: Using AI agents and LLMs to optimize quantitative trading strategies for portfolio management(Black-Litterman, Mean Variance Optimization)</li>
             <li>Spring 2025: Completed my Bachelors in Computer Science at Georgia State University in December 2025. </li>
-            <li>2x Hackathon Winner | 1st Emory Hacks Healthcare Track (Fall 2025) | 2nd UGAHacks XI NCR Track (Spring 2026)</li>
+            <li>3x Hackathon Winner | 1st Emory Hacks Healthcare Track (Fall 2025) | 2nd UGAHacks XI NCR Track (Spring 2026) | 3rd Overall Devin AI/Cognition Hackathon hosted by GT Hackerhouse</li>
             <li>2x Hackathon Hoster | Hacklanta 1 350 hackers (largest in GSU history) | Hacklanta 2 900 hackers</li>
             <li>Dual enrolled at KSU at ages 16/17 (3.9 GPA) Graduated High School Class of 2022 (3.9 GPA)</li>
           </ul>
+          <div class="edu-marks">
+            <img src="/assets/images/about/gsu.png" alt="Georgia State University">
+            <img src="/assets/images/about/ksu.png" alt="Kennesaw State University">
+            <img src="/assets/images/about/hacklanta-26.png" alt="Hacklanta 26">
+          </div>
         </div>
       </section>
 
       <section class="view view-sheet" data-view="contact" hidden>
         <ul class="links">
           <li><a href="https://www.linkedin.com/in/carter-tierney-6b6001261/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="https://github.com/ctsc" target="_blank" rel="noopener noreferrer">GitHub</a> - not publicly viewable currently, in communication with GitHub support (I was abusing GitHub actions for a project)</li>
+          <li><a href="https://gitlab.com/cartertierney0" target="_blank" rel="noopener noreferrer">GitLab</a></li>
+          <li><a href="https://github.com/ctsc" target="_blank" rel="noopener noreferrer">GitHub</a> - not publicly viewable currently, in communication with GitHub support</li>
           <li><a href="mailto:cartertierney0@gmail.com">cartertierney0@gmail.com</a></li>
           <li><a href="https://calendly.com/cartertierney0/coffee-chat-with-carter" target="_blank" rel="noopener noreferrer">Book a Chat</a></li>
-          <li><a href="/assets/docs/_CarterTierney.pdf" download>Resume</a></li>
+          <li><a href="/master_resume_2026-10-22_v2_may2027.pdf" download>Resume</a></li>
         </ul>
       </section>
     </main>

@@ -118,13 +118,13 @@ a {
   min-width: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  scrollbar-width: thin;
+  scrollbar-width: auto;
   scrollbar-color: #3a3a3a transparent;
   animation: fade-in 240ms var(--ease);
 }
 
 .view.is-on::-webkit-scrollbar {
-  width: 4px;
+  width: 8px;
 }
 
 .view.is-on::-webkit-scrollbar-track {
@@ -165,16 +165,62 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 24px 20px 40px;
+  padding: 24px 20px calc(40px + 2.75in);
   text-align: center;
 }
 
 .view-home.is-on {
   display: flex;
+  position: relative;
+}
+
+.drift {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.drift-pic {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  width: auto;
+  height: auto;
+  max-width: clamp(140px, 18vw, 240px);
+  max-height: clamp(140px, 18vw, 240px);
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: drift 15.4s cubic-bezier(0.45, 0, 0.85, 0.6) forwards;
+}
+
+@keyframes drift {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translate(calc(var(--x) * 0.18), calc(var(--y) * 0.18)) scale(0.15);
+  }
+  30% {
+    opacity: 0.45;
+  }
+  60% {
+    opacity: 0.45;
+  }
+  85% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translate(var(--x), var(--y)) scale(1.9);
+  }
+}
+
+.roles p {
+  text-shadow: 0 1px 8px #000;
 }
 
 .name-stage {
   position: relative;
+  z-index: 1;
   display: grid;
   place-items: center;
   width: min(1100px, 100%);
@@ -202,7 +248,9 @@ a {
 }
 
 .roles {
-  margin-top: 28px;
+  position: relative;
+  z-index: 1;
+  margin-top: calc(28px + 1.25in);
 }
 
 .roles p {
@@ -230,6 +278,10 @@ a {
   width: min(720px, 100%);
   margin: 0 auto;
   padding: 28px 24px 40px;
+}
+
+.view-sheet.about {
+  width: min(960px, 100%);
 }
 
 .sheet-title {
@@ -282,6 +334,96 @@ a {
   font-size: 22px;
 }
 
+.gallery-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.gallery-back {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--quiet);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.gallery-back:hover {
+  color: var(--ink);
+}
+
+.gallery-back:focus-visible {
+  outline: 1px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.gallery-ring {
+  --card: min(200px, 24vw);
+  --ring: min(248px, 30vw);
+  position: relative;
+  width: calc(var(--ring) * 2 + var(--card));
+  height: calc(var(--ring) * 2 + var(--card));
+  max-width: 100%;
+  margin: 8px auto 28px;
+}
+
+.gallery-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--card);
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--ink);
+  cursor: pointer;
+  transform: translate(-50%, -50%) rotate(var(--a)) translateY(calc(-1 * var(--ring))) rotate(calc(-1 * var(--a)));
+}
+
+.gallery-section img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  height: auto;
+  object-fit: cover;
+  object-position: center 28%;
+  background: #111;
+  transition: filter 180ms var(--ease);
+}
+
+.gallery-section:hover img {
+  filter: brightness(1.08);
+}
+
+.gallery-section:focus-visible {
+  outline: 1px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.gallery-section span {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.gallery[hidden],
+.gallery-ring[hidden],
+.gallery-back[hidden] {
+  display: none;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -299,6 +441,8 @@ a {
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 130px;
 }
 
 .gallery figure:focus-visible {
@@ -315,7 +459,6 @@ a {
   object-fit: cover;
   object-position: center 28%;
   background: #111;
-  transition: height 240ms var(--ease);
 }
 
 .gallery img[hidden] {
@@ -359,6 +502,76 @@ a {
 
 .about .block {
   margin-bottom: 36px;
+}
+
+.edu-marks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 24px;
+  margin-top: 22px;
+}
+
+.edu-marks img {
+  display: block;
+  width: auto;
+  max-width: 160px;
+  max-height: 88px;
+  object-fit: contain;
+}
+
+.edu-marks img:nth-child(-n+2) {
+  background: #fff;
+}
+
+.edu-marks img:last-child {
+  max-width: 220px;
+  max-height: 220px;
+}
+
+.personal-block {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.about-side-photos {
+  flex: 0 0 188px;
+  width: 188px;
+  margin: 36px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-bert {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.about-bert img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 20%;
+  background: #111;
+}
+
+.about-bert figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.personal-copy {
+  flex: 1;
+  min-width: 0;
 }
 
 .about p,
@@ -433,6 +646,34 @@ a {
   }
 }
 
+@media (max-width: 560px) {
+  .gallery-ring {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 14px;
+    margin-top: 16px;
+  }
+
+  .gallery-section {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    transform: none;
+  }
+
+  .drift-pic {
+    max-width: clamp(88px, 26vw, 140px);
+    max-height: clamp(88px, 26vw, 140px);
+  }
+
+  .gallery-section span {
+    font-size: 11px;
+  }
+}
+
 @media (max-width: 640px) {
   .topbar {
     padding-left: 16px;
@@ -445,7 +686,7 @@ a {
   }
 
   .view-home {
-    padding: 12px 16px 24px;
+    padding: 12px 16px calc(24px + 2.75in);
   }
 
   .roles p {
@@ -462,6 +703,24 @@ a {
   .about li {
     font-size: 15px;
   }
+
+  .personal-block {
+    gap: 16px;
+  }
+
+  .about-side-photos,
+  .about-bert {
+    flex-basis: 112px;
+    width: 112px;
+  }
+
+  .about-side-photos {
+    margin-top: 22px;
+  }
+
+  .about-bert figcaption {
+    font-size: 12px;
+  }
 }
 
 @media (max-height: 740px) {
@@ -472,7 +731,7 @@ a {
   }
 
   .roles {
-    margin-top: 16px;
+    margin-top: calc(16px + 1.25in);
   }
 }
 

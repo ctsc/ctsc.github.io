@@ -1,94 +1,103 @@
-// Edit photo paths and captions here.
-const GALLERY = [
+function pic(file, caption, alt) {
+  return {
+    src: `/assets/images/gallery/${file}`,
+    caption: caption || '',
+    alt: alt || caption || '',
+  };
+}
+
+function clip(poster, video, caption, extra) {
+  extra = extra || {};
+  return {
+    poster: `/assets/images/gallery/${poster}`,
+    video: `/assets/videos/${video}`,
+    caption: caption || '',
+    alt: extra.alt || caption || '',
+    muted: extra.muted,
+  };
+}
+
+const SECTIONS = [
   {
-    src: '/assets/images/gallery/1741323783582618267.JPG',
-    alt: "Bachelor's graduation pics",
-    caption: "Bachelor's graduation pics.",
+    id: 'hackathons',
+    title: 'Hackathons',
+    photos: [
+      pic('xyz-07.jpeg', 'Emory Hacks'),
+      pic('xyz-14.jpeg', 'UGA Hacks'),
+      pic('xyz-15.jpeg', 'Hacklytics GT'),
+      pic('IMG_0989.jpg', 'Winning 1st at Emory Hacks.'),
+    ],
   },
   {
-    src: '/assets/images/gallery/IMG_0989.jpg',
-    alt: 'Winning 1st at Emory Hacks',
-    caption: 'Winning 1st at Emory Hacks.',
+    id: 'graduation',
+    title: 'BS CS Graduation',
+    photos: [
+      pic('xyz-01.jpg', '', 'Graduation at GSU'),
+      pic('xyz-05.jpeg', '', 'Graduation'),
+      pic('xyz-09.png', '', 'Graduation'),
+      pic('graduation-gsu.jpg', 'Graduation at GSU'),
+      pic('1741323783582618267.JPG', "Bachelor's graduation pics."),
+    ],
   },
   {
-    src: '/assets/images/gallery/IMG_3788.JPG',
-    alt: 'Formal photo with Kathy',
-    caption: 'Formal photo with Kathy.',
+    id: 'progsu',
+    title: 'progsu/Hacklanta',
+    photos: [
+      pic('hacklanta.jpg', 'Hacklanta II'),
+      pic('xyz-12.jpg', 'Tabling Event'),
+      pic('xyz-13.png', 'Spring 2026 Kickoff'),
+      pic('xyz-18.jpeg', 'Claude/Anthropic Event'),
+      pic('claude-atlanta.png', 'Claude Atlanta'),
+      pic('ai-ideathon.png', 'AI Ideathon (AI GT x progsu)'),
+      pic('make-your-mark.jpg', 'Hacklanta I'),
+      pic('hackathon-room.jpg', 'Hacklanta I judges'),
+    ],
   },
   {
-    src: '/assets/images/gallery/IMG_1896.jpg',
-    alt: '1st place at Georgia state championships',
-    caption: '1st place at Georgia state championships.',
+    id: 'personal',
+    title: 'Personal',
+    photos: [
+      pic('karaoke.jpg', 'Karaoke'),
+      pic('xyz-04.jpg', 'daily affirmation'),
+      pic('xyz-06.jpeg', 'Deftones/Shaky Knees 2025'),
+      pic('xyz-16.jpeg', 'My Car Pegasus'),
+      pic('xyz-19.jpeg', 'Atlanta'),
+      pic('xyz-20.jpg', 'Xmas Pic'),
+      pic('xyz-21.jpeg', 'Sisters Wedding'),
+      pic('xyz-22.jpg', 'Atlanta United Game'),
+      pic('xyz-23.jpeg', 'Bayern Munich @ BoA'),
+      pic('xyz-26.png', 'Sisters Wedding pt 2'),
+      pic('xyz-28.jpg', 'Daily Affirmation'),
+      pic('xyz-29.jpeg', 'Fun Puzzle'),
+      pic('fanduel.jpg', 'FanDuel'),
+      pic('panel.jpg', 'FanDuel panel'),
+      pic('braves.jpg', 'Intern Braves Game'),
+      pic('IMG_3788.JPG', 'Formal photo with Kathy.'),
+      pic('IMG_2854.jpg', 'Another formal with Kathy :)'),
+      pic('group-stairs.jpg', 'Merc Benz R&D Group'),
+    ],
   },
   {
-    src: '/assets/images/gallery/IMG_2854.jpg',
-    alt: 'Another formal with Kathy :)',
-    caption: 'Another formal with Kathy :)',
+    id: 'weightlifting',
+    title: 'Weightlifting',
+    photos: [
+      pic('IMG_1896.jpg', '1st place at Georgia state championships.'),
+      clip('xyz-02.jpg', 'xyz-02.mov', 'weightlifting video'),
+      clip('deadlift-pov.jpg', 'deadlift-pov.mov', 'Deadlift', { muted: true }),
+      clip('deadlift.jpg', 'deadlift.mp4', 'Deadlift'),
+      clip('opencv-form.jpg', 'opencv-form.mov', 'OpenCV form analysis', { muted: true }),
+    ],
   },
   {
-    src: '/assets/images/gallery/karaoke.jpg',
-    alt: 'Karaoke',
-    caption: 'Karaoke',
-  },
-  {
-    src: '/assets/images/gallery/fanduel.jpg',
-    alt: 'FanDuel',
-    caption: 'FanDuel',
-  },
-  {
-    src: '/assets/images/gallery/hacklanta.jpg',
-    alt: 'Hacklanta II',
-    caption: 'Hacklanta II',
-  },
-  {
-    src: '/assets/images/gallery/hackathon-room.jpg',
-    alt: 'Hacklanta I judges',
-    caption: 'Hacklanta I judges',
-  },
-  {
-    src: '/assets/images/gallery/braves.jpg',
-    alt: 'Intern Braves Game',
-    caption: 'Intern Braves Game',
-  },
-  {
-    src: '/assets/images/gallery/make-your-mark.jpg',
-    alt: 'Hacklanta I',
-    caption: 'Hacklanta I',
-  },
-  {
-    src: '/assets/images/gallery/panel.jpg',
-    alt: 'FanDuel panel',
-    caption: 'FanDuel panel',
-  },
-  {
-    src: '/assets/images/gallery/graduation-gsu.jpg',
-    alt: 'Graduation at GSU',
-    caption: 'Graduation at GSU',
-  },
-  {
-    src: '/assets/images/gallery/group-stairs.jpg',
-    alt: 'Merc Benz R&D Group',
-    caption: 'Merc Benz R&D Group',
-  },
-  {
-    poster: '/assets/images/gallery/deadlift-pov.jpg',
-    video: '/assets/videos/deadlift-pov.mov',
-    muted: true,
-    alt: 'Deadlift',
-    caption: 'Deadlift',
-  },
-  {
-    poster: '/assets/images/gallery/deadlift.jpg',
-    video: '/assets/videos/deadlift.mp4',
-    alt: 'Deadlift',
-    caption: 'Deadlift',
-  },
-  {
-    poster: '/assets/images/gallery/opencv-form.jpg',
-    video: '/assets/videos/opencv-form.mov',
-    muted: true,
-    alt: 'OpenCV form analysis',
-    caption: 'OpenCV form analysis',
+    id: 'memes',
+    title: 'Memes',
+    photos: [
+      pic('xyz-10.jpg', '', 'Meme'),
+      pic('xyz-11.jpg', '', 'Meme'),
+      pic('xyz-17.jpg', '', 'Meme'),
+      pic('xyz-24.jpg', '', 'Meme'),
+      pic('xyz-25.jpg', '', 'Meme'),
+    ],
   },
 ];
 
@@ -113,24 +122,173 @@ let current = 'home';
 let animating = false;
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let galleryReady = false;
 
-function renderGallery() {
+function thumbPath(path) {
+  const name = path.slice(path.lastIndexOf('/') + 1).replace(/\.[^.]+$/, '');
+  return `/assets/images/gallery/thumbs/${name}.jpg`;
+}
+
+const DRIFT_MS = 15400;
+const DRIFT_GAP = 1980;
+const DRIFT_MAX = 8;
+const driftLayer = document.querySelector('[data-drift]');
+const driftPool = [...new Set(SECTIONS.flatMap((section) => (
+  section.photos.map((item) => thumbPath(item.video ? item.poster : item.src))
+)))].sort(() => Math.random() - 0.5);
+const driftReady = [];
+let driftNext = 0;
+let driftCursor = 0;
+let driftTimer = 0;
+let driftOn = false;
+let driftSpawned = 0;
+const DRIFT_LANES = [-0.55, 0.2, -0.2, 0.55];
+
+function loadDrift(count) {
+  for (let i = 0; i < count && driftNext < driftPool.length; i += 1) {
+    const src = driftPool[driftNext];
+    driftNext += 1;
+    const img = new Image();
+    if (driftNext <= 4) img.fetchPriority = 'high';
+    img.src = src;
+    img.decode().then(() => {
+      driftReady.push(src);
+      if (driftOn && driftReady.length <= 4) spawnDrift(true);
+    }, () => {});
+  }
+}
+
+function spawnDrift(seed) {
+  if (!driftReady.length || driftLayer.childElementCount >= DRIFT_MAX) return;
+  const src = driftReady[driftCursor % driftReady.length];
+  driftCursor += 1;
+  loadDrift(1);
+  const left = driftSpawned % 2 === 1;
+  const lane = DRIFT_LANES[Math.floor(driftSpawned / 2) % DRIFT_LANES.length];
+  driftSpawned += 1;
+  const tilt = lane + (Math.random() - 0.5) * 0.12;
+  const angle = left ? Math.PI - tilt : tilt;
+  const reach = 0.8 + Math.random() * 0.2;
+  const img = document.createElement('img');
+  img.className = 'drift-pic';
+  img.src = src;
+  img.alt = '';
+  img.style.setProperty('--x', `${Math.cos(angle) * reach * 46}vw`);
+  img.style.setProperty('--y', `${Math.sin(angle) * reach * 50}vh`);
+  if (seed) img.style.animationDelay = `${-Math.random() * DRIFT_MS * 0.5}ms`;
+  img.addEventListener('animationend', () => img.remove(), { once: true });
+  driftLayer.prepend(img);
+}
+
+function startDrift() {
+  if (driftOn || reduceMotion || !driftLayer) return;
+  driftOn = true;
+  if (!driftNext) loadDrift(6);
+  for (let i = 0; i < Math.min(4, driftReady.length); i += 1) spawnDrift(true);
+  driftTimer = window.setInterval(() => spawnDrift(false), DRIFT_GAP);
+}
+
+function stopDrift() {
+  driftOn = false;
+  window.clearInterval(driftTimer);
+  if (driftLayer) driftLayer.replaceChildren();
+}
+
+function shellView(id) {
+  return id.startsWith('gallery') ? 'gallery' : id;
+}
+
+function sectionFrom(id) {
+  if (!id.startsWith('gallery-')) return null;
+  const key = id.slice(8);
+  return SECTIONS.some((section) => section.id === key) ? key : null;
+}
+
+function ensureGallery(sectionId) {
+  if (!galleryReady) {
+    renderSectionIndex();
+    bindGallery();
+    galleryReady = true;
+  }
+  showGalleryMode(sectionId);
+}
+
+function renderSectionIndex() {
+  const root = document.querySelector('[data-gallery-index]');
+  root.replaceChildren();
+  SECTIONS.forEach((section, index) => {
+    const cover = section.photos[0];
+    const full = cover.video ? cover.poster : cover.src;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'gallery-section';
+    button.dataset.nav = `gallery-${section.id}`;
+    button.style.setProperty('--a', `${index * 60}deg`);
+    button.setAttribute('aria-label', section.title);
+    const img = document.createElement('img');
+    img.src = thumbPath(full);
+    img.alt = '';
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    const label = document.createElement('span');
+    label.textContent = section.title;
+    button.append(img, label);
+    root.append(button);
+  });
+}
+
+function showGalleryMode(sectionId) {
+  const indexRoot = document.querySelector('[data-gallery-index]');
+  const photoRoot = document.querySelector('[data-gallery]');
+  const title = document.querySelector('[data-gallery-title]');
+  const back = document.querySelector('[data-gallery-back]');
+  const section = SECTIONS.find((item) => item.id === sectionId) || null;
+
+  closeGallery();
+
+  if (!section) {
+    title.textContent = 'Photo Gallery';
+    back.hidden = true;
+    indexRoot.hidden = false;
+    photoRoot.hidden = true;
+    photoRoot.replaceChildren();
+    return;
+  }
+
+  title.textContent = section.title;
+  back.hidden = false;
+  indexRoot.hidden = true;
+  photoRoot.hidden = false;
+  renderPhotos(section.photos);
+}
+
+function renderPhotos(photos) {
   const root = document.querySelector('[data-gallery]');
-  GALLERY.forEach((item) => {
+  root.replaceChildren();
+  photos.forEach((item) => {
     const figure = document.createElement('figure');
     const img = document.createElement('img');
-    const caption = document.createElement('figcaption');
-    img.src = item.video ? item.poster : item.src;
+    const full = item.video ? item.poster : item.src;
+    const thumb = thumbPath(full);
+    img.src = thumb;
     img.alt = item.alt;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.dataset.thumb = thumb;
+    img.dataset.full = full;
     if (item.video) {
       figure.dataset.video = item.video;
       if (item.muted) figure.dataset.muted = 'true';
     }
-    caption.textContent = item.caption;
     figure.tabIndex = 0;
     figure.setAttribute('role', 'button');
-    figure.setAttribute('aria-label', item.caption);
-    figure.append(img, caption);
+    figure.setAttribute('aria-label', item.caption || item.alt);
+    figure.append(img);
+    if (item.caption) {
+      const caption = document.createElement('figcaption');
+      caption.textContent = item.caption;
+      figure.append(caption);
+    }
     root.append(figure);
   });
 }
@@ -143,7 +301,10 @@ function closeFigure(figure) {
     video.remove();
   }
   const img = figure.querySelector('img');
-  if (img) img.hidden = false;
+  if (img) {
+    img.hidden = false;
+    if (img.dataset.thumb) img.src = img.dataset.thumb;
+  }
 }
 
 function closeGallery() {
@@ -158,8 +319,9 @@ function openFigure(figure) {
     return;
   }
   figure.classList.add('is-open');
-  if (!figure.dataset.video) return;
   const img = figure.querySelector('img');
+  if (img && img.dataset.full) img.src = img.dataset.full;
+  if (!figure.dataset.video) return;
   const video = document.createElement('video');
   video.controls = true;
   video.playsInline = true;
@@ -189,11 +351,13 @@ function bindGallery() {
 
 function readHash() {
   const id = location.hash.replace('#', '');
+  if (id === 'gallery') return id;
+  if (sectionFrom(id)) return id;
   return VIEWS.includes(id) ? id : 'home';
 }
 
 function setNav(id) {
-  const navId = id === 'about' || id === 'gallery' ? 'content' : id;
+  const navId = shellView(id) === 'gallery' || id === 'about' ? 'content' : id;
   document.querySelectorAll('.topbar [data-nav]').forEach((button) => {
     if (button.dataset.nav === navId) button.setAttribute('aria-current', 'page');
     else button.removeAttribute('aria-current');
@@ -203,34 +367,50 @@ function setNav(id) {
 function show(next, options) {
   const instant = options && options.instant;
   const push = options && options.push;
-  if (!VIEWS.includes(next) || next === current || animating) return;
+  if (next.startsWith('gallery-') && !sectionFrom(next)) next = 'gallery';
+  const allowed = VIEWS.includes(next) || next === 'gallery' || sectionFrom(next);
+  if (!allowed || next === current || animating) return;
+
+  const nextShell = shellView(next);
+  const currentShell = shellView(current);
+  const sameShell = nextShell === currentShell;
 
   const finish = () => {
-    if (next !== 'gallery') closeGallery();
-    const outgoing = document.querySelector(`[data-view="${current}"]`);
-    const incoming = document.querySelector(`[data-view="${next}"]`);
-    outgoing.classList.remove('is-on', 'is-out');
-    outgoing.hidden = true;
-    incoming.hidden = false;
-    incoming.classList.add('is-on');
+    if (nextShell === 'gallery') ensureGallery(sectionFrom(next));
+    else closeGallery();
+
+    if (!sameShell) {
+      const outgoing = document.querySelector(`[data-view="${currentShell}"]`);
+      const incoming = document.querySelector(`[data-view="${nextShell}"]`);
+      outgoing.classList.remove('is-on', 'is-out');
+      outgoing.hidden = true;
+      incoming.hidden = false;
+      incoming.classList.add('is-on');
+    } else {
+      const shell = document.querySelector(`[data-view="${currentShell}"]`);
+      if (shell) shell.classList.remove('is-out');
+    }
+
     current = next;
     setNav(next);
     if (push) history.pushState({ view: next }, '', `#${next}`);
-    if (next === 'home') {
+    if (nextShell === 'home') {
       layout();
       startLoop();
     } else stopLoop();
+    const active = document.querySelector(`[data-view="${nextShell}"]`);
+    if (active) active.scrollTop = 0;
     window.scrollTo(0, 0);
     animating = false;
   };
 
-  if (instant || reduceMotion) {
+  if (sameShell || instant || reduceMotion) {
     finish();
     return;
   }
 
   animating = true;
-  document.querySelector(`[data-view="${current}"]`).classList.add('is-out');
+  document.querySelector(`[data-view="${currentShell}"]`).classList.add('is-out');
   window.setTimeout(finish, 200);
 }
 
@@ -296,10 +476,9 @@ function layout() {
   cells = next;
   cols = maxCols;
   rows = Math.max(1, rowCursor);
-  const probe = document.createElement('canvas').getContext('2d');
   fontPx = 14;
-  probe.font = `${fontPx}px Mojangles, VT323, monospace`;
-  const glyphW = probe.measureText('0').width || fontPx * 0.6;
+  ctx.font = `${fontPx}px Mojangles, VT323, monospace`;
+  const glyphW = ctx.measureText('0').width || fontPx * 0.6;
   pitchX = glyphW * 1.02;
   pitchY = fontPx * 0.78;
   const rawWidth = cols * pitchX;
@@ -363,19 +542,21 @@ function startLoop() {
   running = true;
   lastTick = 0;
   rafId = window.requestAnimationFrame(frame);
+  startDrift();
 }
 
 function stopLoop() {
   running = false;
   if (rafId) window.cancelAnimationFrame(rafId);
   rafId = 0;
+  stopDrift();
 }
 
 function bind() {
-  document.querySelectorAll('[data-nav]').forEach((button) => {
-    button.addEventListener('click', () => {
-      show(button.dataset.nav, { push: true });
-    });
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-nav]');
+    if (!button) return;
+    show(button.dataset.nav, { push: true });
   });
 
   window.addEventListener('popstate', () => {
@@ -397,32 +578,28 @@ function bind() {
   });
 }
 
-async function boot() {
-  renderGallery();
-  bindGallery();
+function boot() {
   bind();
 
   const start = readHash();
-  if (start !== 'home') {
+  if (shellView(start) !== 'home') {
     document.querySelector('[data-view="home"]').classList.remove('is-on');
     document.querySelector('[data-view="home"]').hidden = true;
-    const incoming = document.querySelector(`[data-view="${start}"]`);
+    const incoming = document.querySelector(`[data-view="${shellView(start)}"]`);
     incoming.hidden = false;
     incoming.classList.add('is-on');
     current = start;
   }
   setNav(current);
   history.replaceState({ view: current }, '', `#${current}`);
-
-  try {
-    await document.fonts.load('148px Mojangles');
-    await document.fonts.ready;
-  } catch (err) {
-    /* Fall back to VT323 or monospace if Mojangles is blocked. */
-  }
+  if (shellView(current) === 'gallery') ensureGallery(sectionFrom(current));
 
   layout();
   if (current === 'home') startLoop();
+
+  document.fonts.load('14px Mojangles').then(() => {
+    if (current === 'home') layout();
+  }).catch(() => {});
 }
 
 boot();
