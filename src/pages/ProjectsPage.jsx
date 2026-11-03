@@ -26,8 +26,8 @@ const ProjectsPage = ({ onBack }) => {
 
     const handleDownloadPDF = () => {
         const link = document.createElement('a');
-        link.href = '/master_resume_2026-10-22_v2_may2027.pdf';
-        link.download = 'master_resume_2026-10-22_v2_may2027.pdf';
+        link.href = '/master_resume_2026-11-03_may2027.pdf';
+        link.download = 'master_resume_2026-11-03_may2027.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

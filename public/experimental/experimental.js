@@ -51,6 +51,21 @@ const SECTIONS = [
       pic('ai-ideathon.png', 'AI Ideathon (AI GT x progsu)'),
       pic('make-your-mark.jpg', 'Hacklanta I'),
       pic('hackathon-room.jpg', 'Hacklanta I judges'),
+      pic('ibm-skillsbuild.jpg', 'IBM SkillsBuild: AI Accelerator'),
+      pic('hacklanta-ii.png', 'Hacklanta II'),
+      pic('mbrdna-mario-kart.png', 'MBRDNA panel and Mario Kart'),
+      pic('intern-panel.png', 'Intern Panel'),
+      pic('resume-workshop.png', 'Resume Workshop'),
+      pic('fall-kickoff-carnival.webp', '$1000 Fall Kickoff Carnival'),
+      pic('prizepicks-recruiting.png', 'PrizePicks Internship Recruiting'),
+      pic('progirls-loop-lounge.png', 'ProGirls Loop and Lounge'),
+      pic('eboard-interest.png', 'Eboard Interest Meeting'),
+      pic('mercedes-internship.png', 'Mercedes Internship'),
+      pic('crack-the-code.png', 'Crack the Code'),
+      pic('ai-ideathon-feb.png', '$500 AI Ideathon'),
+      pic('tournament-150.png', '$150 Tournament x Kickoff'),
+      pic('fanduel-ping-pong.png', 'FanDuel Recruiting x Ping Pong'),
+      pic('tournament-100.jpg', '$100 Tournament x Kickoff'),
     ],
   },
   {
@@ -58,6 +73,7 @@ const SECTIONS = [
     title: 'Personal',
     photos: [
       pic('karaoke.jpg', 'Karaoke'),
+      pic('xyz-03.jpg', 'Bert'),
       pic('xyz-04.jpg', 'daily affirmation'),
       pic('xyz-06.jpeg', 'Deftones/Shaky Knees 2025'),
       pic('xyz-16.jpeg', 'My Car Pegasus'),
@@ -101,7 +117,7 @@ const SECTIONS = [
   },
 ];
 
-const VIEWS = ['home', 'content', 'about', 'gallery', 'contact'];
+const VIEWS = ['home', 'blog', 'about', 'gallery'];
 
 const stage = document.getElementById('name-stage');
 const canvas = document.getElementById('binary');
@@ -144,17 +160,26 @@ let driftOn = false;
 let driftSpawned = 0;
 const DRIFT_LANES = [-0.55, 0.2, -0.2, 0.55];
 
+function markDriftReady(src) {
+  if (driftReady.includes(src)) return;
+  driftReady.push(src);
+  if (driftOn && driftReady.length <= 4) spawnDrift(true);
+}
+
 function loadDrift(count) {
   for (let i = 0; i < count && driftNext < driftPool.length; i += 1) {
     const src = driftPool[driftNext];
     driftNext += 1;
     const img = new Image();
     if (driftNext <= 4) img.fetchPriority = 'high';
+    img.onload = () => markDriftReady(src);
+    img.onerror = () => markDriftReady(src);
     img.src = src;
-    img.decode().then(() => {
-      driftReady.push(src);
-      if (driftOn && driftReady.length <= 4) spawnDrift(true);
-    }, () => {});
+    if (img.decode) {
+      img.decode().then(() => markDriftReady(src), () => {
+        if (img.complete) markDriftReady(src);
+      });
+    }
   }
 }
 
@@ -185,6 +210,7 @@ function startDrift() {
   driftOn = true;
   if (!driftNext) loadDrift(6);
   for (let i = 0; i < Math.min(4, driftReady.length); i += 1) spawnDrift(true);
+  spawnDrift(false);
   driftTimer = window.setInterval(() => spawnDrift(false), DRIFT_GAP);
 }
 
@@ -267,23 +293,25 @@ function renderPhotos(photos) {
   root.replaceChildren();
   photos.forEach((item) => {
     const figure = document.createElement('figure');
-    const img = document.createElement('img');
     const full = item.video ? item.poster : item.src;
-    const thumb = thumbPath(full);
-    img.src = thumb;
-    img.alt = item.alt;
-    img.loading = 'lazy';
-    img.decoding = 'async';
-    img.dataset.thumb = thumb;
-    img.dataset.full = full;
     if (item.video) {
-      figure.dataset.video = item.video;
-      if (item.muted) figure.dataset.muted = 'true';
+      const video = document.createElement('video');
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = 'metadata';
+      video.muted = !!item.muted;
+      video.poster = full;
+      video.src = item.video;
+      video.setAttribute('aria-label', item.caption || item.alt);
+      figure.append(video);
+    } else {
+      const img = document.createElement('img');
+      img.src = full;
+      img.alt = item.alt;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      figure.append(img);
     }
-    figure.tabIndex = 0;
-    figure.setAttribute('role', 'button');
-    figure.setAttribute('aria-label', item.caption || item.alt);
-    figure.append(img);
     if (item.caption) {
       const caption = document.createElement('figcaption');
       caption.textContent = item.caption;
@@ -293,71 +321,34 @@ function renderPhotos(photos) {
   });
 }
 
-function closeFigure(figure) {
-  figure.classList.remove('is-open');
-  const video = figure.querySelector('video');
-  if (video) {
-    video.pause();
-    video.remove();
-  }
-  const img = figure.querySelector('img');
-  if (img) {
-    img.hidden = false;
-    if (img.dataset.thumb) img.src = img.dataset.thumb;
-  }
-}
-
 function closeGallery() {
   const root = document.querySelector('[data-gallery]');
   if (!root) return;
-  root.querySelectorAll('figure.is-open').forEach(closeFigure);
+  root.querySelectorAll('video').forEach((video) => {
+    video.pause();
+  });
 }
 
-function openFigure(figure) {
-  if (figure.classList.contains('is-open')) {
-    closeFigure(figure);
-    return;
-  }
-  figure.classList.add('is-open');
-  const img = figure.querySelector('img');
-  if (img && img.dataset.full) img.src = img.dataset.full;
-  if (!figure.dataset.video) return;
-  const video = document.createElement('video');
-  video.controls = true;
-  video.playsInline = true;
-  video.muted = figure.dataset.muted === 'true';
-  video.src = figure.dataset.video;
-  img.hidden = true;
-  img.after(video);
-  video.play().catch(() => {});
-}
+function bindGallery() {}
 
-function bindGallery() {
-  const root = document.querySelector('[data-gallery]');
-  root.addEventListener('click', (event) => {
-    if (event.target.closest('video')) return;
-    const figure = event.target.closest('figure');
-    if (!figure || !root.contains(figure)) return;
-    openFigure(figure);
-  });
-  root.addEventListener('keydown', (event) => {
-    if (event.key !== 'Enter' && event.key !== ' ') return;
-    const figure = event.target.closest('figure');
-    if (!figure || event.target.closest('video')) return;
-    event.preventDefault();
-    openFigure(figure);
-  });
+function normalizeView(id) {
+  if (id === 'blog' || id === 'content' || id === 'about') return 'about';
+  if (id === 'contact') return 'home';
+  if (id.startsWith('gallery-') && !sectionFrom(id)) return 'gallery';
+  return id;
 }
 
 function readHash() {
   const id = location.hash.replace('#', '');
   if (id === 'gallery') return id;
   if (sectionFrom(id)) return id;
+  if (id === 'blog' || id === 'content' || id === 'about') return 'about';
+  if (id === 'contact') return 'home';
   return VIEWS.includes(id) ? id : 'home';
 }
 
 function setNav(id) {
-  const navId = shellView(id) === 'gallery' || id === 'about' ? 'content' : id;
+  const navId = shellView(id) === 'gallery' ? 'gallery' : id === 'about' ? 'blog' : id;
   document.querySelectorAll('.topbar [data-nav]').forEach((button) => {
     if (button.dataset.nav === navId) button.setAttribute('aria-current', 'page');
     else button.removeAttribute('aria-current');
@@ -367,8 +358,8 @@ function setNav(id) {
 function show(next, options) {
   const instant = options && options.instant;
   const push = options && options.push;
-  if (next.startsWith('gallery-') && !sectionFrom(next)) next = 'gallery';
-  const allowed = VIEWS.includes(next) || next === 'gallery' || sectionFrom(next);
+  next = normalizeView(next);
+  const allowed = VIEWS.includes(next) || next === 'gallery' || sectionFrom(next) || next === 'about';
   if (!allowed || next === current || animating) return;
 
   const nextShell = shellView(next);
@@ -538,11 +529,11 @@ function frame(time) {
 }
 
 function startLoop() {
-  if (running || reduceMotion || current !== 'home') return;
+  if (running || current !== 'home') return;
   running = true;
   lastTick = 0;
   rafId = window.requestAnimationFrame(frame);
-  startDrift();
+  if (!reduceMotion) startDrift();
 }
 
 function stopLoop() {
@@ -573,8 +564,14 @@ function bind() {
     window.clearTimeout(resizeTimer);
     resizeTimer = window.setTimeout(() => {
       layout();
-      if (!reduceMotion) startLoop();
+      startLoop();
     }, 120);
+  });
+
+  // Re-layout once the stage has a real width (common mobile first-paint miss).
+  window.requestAnimationFrame(() => {
+    layout();
+    startLoop();
   });
 }
 
@@ -598,7 +595,10 @@ function boot() {
   if (current === 'home') startLoop();
 
   document.fonts.load('14px Mojangles').then(() => {
-    if (current === 'home') layout();
+    if (current === 'home') {
+      layout();
+      startLoop();
+    }
   }).catch(() => {});
 }
 
