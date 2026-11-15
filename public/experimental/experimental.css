@@ -63,7 +63,7 @@ a {
   z-index: 2;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 20px;
   min-height: 56px;
   padding: calc(10px + env(safe-area-inset-top, 0px)) 24px 10px;
@@ -73,9 +73,9 @@ a {
 .topbar nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 8px 16px;
-  margin-left: auto;
+  margin: 0;
 }
 
 .topbar button,
@@ -182,18 +182,7 @@ a {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 4px;
-}
-
-.home-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 0;
-  padding: 12px 0;
+  padding-top: 52px;
 }
 
 .drift {
@@ -977,15 +966,11 @@ a {
   }
 
   .home-brand {
-    padding-top: 0;
+    padding-top: 40px;
   }
 
   .name-stage {
     width: min(100%, 100%);
-  }
-
-  .roles p {
-    font-size: 15px;
   }
 
   .view-sheet,
@@ -1014,8 +999,8 @@ a {
     padding-bottom: 16px;
   }
 
-  .home-main {
-    padding: 8px 0;
+  .home-brand {
+    padding-top: 36px;
   }
 }
 
