@@ -89,7 +89,7 @@ const SECTIONS = [
   },
 ];
 
-const VIEWS = ['home', 'blog', 'about', 'gallery'];
+const VIEWS = ['home', 'blog', 'about', 'gallery', 'contact'];
 
 const stage = document.getElementById('name-stage');
 const canvas = document.getElementById('binary');
@@ -214,23 +214,30 @@ function ensureGallery(sectionId) {
 function renderSectionIndex() {
   const root = document.querySelector('[data-gallery-index]');
   root.replaceChildren();
-  SECTIONS.forEach((section, index) => {
+  SECTIONS.forEach((section) => {
     const cover = section.photos[0];
     const full = cover.video ? cover.poster : cover.src;
+    const count = section.photos.length;
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'gallery-section';
     button.dataset.nav = `gallery-${section.id}`;
-    button.style.setProperty('--a', `${index * 60}deg`);
-    button.setAttribute('aria-label', section.title);
+    button.setAttribute('aria-label', `${section.title}, ${count} photos`);
     const img = document.createElement('img');
     img.src = thumbPath(full);
     img.alt = '';
     img.loading = 'lazy';
     img.decoding = 'async';
+    const meta = document.createElement('span');
+    meta.className = 'gallery-section-meta';
     const label = document.createElement('span');
+    label.className = 'gallery-section-title';
     label.textContent = section.title;
-    button.append(img, label);
+    const tally = document.createElement('span');
+    tally.className = 'gallery-section-count';
+    tally.textContent = `${count} photos`;
+    meta.append(label, tally);
+    button.append(img, meta);
     root.append(button);
   });
 }
@@ -305,7 +312,6 @@ function bindGallery() {}
 
 function normalizeView(id) {
   if (id === 'blog' || id === 'content' || id === 'about') return 'about';
-  if (id === 'contact') return 'home';
   if (id.startsWith('gallery-') && !sectionFrom(id)) return 'gallery';
   return id;
 }
@@ -315,7 +321,6 @@ function readHash() {
   if (id === 'gallery') return id;
   if (sectionFrom(id)) return id;
   if (id === 'blog' || id === 'content' || id === 'about') return 'about';
-  if (id === 'contact') return 'home';
   return VIEWS.includes(id) ? id : 'home';
 }
 
@@ -331,7 +336,7 @@ function show(next, options) {
   const instant = options && options.instant;
   const push = options && options.push;
   next = normalizeView(next);
-  const allowed = VIEWS.includes(next) || next === 'gallery' || sectionFrom(next) || next === 'about';
+  const allowed = VIEWS.includes(next) || sectionFrom(next);
   if (!allowed || next === current || animating) return;
 
   const nextShell = shellView(next);
